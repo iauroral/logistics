@@ -1,0 +1,31 @@
+.has-warning .form-control,
+.has-error .form-control,
+.has-success .form-control {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.has-error .form-control {
+  border-color: darken(@color-red, 10%) !important;
+}
+
+.has-warning .form-control {
+  border-color: darken(@color-yellow, 10%) !important
+}
+
+.has-success .form-control {
+  border-color: darken(@color-green, 10%) !important
+}
+
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+  color: darken(@color-red, 10%);
+}
+
+.has-warning .help-block, .has-warning .control-label, .has-warning .radio, .has-warning .checkbox, .has-warning .radio-inline, .has-warning .checkbox-inline, .has-warning.radio label, .has-warning.checkbox label, .has-warning.radio-inline label, .has-warning.checkbox-inline label {
+  color: darken(@color-yellow, 10%);
+}
+
+.has-success .help-block, .has-success .control-label, .has-success .radio, .has-success .checkbox, .has-success .radio-inline, .has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
+  color: darken(@color-green, 10%);
+}

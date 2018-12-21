@@ -1,0 +1,5 @@
+<!-- We add local padding for demo purpose only to add extra space -->
+
+<!-- Main Wrapper -->
+<div ui-view></div>
+

@@ -1,0 +1,9 @@
+spring:
+  data:
+    rest:
+      base-path: /data
+  session:
+    store-type: hash_map
+
+server:
+  port: 8000

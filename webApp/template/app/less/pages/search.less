@@ -1,0 +1,38 @@
+.filter-item {
+  margin-bottom: 0;
+
+  .panel-body {
+    padding: 10px 20px;
+    border-bottom: none;
+  }
+
+  a {
+    color: @color-text;
+  }
+
+}
+
+.filter-item:last-child {
+  border-bottom: 1px solid @border-color;
+}
+
+.filter-item:hover, .filter-item.active {
+
+  .panel-body {
+    background: #fafcfd;
+    z-index: 100;
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .175);
+    -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, .175);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .175);
+  }
+}
+
+.filter-item::selection {
+  .panel-body {
+    background: #fafcfd;
+  }
+}
+
+.filter-item h4 {
+  margin-bottom: 5px;
+}

@@ -1,0 +1,39 @@
+<div ng-controller="editorCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <div panel-tools></div>
+                    Summernote standard editor
+                </div>
+                <div class="panel-body">
+                    <div summernote class="summernote" ng-model="summernoteText"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <div panel-tools></div>
+                    Summernote with custom toolbar
+                </div>
+                <div class="panel-body">
+                    <div summernote ng-model="summernoteTextTwo" config="summernoteOpt"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <div panel-tools></div>
+                    Summernote airMode
+                </div>
+                <div class="panel-body">
+                    <div summernote ng-model="summernoteTextTwo" airMode></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

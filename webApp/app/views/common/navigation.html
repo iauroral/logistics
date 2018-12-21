@@ -1,0 +1,39 @@
+<div id="navigation" ng-controller="NavigationCtrl">
+    <div class="profile-picture">
+        <a href="index.html">
+            <img src="images/profile.jpg" class="img-circle m-b" alt="logo">
+        </a>
+        <div class="stats-label text-color">
+            <span class="font-extra-bold font-uppercase">{{ user.name }}</span>
+            <div class="small-chart m-t-sm">
+                <div sparkline spark-data="barProfileData" spark-options="barProfileOptions"></div>
+            </div>
+        </div>
+    </div>
+    <ul side-navigation class="nav" id="side-menu">
+        <li ui-sref-active="active">
+            <a ui-sref="main.dashboard"> <span class="nav-label">仪表台</span> <span class="label label-success pull-right">v.1.0.0</span> </a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="analytics"> <span class="nav-label">Analytics</span><span class="label label-warning pull-right">NEW</span> </a>
+        </li>
+        <li ng-class="{active: $state.includes('interface')}">
+            <a href="#"><span class="nav-label">Interface</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level" ng-class="{in: $state.includes('interface')}">
+                <li ui-sref-active="active"><a ui-sref="interface.panels">Panels design</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.typography">Typography</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.buttons">Colors &amp; Buttons</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.components">Components</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.alerts">Alerts</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.modals">Modals</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.loading_buttons">Loading buttons</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.draggable_panels">Draggable Panels</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.code_editor">Code editor</a></li>
+                <li ui-sref-active="active"><a href="email_template/email_template.html">Email template</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.list">List</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.tour">Tour</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.icons">Icons library</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

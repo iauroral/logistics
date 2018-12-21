@@ -1,0 +1,164 @@
+<div class="color-line">
+</div>
+<div id="logo" class="light-version">
+        <span>
+            Homer Theme
+        </span>
+</div>
+<nav role="navigation">
+        <minimaliza-menu></minimaliza-menu>
+    <div class="small-logo">
+        <span class="text-primary">HOMER APP</span>
+    </div>
+    <form role="search" class="navbar-form-custom" method="post" action="#">
+        <div class="form-group">
+            <input type="text" placeholder="Search something special" class="form-control" name="search">
+        </div>
+    </form>
+    <div class="mobile-menu">
+        <button type="button" class="navbar-toggle mobile-menu-toggle" data-toggle="collapse" data-target="#mobile-collapse">
+            <i class="fa fa-chevron-down"></i>
+        </button>
+        <div class="collapse mobile-navbar" id="mobile-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a ui-sref="common.login">Login</a>
+                </li>
+                <li>
+                    <a ui-sref="common.register">Logout</a>
+                </li>
+                <li>
+                    <a ui-sref="app_views.profile">Profile</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="navbar-right">
+        <ul class="nav navbar-nav no-borders">
+            <li uib-dropdown>
+                <a href="#" uib-dropdown-toggle>
+                    <i class="pe-7s-speaker"></i>
+                </a>
+                <ul uib-dropdown-menu class="hdropdown notification animated flipInX">
+                    <li>
+                        <a>
+                            <span class="label label-success">NEW</span> It is a long established.
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="label label-warning">WAR</span> There are many variations.
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="label label-danger">ERR</span> Contrary to popular belief.
+                        </a>
+                    </li>
+                    <li class="summary"><a href="#">See all notifications</a></li>
+                </ul>
+            </li>
+            <li uib-dropdown>
+                <a href="#" uib-dropdown-toggle>
+                    <i class="pe-7s-keypad"></i>
+                </a>
+                <div uib-dropdown-menu class="hdropdown bigmenu animated flipInX">
+
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <a ui-sref="app_views.projects">
+                                    <i class="pe pe-7s-portfolio text-info"></i>
+                                    <h5>Projects</h5>
+                                </a>
+                            </td>
+                            <td>
+                                <a ui-sref="app_views.mailbox">
+                                    <i class="pe pe-7s-mail text-warning"></i>
+                                    <h5>Email</h5>
+                                </a>
+                            </td>
+                            <td>
+                                <a ui-sref="app_views.contacts">
+                                    <i class="pe pe-7s-users text-success"></i>
+                                    <h5>Contacts</h5>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a ui-sref="app_views.forum">
+                                    <i class="pe pe-7s-comment text-info"></i>
+                                    <h5>Forum</h5>
+                                </a>
+                            </td>
+                            <td>
+                                <a ui-sref="analytics">
+                                    <i class="pe pe-7s-graph1 text-danger"></i>
+                                    <h5>Analytics</h5>
+                                </a>
+                            </td>
+                            <td>
+                                <a ui-sref="app_views.file_manager">
+                                    <i class="pe pe-7s-box1 text-success"></i>
+                                    <h5>Files</h5>
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </li>
+            <li uib-dropdown>
+                <a class="label-menu-corner" href="#" uib-dropdown-toggle>
+                    <i class="pe-7s-mail"></i>
+                    <span class="label label-success">4</span>
+                </a>
+                <ul uib-dropdown-menu class="hdropdown animated flipInX">
+                    <div class="title">
+                        You have 4 new messages
+                    </div>
+                    <li>
+                        <a>
+                            It is a long established.
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            There are many variations.
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Lorem Ipsum is simply dummy.
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Contrary to popular belief.
+                        </a>
+                    </li>
+                    <li class="summary"><a href="#">See All Messages</a></li>
+                </ul>
+            </li>
+            <li>
+                <a ng-click="$root.rightSidebar = !$root.rightSidebar">
+                    <i class="pe-7s-upload pe-7s-news-paper"></i>
+                </a>
+            </li>
+            <li>
+                <a ui-sref="common.login">
+                    <i class="pe-7s-upload pe-rotate-90"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+

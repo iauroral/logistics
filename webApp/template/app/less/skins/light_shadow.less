@@ -1,0 +1,246 @@
+@panel-border-radius: 2px;
+@border-color: #eaeaea;
+@background-color: #F8F9FB;
+
+body.light-skin {
+
+  background-color: @background-color;
+
+  // Support old Homer version
+  .color-line {
+    display: none;
+  }
+
+  &.fixed-navbar #wrapper, #menu {
+    top: 55px;
+  }
+
+  .welcome-message {
+    display: none;
+  }
+
+
+  // wrapper
+  #wrapper {
+    background-color: transparent;
+    border-left: none;
+
+    .content {
+      padding-top: 20px;
+    }
+  }
+
+  &.fixed-small-header #wrapper .content {
+    padding-top: 90px;
+  }
+
+  // Navigation
+
+  #menu {
+    width: 190px;
+  }
+  #side-menu {
+    background: none;
+    padding: 23px 0 50px 25px;
+
+    li {
+      border: none;
+
+      &:first-child {
+        border: none;
+      }
+
+      a {
+        text-transform: none;
+        font-weight: 600;
+        padding: 10px 10px;
+        color: #909295;
+
+        &:hover, &:focus {
+          background-color: inherit;
+          color: @color-text;
+          font-weight: 700;
+        }
+      }
+
+      &.active {
+        border: none;
+        background: none;
+
+        > a {
+          border: none;
+          font-weight: 700;
+          color: @color-text;
+        }
+      }
+      .nav-second-level {
+
+        li {
+
+          a {
+
+            padding: 6px 10px 6px 20px;
+
+          }
+
+        }
+      }
+
+      .nav-third-level {
+
+        li {
+
+          a {
+
+            padding: 6px 10px 6px 30px;
+
+          }
+
+        }
+
+      }
+    }
+
+  }
+
+  .profile-picture {
+    display: none;
+  }
+
+  // Panels
+
+  .hpanel .panel-body {
+    border-radius: @panel-border-radius;
+  }
+
+  .panel-footer {
+    border-radius: 0 0 @panel-border-radius @panel-border-radius;
+  }
+
+  .hpanel {
+
+    .panel-body {
+      border: none;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, .1);
+    }
+
+    &.panel-collapse .panel-heading {
+      border: none;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, .1);
+    }
+
+    .panel-heading {
+      border: none;
+    }
+
+    .hbuilt.panel-heading,
+    &.blog-box .panel-heading {
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, .1);
+    }
+
+  }
+
+  .hpanel.hgreen .panel-body {
+    border-top: 2px solid @color-green;
+  }
+
+  .hpanel.hblue .panel-body {
+    border-top: 2px solid @color-blue;
+  }
+
+  .hpanel.hyellow .panel-body {
+    border-top: 2px solid @color-yellow;
+  }
+
+  .hpanel.hviolet .panel-body {
+    border-top: 2px solid @color-violet;
+  }
+
+  .hpanel.horange .panel-body {
+    border-top: 2px solid @color-orange;
+  }
+
+  .hpanel.hred .panel-body {
+    border-top: 2px solid @color-red;
+  }
+
+  .hpanel.hreddeep .panel-body {
+    border-top: 2px solid @color-red-deep;
+  }
+
+  .hpanel.hnavyblue .panel-body {
+    border-top: 2px solid @color-navy-blue;
+  }
+
+
+  // Header
+  #header {
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, .1);
+    height: 55px;
+    border: none;
+    z-index: 10;
+  }
+
+  .header-link {
+    background-color: #ffffff;
+  }
+
+  #logo {
+
+    height: 55px;
+    width: 200px;
+    padding-left: 33px;
+
+    &.light-version {
+      border: none;
+      background-color: #ffffff;
+      text-align: left;
+
+      span {
+        font-weight: 700;
+        color: #6a6c6f;
+        font-size: 14px;
+      }
+    }
+
+
+  }
+
+  &.fixed-small-header .small-header {
+    top: 55px;
+    z-index: 5;
+  }
+
+  .small-header {
+    padding: 0  0 0 21px !important;
+  }
+
+  &.hide-sidebar .small-header {
+    padding: 0  0 0 0 !important;
+  }
+
+  // Footer
+  .hpanel > .panel-footer, .hpanel > .panel-section {
+    background-color: transparent;
+    border: none;
+  }
+
+  .social-board {
+    .hpanel > .panel-footer, .hpanel > .panel-section {
+      border: 1px solid @border-color;
+    }
+  }
+
+  .contact-panel.hpanel > .panel-footer, .contact-panel.hpanel > .panel-section {
+    border: 1px solid @border-color;
+  }
+
+  .footer {
+    left: -181px;
+  }
+
+  &.fixed-footer .footer {
+    left: 0;
+  }
+
+}

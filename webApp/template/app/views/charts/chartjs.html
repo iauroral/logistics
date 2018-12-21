@@ -1,0 +1,118 @@
+<div class="row" ng-controller="chartjsCtrl">
+    <div class="col-lg-4">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Radar type chart
+            </div>
+            <div class="panel-body">
+                <div>
+                    <canvas height="200" id="radar-area" class="chart chart-radar"
+                            chart-data="radarData" chart-labels="radarLabels" chart-options="globalOptions"
+                            chart-dataset-override="radarOverride">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Doughnut bar chart
+            </div>
+            <div class="panel-body">
+                <div>
+                    <canvas height="200" id="doughnut" class="chart chart-doughnut"
+                            chart-data="doughnutData" chart-labels="doughnutLabels"
+                            chart-colors="doughnutColors">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Polar type chart
+            </div>
+            <div class="panel-body">
+                <div>
+                    <canvas height="200" id="polar-area" class="chart chart-polar-area"
+                            chart-data="polardata" chart-labels="polarlabels" chart-dataset-override="polarOverride">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row" ng-controller="chartjsCtrl">
+    <div class="col-lg-6">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Line type chart
+            </div>
+            <div class="panel-body">
+                <div>
+                    <canvas height="140" id="line" class="chart chart-line" chart-data="lineData"
+                            chart-labels="lineLabels" chart-series="lineSeries" chart-options="globalOptions"
+                            chart-dataset-override="lineOverride">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Bar type chart
+            </div>
+            <div class="panel-body">
+                <div>
+                    <canvas height="140" id="bar" class="chart chart-bar"
+                            chart-data="barData" chart-series="barSeries" chart-labels="barLabels"
+                            chart-dataset-override="barOverride">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-controller="chartjsCtrl">
+    <div class="col-lg-6">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Single Bar type chart
+            </div>
+            <div class="panel-body">
+                <div>
+                    <canvas height="140" id="singleBar" class="chart chart-bar"
+                            chart-data="singleBarData" chart-series="singleBarSeries" chart-labels="singleBarLabels"
+                            chart-dataset-override="singleBarOverride">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Line type chart without curve
+            </div>
+            <div class="panel-body">
+                <div>
+                    <canvas height="140" id="sharpline" class="chart chart-line" chart-data="sharplineData"
+                            chart-labels="sharplineLabels" chart-series="sharplineSeries" chart-options="globalOptions"
+                            chart-dataset-override="sharplineOverride">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

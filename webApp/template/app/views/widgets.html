@@ -1,0 +1,437 @@
+<!-- Header -->
+<div id="header" ng-include="'views/common/header.html'"></div>
+
+<!-- Navigation -->
+<aside id="menu" ng-include="'views/common/navigation.html'"></aside>
+
+<!-- Main Wrapper -->
+<div id="wrapper">
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h2 class="m-b-xs">Box title</h2>
+                            <p class="font-bold text-success">Lorem ipsum</p>
+                            <div class="m">
+                                <i class="pe-7s-science fa-5x"></i>
+                            </div>
+                            <p class="small">
+                                Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+                            <button class="btn btn-success btn-sm">Action button</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h2 class="m-b-xs">Box title</h2>
+                            <p class="font-bold text-info">Lorem ipsum</p>
+                            <div class="m">
+                                <i class="pe-7s-global fa-5x"></i>
+                            </div>
+                            <p class="small">
+                                Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+                            <button class="btn btn-info btn-sm">Action button</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h2 class="m-b-xs">Box title</h2>
+                            <p class="font-bold text-warning">Lorem ipsum</p>
+                            <div class="m">
+                                <i class="pe-7s-display1 fa-5x"></i>
+                            </div>
+                            <p class="small">
+                                Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+                            <button class="btn btn-warning btn-sm">Action button</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h2 class="m-b-xs">Box title</h2>
+                            <p class="font-bold text-danger">Lorem ipsum</p>
+                            <div class="m">
+                                <i class="pe-7s-airplay fa-5x"></i>
+                            </div>
+                            <p class="small">
+                                Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+                            <button class="btn btn-danger btn-sm">Action button</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>Page Views</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-monitor fa-4x"></i>
+                        </div>
+                        <div class="m-t-xl">
+                            <h1 class="text-success">160k+</h1>
+                            <small>
+                                Lorem Ipsum is simply dummy text of the printing and <strong>typesetting industry</strong>. Lorem Ipsum has been.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>Acite Views</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-shuffle fa-4x"></i>
+                        </div>
+                        <div class="m-t-xl">
+                            <h1 class="text-info">462</h1>
+                            <small>
+                                Lorem Ipsum is simply dummy text of the printing and <strong>typesetting industry</strong>. Lorem Ipsum has been.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>Income</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-ticket fa-4x"></i>
+                        </div>
+                        <div class="m-t-xl">
+                            <h1 class="text-warning">$200,00</h1>
+                            <small>
+                                Lorem Ipsum is simply dummy text of the printing and <strong>typesetting industry</strong>. Lorem Ipsum has been.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>Messages</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-attention fa-4x"></i>
+                        </div>
+                        <div class="m-t-xl">
+                            <h1 class="text-danger">680</h1>
+                            <small>
+                                Lorem Ipsum is simply dummy text of the printing and <strong>typesetting industry</strong>. Lorem Ipsum has been.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>Chart box</h4>
+                        </div>
+                        <div class="flot-chart" style="height: 150px">
+                            <div flot class="flot-chart-content" dataset="chartIncomeData" options="chartIncomeOptions"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3" ng-controller="charts_flotCtrl">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>Chart box</h4>
+                        </div>
+                        <div class="flot-chart" style="height: 150px">
+                            <div flot class="flot-chart-content" dataset="flotChartData" options="flotBarOptionsWid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3" ng-controller="charts_flotCtrl">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>Chart box</h4>
+                        </div>
+                        <div class="flot-chart m-t-lg" style="height: 120px">
+                            <div flot class="flot-chart-pie-content" dataset="pieChartDataWid" options="pieChartOptions" style="height: 120px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="stats-title">
+                            <h4>Progress box</h4>
+                        </div>
+                        <div class="m-t-lg">
+                            <uib-progressbar value="25" type="danger" class="m-t-xs  full progress-small"></uib-progressbar>
+                            <uib-progressbar value="35" type="danger" class="m-t-xs  full progress-small"></uib-progressbar>
+                            <uib-progressbar value="55" type="danger" class="m-t-xs  full progress-small"></uib-progressbar>
+                            <uib-progressbar value="75" type="danger" class="m-t-xs  full progress-small"></uib-progressbar>
+                            <uib-progressbar value="95" type="danger" class="m-t-xs  full progress-small"></uib-progressbar>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="hpanel hbggreen">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h3>Title text</h3>
+                            <p class="text-big font-light">
+                                20
+                            </p>
+                            <small>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="hpanel hbgblue">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h3>Title text</h3>
+                            <p class="text-big font-light">
+                                160
+                            </p>
+                            <small>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="hpanel hbgyellow">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h3>Title text</h3>
+                            <p class="text-big font-light">
+                                750
+                            </p>
+                            <small>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="hpanel hbgred">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h3>Title text</h3>
+                            <p class="text-big font-light">
+                                0,43
+                            </p>
+                            <small>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="text-success font-bold">Lorem ipsum</span>
+                                    </td>
+                                    <td>Jul 14, 2013</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="text-success font-bold">Lorem ipsum</span>
+                                    </td>
+                                    <td>Jul 09, 2015</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="text-success font-bold">Lorem ipsum</span>
+                                    </td>
+                                    <td>Jul 24, 2014</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="text-info font-bold">Lorem ipsum</span>
+                                    </td>
+                                    <td>Jul 14, 2013</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="text-info font-bold">Lorem ipsum</span>
+                                    </td>
+                                    <td>Jul 09, 2015</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="text-info font-bold">Lorem ipsum</span>
+                                    </td>
+                                    <td>Jul 24, 2014</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="text-warning font-bold">Lorem ipsum</span>
+                                    </td>
+                                    <td>Jul 14, 2013</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="text-warning font-bold">Lorem ipsum</span>
+                                    </td>
+                                    <td>Jul 09, 2015</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="text-warning font-bold">Lorem ipsum</span>
+                                    </td>
+                                    <td>Jul 24, 2014</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Task</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="text-danger font-bold">Lorem ipsum</span>
+                                    </td>
+                                    <td>Jul 14, 2013</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="text-danger font-bold">Lorem ipsum</span>
+                                    </td>
+                                    <td>Jul 09, 2015</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="text-danger font-bold">Lorem ipsum</span>
+                                    </td>
+                                    <td>Jul 24, 2014</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+
+    </div>
+
+    <!-- Right sidebar -->
+    <div id="right-sidebar" ng-include="'views/common/right_sidebar.html'" class="sidebar-open" ng-show="rightSidebar"></div>
+
+    <!-- Footer -->
+    <footer class="footer" ng-include="'views/common/footer.html'"></footer>
+</div>

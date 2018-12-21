@@ -1,0 +1,332 @@
+<!-- Header -->
+<div id="header" ng-include="'views/common/header.html'"></div>
+
+<!-- Navigation -->
+<aside id="menu" ng-include="'views/common/navigation.html'"></aside>
+
+<!-- Main Wrapper -->
+<div id="wrapper">
+
+    <div class="content" animate-panel>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="hpanel">
+                    <div class="panel-body text-center h-200">
+                        <i class="pe-7s-graph1 fa-4x"></i>
+
+                        <h1 class="m-xs">$1 206,90</h1>
+
+                        <h3 class="font-extra-bold no-margins text-success">
+                            All Income
+                        </h3>
+                        <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum.</small>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="hpanel stats">
+                    <div class="panel-body h-200">
+                        <div class="stats-title pull-left">
+                            <h4>Users Activity</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-share fa-4x"></i>
+                        </div>
+                        <div class="m-t-xl">
+                            <h3 class="m-b-xs">4 210,160</h3>
+                    <span class="font-bold no-margins">
+                        Social users
+                    </span>
+                            <uib-progressbar value="55" type="success" class="m-t-xs  full progress-small"></uib-progressbar>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <small class="stats-label">Pages / Visit</small>
+                                    <h4>7.80</h4>
+                                </div>
+
+                                <div class="col-xs-6">
+                                    <small class="stats-label">% New Visits</small>
+                                    <h4>76.43%</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="hpanel stats">
+                    <div class="panel-body h-200">
+                        <div class="stats-title pull-left">
+                            <h4>Page Views</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-monitor fa-4x"></i>
+                        </div>
+                        <div class="m-t-xl">
+                            <h1 class="text-success">860k+</h1>
+                    <span class="font-bold no-margins">
+                        Social users
+                    </span>
+                            <br/>
+                            <small>
+                                Lorem Ipsum is simply dummy text of the printing and <strong>typesetting industry</strong>. Lorem Ipsum has been.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="hpanel stats">
+                    <div class="panel-body h-200">
+                        <div class="stats-title pull-left">
+                            <h4>Today income</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-cash fa-4x"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="flot-chart">
+                            <div flot class="flot-chart-content" dataset="chartIncomeData" options="chartIncomeOptions"></div>
+                        </div>
+                        <div class="m-t-xs">
+
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <small class="stat-label">Today</small>
+                                    <h4>$230,00 </h4>
+                                </div>
+                                <div class="col-xs-7">
+                                    <small class="stat-label">Last week</small>
+                                    <h4>$7 980,60 <i class="fa fa-level-up text-success"></i></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3" ng-controller="charts_flotCtrl">
+                <div class="hpanel stats">
+                    <div class="panel-body h-200">
+                        <div class="stats-title pull-left">
+                            <h4>Page Views</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-credit fa-4x"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="flot-chart">
+                            <div flot class="flot-chart-content" dataset="flotChartData" options="flotBarOptionsDas"></div>
+                        </div>
+                        <div class="m-t-xs">
+
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <small class="stat-label">Today</small>
+                                    <h4>$230,00 </h4>
+                                </div>
+                                <div class="col-xs-7">
+                                    <small class="stat-label">Last week</small>
+                                    <h4>$7 980,60 <i class="fa fa-level-up text-success"></i></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="hpanel stats">
+                    <div class="panel-body h-200 list">
+                        <div class="stats-title pull-left">
+                            <h4>Users Activity</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-science fa-4x"></i>
+                        </div>
+                        <div class="m-t-xl">
+                            <span class="font-bold no-margins">
+                                Social users
+                            </span>
+                            <br/>
+                            <small>
+                                Lorem Ipsum is simply dummy text of the printing simply all dummy text.
+                            </small>
+                        </div>
+                            <div class="row m-t-sm">
+                                <div class="col-lg-6">
+                                    <h3 class="no-margins font-extra-bold text-success">300,102</h3>
+                                    <div class="font-bold">98% <i class="fa fa-level-up text-success"></i></div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h3 class="no-margins font-extra-bold text-success">280,200</h3>
+                                    <div class="font-bold">98% <i class="fa fa-level-up text-success"></i></div></div>
+
+                            </div>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="hpanel">
+                    <div class="panel-body text-center h-200">
+                        <i class="pe-7s-graph2 fa-4x"></i>
+                        <h1 class="m-xs">$802,40</h1>
+                        <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum consectetur adipiscing elit.</small>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3" ng-controller="charts_flotCtrl">
+                <div class="hpanel stats">
+                    <div class="panel-body h-200">
+                        <div class="stats-title pull-left">
+                            <h4>Today income</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-shuffle fa-4x"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="flot-pie-chart">
+                            <div flot class="flot-chart-pie-content" dataset="pieChartDataDas" options="pieChartOptions" style="height: 112px"></div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3" ng-controller="charts_flotCtrl">
+                <div class="hpanel stats">
+                    <div class="panel-body h-200">
+                        <div class="stats-title pull-left">
+                            <h4>Page Views</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-battery fa-4x"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="m-t-xs">
+
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <small class="stat-label">Today</small>
+                                    <h4>$170,20 <i class="fa fa-level-up text-success"></i></h4>
+                                </div>
+                                <div class="col-xs-6">
+                                    <small class="stat-label">Last week</small>
+                                    <h4>$580,90 <i class="fa fa-level-up text-success"></i></h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <small class="stat-label">Today</small>
+                                    <h4>$620,20 <i class="fa fa-level-up text-success"></i></h4>
+                                </div>
+                                <div class="col-xs-6">
+                                    <small class="stat-label">Last week</small>
+                                    <h4>$140,70 <i class="fa fa-level-up text-success"></i></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3" ng-controller="charts_flotCtrl">
+                <div class="hpanel stats">
+                    <div class="panel-body h-200">
+                        <div class="stats-title pull-left">
+                            <h4>Today income</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-gleam fa-4x"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="flot-chart">
+                            <div flot class="flot-chart-content" dataset="lineChartData" options="lineChartOptionsDas" style="height: 125px"></div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="hpanel stats">
+                    <div class="panel-body h-200 list">
+                        <div class="stats-title pull-left">
+                            <h4>Users Activity</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-display1 fa-4x"></i>
+                        </div>
+                        <div class="m-t-xl">
+                            <small>
+                                Lorem Ipsum is simply dummy text of the printing..
+                            </small>
+                        </div>
+
+                        <uib-progressbar value="25" type="success" class="m-t-xs  full progress-small"></uib-progressbar>
+                        <uib-progressbar value="35" type="success" class="m-t-xs  full progress-small"></uib-progressbar>
+                        <uib-progressbar value="55" type="success" class="m-t-xs  full progress-small"></uib-progressbar>
+                        <uib-progressbar value="95" type="success" class="m-t-xs  full progress-small"></uib-progressbar>
+
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="hpanel">
+                    <div class="panel-body text-center h-200">
+                        <i class="pe-7s-global fa-4x"></i>
+                        <h1 class="m-xs text-success">$1 208,20</h1>
+                        <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit vestibulum consectetur adipiscing elit.</small>
+                    </div>
+                    <div class="panel-footer">
+                        This is standard panel footer
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Right sidebar -->
+    <div id="right-sidebar" ng-include="'views/common/right_sidebar.html'" class="sidebar-open" ng-show="rightSidebar"></div>
+
+    <!-- Footer -->
+    <footer class="footer" ng-include="'views/common/footer.html'"></footer>
+</div>
+

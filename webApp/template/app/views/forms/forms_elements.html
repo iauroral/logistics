@@ -1,0 +1,261 @@
+<div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="hpanel">
+            <div class="panel-body">
+                <h3>Forms</h3>
+                <p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <div panel-tools></div>
+                    Basic elements
+                </div>
+                <div class="panel-body">
+                <form method="get" class="form-horizontal">
+                <div class="form-group"><label class="col-sm-2 control-label">Normal</label>
+
+                    <div class="col-sm-10"><input type="text" class="form-control"></div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">Help text</label>
+
+                    <div class="col-sm-10"><input type="text" class="form-control"> <span class="help-block m-b-none">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">Password</label>
+
+                    <div class="col-sm-10"><input type="password" class="form-control" name="password"></div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">Placeholder</label>
+
+                    <div class="col-sm-10"><input type="text" placeholder="placeholder" class="form-control"></div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-lg-2 control-label">Disabled</label>
+
+                    <div class="col-lg-10"><input type="text" disabled="" placeholder="Disabled input here..." class="form-control"></div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-lg-2 control-label">Static control</label>
+
+                    <div class="col-lg-10"><p class="form-control-static">email@example.com</p></div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <button class="btn btn-default" type="submit">Cancel</button>
+                        <button class="btn btn-primary" type="submit">Save changes</button>
+                    </div>
+                </div>
+                </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7">
+        <div class="hpanel">
+        <div class="panel-heading">
+            <div panel-tools></div>
+            Checkbox and radios
+        </div>
+        <div class="panel-body">
+        <form method="get" class="form-horizontal">
+            <div class="form-group"><label class="col-sm-2 control-label">Checkboxes and radios <br/>
+            </label>
+
+                <div class="col-sm-10">
+                    <div class="checkbox"><label> <input type="checkbox" value=""> Option one is this and that&mdash;be sure to include why it's great </label></div>
+                    <div class="radio"><label> <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"> Option one is this and that&mdash;be sure to
+                        include why it's great </label></div>
+                    <div class="radio"><label> <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Option two can be something else and selecting it will
+                        deselect option one </label></div>
+                </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group"><label class="col-sm-2 control-label">Inline checkboxes</label>
+
+                <div class="col-sm-10"><label class="checkbox-inline"> <input type="checkbox" value="option1" id="inlineCheckbox1"> a </label> <label class="checkbox-inline">
+                    <input type="checkbox" value="option2" id="inlineCheckbox2"> b </label> <label class="checkbox-inline">
+                    <input type="checkbox" value="option3" id="inlineCheckbox3"> c </label></div>
+            </div>
+        <div class="form-group"><label class="col-sm-2 control-label">Checkboxes &amp; radios <br/>
+            <small class="text-navy">Custom elements</small>
+        </label>
+
+            <div class="col-sm-10">
+                <div><label> <input icheck type="checkbox" ng-model="main.check2"> Option one </label></div>
+                <div><label> <input icheck type="checkbox" ng-model="main.checkThree"> Option two checked </label></div>
+                <div><label> <input icheck type="checkbox" ng-model="main.checkTwo" disabled> Option three checked and disabled </label></div>
+                <div><label> <input icheck type="checkbox" ng-model="main.check4" disabled> Option four disabled </label></div>
+                <div><label> <input icheck type="radio" name="radioTest" ng-model="main.checkFour"> Option one </label></div>
+                <div><label> <input icheck type="radio" name="radioTest" ng-model="main.check8"> Option two checked </label></div>
+                <div><label> <input icheck type="radio" name="radioTestNext" ng-model="main.check8" disabled> Option four disabled </label></div>
+                <div><label> <input icheck type="radio" name="radioTestNext" ng-model="main.check9" disabled> Option three checked and disabled</label></div>
+            </div>
+        </div>
+        <div class="hr-line-dashed"></div>
+        <div class="form-group"><label class="col-sm-2 control-label">Inline checkboxes</label>
+
+            <div class="col-sm-10">
+                <label> <input icheck type="checkbox" ng-model="main.unCheck"> a </label>
+                <label> <input icheck type="checkbox" ng-model="main.unCheck"> b </label>
+                <label> <input icheck type="checkbox" ng-model="main.unCheck"> c </label></div>
+        </div>
+        <div class="hr-line-dashed"></div>
+        <div class="form-group"><label class="col-sm-2 control-label">Select</label>
+
+            <div class="col-sm-10"><select class="form-control m-b" name="account">
+                <option>option 1</option>
+                <option>option 2</option>
+                <option>option 3</option>
+                <option>option 4</option>
+            </select>
+            </div>
+        </div>
+        <div class="hr-line-dashed"></div>
+        <div class="form-group">
+            <div class="col-sm-8 col-sm-offset-2">
+                <button class="btn btn-default" type="submit">Cancel</button>
+                <button class="btn btn-primary" type="submit">Save changes</button>
+            </div>
+        </div>
+        </form>
+        </div>
+        </div>
+        </div>
+    </div>
+
+<div class="row">
+<div class="col-lg-12">
+    <div class="hpanel">
+        <div class="panel-heading">
+            <div panel-tools></div>
+            Form elements options
+        </div>
+        <div class="panel-body">
+            <form method="get" class="form-horizontal">
+
+                <div class="form-group"><label class="col-sm-2 control-label">Control sizing</label>
+
+                    <div class="col-sm-10"><input type="text" placeholder=".input-lg" class="form-control input-lg m-b">
+                        <input type="text" placeholder="Default input" class="form-control m-b"> <input type="text" placeholder=".input-sm" class="form-control input-sm">
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">Column sizing</label>
+
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-md-2"><input type="text" placeholder=".col-md-2" class="form-control"></div>
+                            <div class="col-md-3"><input type="text" placeholder=".col-md-3" class="form-control"></div>
+                            <div class="col-md-4"><input type="text" placeholder=".col-md-4" class="form-control"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">Input groups</label>
+
+                    <div class="col-sm-10">
+                        <div class="input-group m-b"><span class="input-group-addon">@</span> <input type="text" placeholder="Username" class="form-control"></div>
+                        <div class="input-group m-b"><input type="text" class="form-control"> <span class="input-group-addon">.00</span></div>
+                        <div class="input-group m-b"><span class="input-group-addon">$</span> <input type="text" class="form-control"> <span class="input-group-addon">.00</span></div>
+                        <div class="input-group m-b"><span class="input-group-addon"> <input type="checkbox"> </span> <input type="text" class="form-control"></div>
+                        <div class="input-group"><span class="input-group-addon"> <input type="radio"> </span> <input type="text" class="form-control"></div>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">Button addons</label>
+
+                    <div class="col-sm-10">
+                        <div class="input-group m-b"><span class="input-group-btn">
+                                            <button type="button" class="btn btn-primary">Go!</button> </span> <input type="text" class="form-control">
+                        </div>
+                        <div class="input-group"><input type="text" class="form-control"> <span class="input-group-btn"> <button type="button" class="btn btn-primary">Go!
+                        </button> </span></div>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">With dropdowns</label>
+
+                    <div class="col-sm-10">
+                        <div class="input-group m-b">
+                            <div class="input-group-btn" dropdown>
+                                <button class="btn btn-default dropdown-toggle" dropdown-toggle type="button">Action <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">Action</a></li>
+                                    <li><a href="">Another action</a></li>
+                                    <li><a href="">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control"></div>
+                        <div class="input-group"><input type="text" class="form-control">
+
+                            <div class="input-group-btn" dropdown>
+                                <button class="btn btn-default dropdown-toggle" dropdown-toggle type="button">Action <span class="caret"></span></button>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="">Action</a></li>
+                                    <li><a href="">Another action</a></li>
+                                    <li><a href="">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="">Separated link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">Segmented</label>
+
+                    <div class="col-sm-10">
+                        <div class="input-group m-b">
+                            <div class="input-group-btn" dropdown>
+                                <button tabindex="-1" class="btn btn-default" type="button">Action</button>
+                                <button class="btn btn-default dropdown-toggle" dropdown-toggle type="button"><span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">Action</a></li>
+                                    <li><a href="">Another action</a></li>
+                                    <li><a href="">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control"></div>
+                        <div class="input-group"><input type="text" class="form-control">
+
+
+                            <div class="input-group-btn" dropdown>
+                                <button tabindex="-1" class="btn btn-default" type="button">Action</button>
+                                <button class="btn btn-default dropdown-toggle" dropdown-toggle type="button"><span class="caret"></span></button>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="">Action</a></li>
+                                    <li><a href="">Another action</a></li>
+                                    <li><a href="">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="">Separated link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <button class="btn btn-default" type="submit">Cancel</button>
+                        <button class="btn btn-primary" type="submit">Save changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>

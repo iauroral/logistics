@@ -1,0 +1,151 @@
+<div id="navigation">
+    <div class="profile-picture">
+        <a href="index.html">
+            <img src="images/profile.jpg" class="img-circle m-b" alt="logo">
+        </a>
+
+        <div class="stats-label text-color">
+            <span class="font-extra-bold font-uppercase">Robert Razer</span>
+
+            <div class="dropdown" uib-dropdown>
+                <a uib-dropdown-toggle href>
+                    <small class="text-muted">Founder of App <b class="caret"></b></small>
+                </a>
+                <ul class="animated flipInX m-t-xs" uib-dropdown-menu>
+                    <li><a ui-sref="app_views.contacts">Contacts</a></li>
+                    <li><a ui-sref="app_views.profile">Profile</a></li>
+                    <li><a ui-sref="analytics">Analytics</a></li>
+                    <li class="divider"></li>
+                    <li><a ui-sref="common.login">Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="small-chart m-t-sm">
+            <div sparkline spark-data="barProfileData" spark-options="barProfileOptions"></div>
+            </div>
+            <div>
+                <h4 class="font-extra-bold m-b-xs">
+                    $260 104,200
+                </h4>
+                <small class="text-muted">Your income from the last year in sales product X.</small>
+            </div>
+        </div>
+    </div>
+
+    <ul side-navigation class="nav" id="side-menu">
+        <li ui-sref-active="active">
+            <a ui-sref="dashboard"> <span class="nav-label">Dashboard</span> <span class="label label-success pull-right">v.1</span> </a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="analytics"> <span class="nav-label">Analytics</span><span class="label label-warning pull-right">NEW</span> </a>
+        </li>
+        <li ng-class="{active: $state.includes('interface')}">
+            <a href="#"><span class="nav-label">Interface</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level" ng-class="{in: $state.includes('interface')}">
+                <li ui-sref-active="active"><a ui-sref="interface.panels">Panels design</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.typography">Typography</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.buttons">Colors &amp; Buttons</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.components">Components</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.alerts">Alerts</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.modals">Modals</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.loading_buttons">Loading buttons</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.draggable_panels">Draggable Panels</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.code_editor">Code editor</a></li>
+                <li ui-sref-active="active"><a href="email_template/email_template.html">Email template</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.list">List</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.tour">Tour</a></li>
+                <li ui-sref-active="active"><a ui-sref="interface.icons">Icons library</a></li>
+            </ul>
+        </li>
+        <li ng-class="{'active': $state.includes('app_views') || $state.includes('blog_details')}">
+            <a href="#"><span class="nav-label">App views</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level" ng-class="{'in': $state.includes('app_views') || $state.includes('blog_details')}">
+                <li ui-sref-active="active"><a ui-sref="app_views.contacts">Contacts</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.projects">Projects</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.project_detail">Project detail</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.app_plans">App plans</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.social_board">Social board</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.faq">FAQ</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.timeline">Timeline</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.notes">Notes</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.mailbox">Mailbox</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.email_compose">Email compose</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.email_view">Email view</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.profile">Profile</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.blog">Blog</a></li>
+                <li ui-sref-active="active"><a ui-sref="blog_details">Blog article</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.forum">Forum</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.forum_details">Forum details</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.gallery">Gallery</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.calendar">Calendar</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.invoice">Invoice</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.file_manager">File manager</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.chat_view">Chat view</a></li>
+                <li ui-sref-active="active"><a ui-sref="app_views.search">Search view</a></li>
+            </ul>
+        </li>
+        <li ng-class="{active: $state.includes('charts')}">
+            <a href="#"><span class="nav-label">Charts</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level" ng-class="{in: $state.includes('charts')}">
+                <li ui-sref-active="active"><a ui-sref="charts.chartjs">ChartJs</a></li>
+                <li ui-sref-active="active"><a ui-sref="charts.flot">Flot charts</a></li>
+                <li ui-sref-active="active"><a ui-sref="charts.inline">Inline graphs</a></li>
+                <li ui-sref-active="active"><a ui-sref="charts.chartist">Chartist</a></li>
+                <li ui-sref-active="active"><a ui-sref="charts.c3Charts">C3 Charts</a></li>
+            </ul>
+        </li>
+        <li ng-class="{active: $state.includes('transitions')}">
+            <a href="#"><span class="nav-label">Box transitions</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level" ng-class="{in: $state.includes('transitions')}">
+                <li ui-sref-active="active"><a ui-sref="transitions.overview"><span class="label label-success pull-right">Start</span> Overview </a></li>
+                <li ui-sref-active="active"><a ui-sref="transitions.transition_two">Columns from up</a></li>
+                <li ui-sref-active="active"><a ui-sref="transitions.transition_one">Columns custom</a></li>
+                <li ui-sref-active="active"><a ui-sref="transitions.transition_three">Panels zoom</a></li>
+                <li ui-sref-active="active"><a ui-sref="transitions.transition_four">Rows from down</a></li>
+                <li ui-sref-active="active"><a ui-sref="transitions.transition_five">Rows from right</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><span class="nav-label">Common views</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level">
+                <li ui-sref-active="active"><a ui-sref="common.login">Login</a></li>
+                <li ui-sref-active="active"><a ui-sref="common.register">Register</a></li>
+                <li ui-sref-active="active"><a ui-sref="common.error_one">Error 404</a></li>
+                <li ui-sref-active="active"><a ui-sref="common.error_two">Error 505</a></li>
+                <li ui-sref-active="active"><a ui-sref="common.lock">Lock screen</a></li>
+                <li ui-sref-active="active"><a ui-sref="common.password_recovery">Password recovery</a></li>
+            </ul>
+        </li>
+        <li ng-class="{active: $state.includes('tables')}">
+            <a href="#"><span class="nav-label">Tables</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level" ng-class="{in: $state.includes('tables')}">
+                <li ui-sref-active="active"><a ui-sref="tables.tables_design">Tables design</a></li>
+                <li ui-sref-active="active"><a ui-sref="tables.datatables">Data tables</a></li>
+                <li ui-sref-active="active"><a ui-sref="tables.ng_grid">ngGrid</a></li>
+                <li ui-sref-active="active"><a ui-sref="tables.footable">Foo table</a></li>
+            </ul>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="widgets"> <span class="nav-label">Widgets</span> <span class="label label-success pull-right">Special</span></a>
+        </li>
+        <li ng-class="{active: $state.includes('forms')}">
+            <a href="#"><span class="nav-label">Forms</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level" ng-class="{in: $state.includes('forms')}">
+                <li ui-sref-active="active"><a ui-sref="forms.forms_elements">Forms elements</a></li>
+                <li ui-sref-active="active"><a ui-sref="forms.forms_extended">Forms extended</a></li>
+                <li ui-sref-active="active"><a ui-sref="forms.text_editor">Text editor</a></li>
+                <li ui-sref-active="active"><a ui-sref="forms.wizard">Wizard</a></li>
+                <li ui-sref-active="active"><a ui-sref="forms.validation">Validation</a></li>
+            </ul>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="options"> <span class="nav-label">Layout options</span></a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="grid_system"> <span class="nav-label">Grid system</span></a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="landing"> <span class="nav-label">Landing page</span></a>
+        </li>
+    </ul>
+</div>

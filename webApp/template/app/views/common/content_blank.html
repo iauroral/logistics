@@ -1,0 +1,15 @@
+<!-- We add local padding for demo purpose only to add extra space -->
+<!-- Header -->
+<div id="header" ng-include="'views/common/header.html'"></div>
+
+<!-- Navigation -->
+<aside id="menu" ng-include="'views/common/navigation.html'"></aside>
+
+<!-- Main Wrapper -->
+<div id="wrapper">
+
+    <div ui-view style="padding:40px"></div>
+
+</div>
+</div>
+</div>

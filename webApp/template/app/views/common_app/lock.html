@@ -1,0 +1,26 @@
+<div class="back-link">
+    <a ui-sref="dashboard" class="btn btn-primary">Back to Dashboard</a>
+</div>
+<div class="lock-container">
+    <div ng-controller='clockCtrl'>
+
+        <div class="hpanel">
+            <div class="panel-body text-center">
+
+                <i class="pe-7s-lock big-icon text-success"></i>
+                <br/>
+                <h4><span class="text-success">{{ clock  | date:'h:mm:ss'}}</span> <span class="text-primary">{{ clock  | date:'a'}}</span>  <strong>{{ clock | date:'EEEE, MMMM d, y'}}</strong></h4>
+                <p>Your are in lock screen. Main app was shut down and you need to enter your passwor to go back to app.</p>
+                <form action="#" role="form" class="m-t">
+                    <div class="form-group">
+                        <input type="password" required="" placeholder="******" class="form-control">
+                    </div>
+                    <button class="btn btn-primary block full-width" type="submit">Unlock</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+

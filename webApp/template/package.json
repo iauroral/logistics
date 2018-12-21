@@ -1,0 +1,25 @@
+{
+  "name": "HOMER",
+  "version": "2.0.0",
+  "description": "HOMER - AngularJs WebApp Theme",
+  "dependencies": {
+    "grunt": "^1.0.3"
+  },
+  "devDependencies": {
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^0.6.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-filerev": "^2.0.0",
+    "grunt-usemin": "^3.1.1",
+    "jshint-stylish": "^1.0.0",
+    "load-grunt-tasks": "^4.0.0",
+    "time-grunt": "^1.0.0"
+  }
+}

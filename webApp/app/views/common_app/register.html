@@ -1,0 +1,64 @@
+<div class="color-line"></div>
+<div class="register-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>注册</h3>
+                <small>Full suported AngularJS WebApp/Admin template with very clean and aesthetic style prepared for your next app. </small>
+            </div>
+            <div class="hpanel">
+                <div class="panel-body">
+                    <form id="registerForm" name="registerForm">
+                        <div class="row">
+                            <div class="form-group col-lg-12">
+                                <label for="username">用户名</label>
+                                <input ng-model="user.username" type="text" id="username" class="form-control" name="username" required>
+                                <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.username.$dirty && registerForm.username.$invalid">
+                                    <i class="fa fa-exclamation-triangle"></i>
+                                    请输入用户名
+                                </p>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="name">姓名</label>
+                                <input ng-model="user.name" type="text" id="name" class="form-control" name="name" required>
+                                <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.name.$dirty && registerForm.name.$invalid">
+                                    <i class="fa fa-exclamation-triangle"></i>
+                                    请输入姓名
+                                </p>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="tel">手机号</label>
+                                <input tel-validate ng-model="user.tel" name="tel" type="text" id="tel" class="form-control">
+                                <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.tel.$dirty && registerForm.tel.$invalid">
+                                    <i class="fa fa-exclamation-triangle"></i>
+                                    手机号不合法
+                                </p>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="password">密码</label>
+                                <input ng-model="user.password" type="password" id="password" class="form-control" name="password" required>
+                                <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.password.$dirty && registerForm.password.$invalid">
+                                    <i class="fa fa-exclamation-triangle"></i>
+                                    密码不合法
+                                </p>
+                            </div>
+                            <div class="checkbox col-lg-12">
+                                <input icheck type="checkbox" ng-model="remember" ng-init="remember = true">
+                                Sigh up for our newsletter
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button ng-disabled="registerForm.$invalid" class="btn btn-success">注册</button>
+                            <a ui-sref="login" class="btn btn-default">取消</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <strong>HOMER</strong> - AngularJS Responsive WebApp <br /> 2015 Copyright Company Name
+        </div>
+    </div>
+</div>

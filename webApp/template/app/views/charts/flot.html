@@ -1,0 +1,83 @@
+<div class="row" ng-controller="charts_flotCtrl">
+    <div class="col-lg-8">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Line type chart with tension
+            </div>
+            <div class="panel-body">
+                <div class="flot-chart">
+                    <div flot class="flot-chart-content" dataset="chartUsersData" options="chartUsersOptions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Bar type chart
+            </div>
+            <div class="panel-body">
+                <div class="flot-chart">
+                    <div flot class="flot-chart-content" dataset="flotChartData" options="flotBarOptions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-controller="charts_flotCtrl">
+    <div class="col-lg-4">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Pie type chart
+            </div>
+            <div class="panel-body">
+                <div class="flot-pie-chart" >
+                    <div flot class="flot-chart-pie-content" dataset="pieChartData" options="pieChartOptions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Area type chart
+            </div>
+            <div class="panel-body">
+                <div class="flot-chart">
+                    <div flot class="flot-chart-content" dataset="lineChartData" options="lineChartOptions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-controller="charts_flotCtrl">
+    <div class="col-lg-12">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Line with points
+            </div>
+            <div class="panel-body">
+                <div class="flot-chart" >
+                    <div flot class="flot-chart-content" dataset="sinCosChartData" options="sinCosChartOptions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .flot-chart-pie-content {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+    }
+    .flot-pie-chart {
+        display: block;
+        padding-top: 50px;
+        height: 300px;
+    }
+</style>

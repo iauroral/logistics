@@ -1,0 +1,50 @@
+<div class="row" ng-controller="timelineCtrl">
+    <div class="col-md-6">
+        <div class="hpanel">
+            <div class="v-timeline vertical-container" animate-panel child="vertical-timeline-block" delay="3">
+                <div class="vertical-timeline-block" ng-repeat="item in timelineItems" >
+                    <div class="vertical-timeline-icon navy-bg">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <div class="vertical-timeline-content">
+
+                        <div class="p-sm">
+                            <span class="vertical-date pull-right"> {{item.date | date: 'EEEE'}} <br/> <small>{{item.date | date: 'h:mm:ss a'}}</small> </span>
+
+                            <h2>{{item.type}}</h2>
+                            <p>{{item.content}}
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            {{item.info}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="hpanel">
+            <div class="v-timeline vertical-container" animate-panel child="vertical-timeline-block" delay="3">
+                <div class="vertical-timeline-block" ng-repeat="item in timelineItems" >
+                    <div class="vertical-timeline-icon navy-bg">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <div class="vertical-timeline-content">
+
+                        <div class="p-sm">
+                            <span class="vertical-date pull-right"> {{item.date | date: 'EEEE'}} <br/> <small>{{item.date | date: 'h:mm:ss a'}}</small> </span>
+
+                            <h2>{{item.type}}</h2>
+                            <p>{{item.content}}
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            {{item.info}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

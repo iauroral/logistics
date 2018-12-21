@@ -1,0 +1,44 @@
+<div class="row" ng-controller="nestableCtrl">
+    <div class="col-lg-6">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Nestable list example
+            </div>
+            <div class="panel-body">
+                <p>
+                    Angular UI Tree is an AngularJS UI component that can sort nested lists, provides drag & drop support and doesn't depend on jQuery.
+                </p>
+                <!-- list node template   -->
+                <script type="text/ng-template" id="nodes_renderer.html">
+                    <div ui-tree-handle class="tree-node tree-node-content">
+                        <a class="pull-right btn btn-default btn-xs" data-nodrag ng-click="remove(this)"><span class="fa fa-trash"></span></a>
+                        <a class="pull-right btn btn-default btn-xs" data-nodrag ng-click="newSubItem(this)"><span class="fa fa-plus"></span></a>
+                        <a class="btn btn-primary btn-xs" data-nodrag ng-click="toggle(this)"><span class="fa" ng-class="{'fa-angle-down': collapsed, 'fa-angle-right': !collapsed}"></span></a>
+                        {{node.title}}
+                    </div>
+                    <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+                        <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+                        </li>
+                    </ol>
+                </script>
+                <div ui-tree id="tree-root">
+                    <ol ui-tree-nodes ng-model="data">
+                        <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                Data binding
+            </div>
+            <div class="panel-body">
+                <pre>{{ data | json }}</pre>
+            </div>
+        </div>
+    </div>
+</div>

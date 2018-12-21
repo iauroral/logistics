@@ -1,0 +1,87 @@
+/* Lists */
+.list .list-item-container {
+  float: left;
+}
+
+.list-item-container div:first-child {
+  border-top: none;
+}
+
+.list .list-item .list-item-content p {
+  margin-bottom: 3px;
+  margin-top: 0;
+}
+.list .list-item-date {
+  color: #AAAAAA;
+  font-size: 10px;
+  text-align: center;
+}
+.list .list-item {
+  float: left;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px solid @border-color;
+}
+.list .list-item-container-small {
+  min-width: 80px;
+  text-align: center;
+}
+.list .list-item .list-item-content .list-item-right {
+  height: 100%;
+  padding: 0 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.list .list-item .list-item-content h1, .list .list-item .list-item-content h2, .list .list-item .list-item-content h3, .list .list-item .list-item-content h4, .list .list-item .list-item-content h5, .list .list-item .list-item-content h6, .list .list-item .list-item-content .list-item-title {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+}
+
+
+a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
+  background-color: @color-navy-blue;
+  border-color: @color-navy-blue;
+  color: #FFFFFF !important;
+}
+
+.list-group-item-heading {
+  margin-top: 10px;
+}
+
+.list-group-item-text {
+  margin: 0 0 10px;
+  color: inherit;
+  line-height: inherit;
+}
+
+.list-group-item {
+  background-color: inherit;
+  border: 1px solid @border-color;
+  display: block;
+  margin-bottom: -1px;
+  padding: 10px 15px;
+  position: relative;
+}
+
+.no-padding .list-group-item {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.no-padding .list-group-item:first-child {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-top: none;
+}
+
+.no-padding .list-group {
+  margin-bottom: 0;
+}

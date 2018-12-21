@@ -1,0 +1,428 @@
+<div class="row" ng-controller="chartjsCtrl">
+
+    <div class="col-md-8">
+
+        <div class="font-bold m-b-sm">
+            Project details
+        </div>
+
+        <div class="hpanel">
+            <div class="panel-body">
+
+                <div class="pull-right">
+                    <button class="btn btn-success btn-xs">  Active</button>
+                    <button class="btn btn-default btn-xs"> <i class="fa fa-pencil"></i> Edit</button>
+                </div>
+                <h2 class="m-t-none">Common project </h2>
+                <small>
+                    A wonderful serenity has taken possession of my entire soul, like these sweet mornings of
+                    spring which I enjoy with my whole heart.
+                    I am alone, and feel the charm of existence in this spot, which was created for the bliss of
+                    souls like mine.
+                </small>
+                <div class="small m-t-xs">
+                    <strong>Create by:</strong> Anthony Novic<br/>
+                    <strong>Client:</strong> Nordic Company Walking
+                </div>
+
+
+
+                <div class="m-t-md">
+
+                    <canvas height="60" id="line" class="chart chart-line" chart-data="lineProjectData"
+                            chart-labels="lineProjectLabels" chart-series="lineProjectSeries" chart-options="globalOptions"
+                            chart-dataset-override="lineProjectOverride">
+                    </canvas>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="hpanel">
+
+            <div class="panel-body">
+
+                <p>
+                    <strong>These sweet mornings of spring</strong> which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
+                </p>
+
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered table-striped">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <span class="label label-success">Added</span>
+                            </td>
+                            <td class="issue-info">
+                                <a href="#">
+                                    Message
+                                </a>
+                                <br/>
+                                <small>
+                                    This is issue with the coresponding note
+                                </small>
+                            </td>
+                            <td>
+                                Adrian Novak
+                            </td>
+                            <td>
+                                12.02.2015
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-default btn-xs"> Action</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="label label-info">Added</span>
+                            </td>
+                            <td class="issue-info">
+                                <a href="#">
+                                    Call
+                                </a>
+                                <br/>
+                                <small>
+                                    Desktop publishing packages and web page editors now use Lorem Ipsum as their default model text
+                                </small>
+                            </td>
+                            <td>
+                                Anna Smith
+                            </td>
+                            <td>
+                                10.02.2015
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-default btn-xs"> Action</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="label label-success">Added</span>
+                            </td>
+                            <td class="issue-info">
+                                <a href="#">
+                                    Message
+                                </a>
+                                <br/>
+                                <small>
+                                    It is a long established fact that a reader will be
+                                </small>
+                            </td>
+                            <td>
+                                Anthony Jackson
+                            </td>
+                            <td>
+                                02.03.2015
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-default btn-xs"> Action</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="label label-info">Added</span>
+                            </td>
+                            <td class="issue-info">
+                                <a href="#">
+                                    Message
+                                </a>
+                                <br/>
+                                <small>
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                                </small>
+                            </td>
+                            <td>
+                                Monica Proven
+                            </td>
+                            <td>
+                                01.10.2015
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-default btn-xs"> Action</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="label label-info">Fixed</span>
+                            </td>
+                            <td class="issue-info">
+                                <a href="#">
+                                    Meeting
+                                </a>
+                                <br/>
+                                <small>
+                                    Always free from repetition, injected humour, or non-characteristic words etc.
+                                </small>
+                            </td>
+                            <td>
+                                Alex Ferguson
+                            </td>
+                            <td>
+                                28.11.2015
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-default btn-xs"> Action</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="label label-success">Fixed</span>
+                            </td>
+                            <td class="issue-info">
+                                <a href="#">
+                                    Message
+                                </a>
+                                <br/>
+                                <small>
+                                    Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit am
+                                </small>
+                            </td>
+                            <td>
+                                Mark Conor
+                            </td>
+                            <td>
+                                18.09.2015
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-default btn-xs"> Action</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="label label-success">Fixed</span>
+                            </td>
+                            <td class="issue-info">
+                                <a href="#">
+                                    Call
+                                </a>
+                                <br/>
+                                <small>
+                                    Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit am
+                                </small>
+                            </td>
+                            <td>
+                                Carol Jackson
+                            </td>
+                            <td>
+                                11.03.2015
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-default btn-xs"> Action</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="label label-success">Fixed</span>
+                            </td>
+                            <td class="issue-info">
+                                <a href="#">
+                                    Message
+                                </a>
+                                <br/>
+                                <small>
+                                    Content here, content here', making it look like readable English. Many desktop
+                                </small>
+                            </td>
+                            <td>
+                                Carol Jackson
+                            </td>
+                            <td>
+                                05.04.2015
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-default btn-xs"> Action</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="label label-info">Fixed</span>
+                            </td>
+                            <td class="issue-info">
+                                <a href="#">
+                                    Meeting
+                                </a>
+                                <br/>
+                                <small>
+                                    Virginia, looked up one of the more obscure Latin words, consectetur
+                                </small>
+                            </td>
+                            <td>
+                                Monica Smith
+                            </td>
+                            <td>
+                                10.06.2014
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-default btn-xs"> Action</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="label label-success">Fixed</span>
+                            </td>
+                            <td class="issue-info">
+                                <a href="#">
+                                    Meeting
+                                </a>
+                                <br/>
+                                <small>
+                                    Injected humour, or randomised words which don't l
+                                </small>
+                            </td>
+                            <td>
+                                Anna Johnson
+                            </td>
+                            <td>
+                                13.05.2014
+                            </td>
+                            <td class="text-right">
+                                <button class="btn btn-default btn-xs"> Action</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-4">
+
+        <div class="font-bold m-b-sm">
+            Project statistics
+        </div>
+
+        <div class="hpanel stats">
+            <div class="panel-body">
+
+                <div>
+                    <i class="pe-7s-cash fa-4x"></i>
+                    <h1 class="m-xs text-success">$1 208,20</h1>
+                </div>
+
+                <p>
+                    <strong>Existence of spring</strong> and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
+                </p>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <small class="stat-label">Today</small>
+                        <h4>$170,20 <i class="fa fa-level-up text-success"></i></h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <small class="stat-label">Last week</small>
+                        <h4>$580,90 <i class="fa fa-level-up text-success"></i></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <small class="stat-label">Today</small>
+                        <h4>$620,20 <i class="fa fa-level-up text-success"></i></h4>
+                    </div>
+                    <div class="col-xs-6" >
+                        <small class="stat-label">Last week</small>
+                        <h4>$140,70 <i class="fa fa-level-up text-success"></i></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="font-bold m-b-sm">
+            Project participants
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="hpanel">
+                    <div class="panel-body text-center">
+                        <img alt="logo" class="img-circle img-small" src="images/a1.jpg">
+                        <div class="m-t-sm">
+                            <strong>Mark Newon</strong>
+                            <p class="small">UI Designer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hpanel">
+                    <div class="panel-body text-center">
+                        <img alt="logo" class="img-circle img-small" src="images/a2.jpg">
+                        <div class="m-t-sm">
+                            <strong>Anna Smith</strong>
+                            <p class="small">JS Developer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hpanel">
+                    <div class="panel-body text-center">
+                        <img alt="logo" class="img-circle img-small" src="images/a3.jpg">
+                        <div class="m-t-sm">
+                            <strong>John Smith</strong>
+                            <p class="small">CEO X company</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="hpanel">
+                    <div class="panel-body text-center">
+                        <img alt="logo" class="img-circle img-small" src="images/a1.jpg">
+                        <div class="m-t-sm">
+                            <strong>Max Simson</strong>
+                            <p class="small">UI Designer</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="hpanel">
+                    <div class="panel-body text-center">
+                        <img alt="logo" class="img-circle img-small" src="images/a4.jpg">
+                        <div class="m-t-sm">
+                            <strong>Anna Novak</strong>
+                            <p class="small">UX Designer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hpanel">
+                    <div class="panel-body text-center">
+                        <img alt="logo" class="img-circle img-small" src="images/a5.jpg">
+                        <div class="m-t-sm">
+                            <strong>Michael Smith</strong>
+                            <p class="small">JAVA Developer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hpanel">
+                    <div class="panel-body text-center">
+                        <img alt="logo" class="img-circle img-small" src="images/a6.jpg">
+                        <div class="m-t-sm">
+                            <strong>Max Simson</strong>
+                            <p class="small">UI Designer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hpanel">
+                    <div class="panel-body text-center">
+                        <img alt="logo" class="img-circle img-small" src="images/a7.jpg">
+                        <div class="m-t-sm">
+                            <strong>John Smith</strong>
+                            <p class="small">CEO X company</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</div>

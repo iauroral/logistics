@@ -1,0 +1,45 @@
+.checkbox-variant(@parent, @color) {
+  .@{parent} input[type="checkbox"]:checked + label {
+    &::before {
+      background-color: @color;
+      border-color: @color;
+    }
+    &::after {
+      color: #fff;
+    }
+  }
+}
+
+.radio-variant(@parent, @color) {
+  .@{parent} input[type="radio"]{
+    & + label{
+      &::after{
+        background-color: @color;
+      }
+    }
+    &:checked + label{
+      &::before {
+        border-color: @color;
+      }
+      &::after{
+        background-color: @color;
+      }
+    }
+  }
+}
+
+.checkbox-variant(checkbox-primary, @color-navy-blue);
+.checkbox-variant(checkbox-danger, @color-red);
+.checkbox-variant(checkbox-info, @color-blue);
+.checkbox-variant(checkbox-warning, @color-yellow);
+.checkbox-variant(checkbox-success, @color-green);
+.radio-variant(radio-primary, @color-navy-blue);
+.radio-variant(radio-danger, @color-red);
+.radio-variant(radio-info, @color-blue);
+.radio-variant(radio-warning, @color-yellow);
+.radio-variant(radio-success, @color-green);
+
+.checkbox input:hover,
+.radio input:hover {
+  cursor: pointer;
+}

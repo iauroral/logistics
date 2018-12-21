@@ -1,0 +1,370 @@
+<div class="boxed-wrapper">
+
+<!-- Header -->
+<div id="header" ng-include="'views/common/header.html'"></div>
+
+<!-- Navigation -->
+<aside id="menu" ng-include="'views/common/navigation.html'"></aside>
+
+<!-- Main Wrapper -->
+<div id="wrapper">
+
+    <div small-header class="small-header">
+        <div class="hpanel">
+            <div class="panel-body">
+                <div id="hbreadcrumb" class="pull-right">
+                    <ol class="hbreadcrumb breadcrumb">
+                        <li><a ui-sref="dashboard">Dashboard</a></li>
+                        <li ng-repeat="state in $state.$current.path" ng-switch="$last || !!state.abstract" ng-class="{active: $last}">
+                            <a ng-switch-when="false" href="#{{state.url.format($stateParams)}}">{{state.data.pageTitle}}</a>
+                            <span ng-switch-when="true">{{state.data.pageTitle}}</span>
+                        </li>
+                    </ol>
+                </div>
+                <h2 class="font-light m-b-xs">
+                    {{ $state.current.data.pageTitle }}
+                </h2>
+                <small>{{ $state.current.data.pageDesc }}</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" >
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <h1>Options</h1>
+                        <p class="lead">
+                            Homer admin theme gives you few configure options for your application layout. Each of the layout element: navigation, navbar, small header and footer can be fixed positioning.
+                        </p>
+                        <p>
+                            Use below buttons to enable/disable available options.
+                        </p>
+                        <div>
+                            <dl class="dl-horizontal">
+                                <dt style="text-align: left">Sidebar scroll</dt>
+                                <dd class="status-fixed-sidebar">Off</dd>
+
+                                <dt style="text-align: left">Fixed navbar</dt>
+                                <dd class="status-fixed-navbar">Off</dd>
+
+                                <dt style="text-align: left">Fixed footer</dt>
+                                <dd class="status-fixed-footer">Off</dd>
+
+                                <dt style="text-align: left">Fixed small header</dt>
+                                <dd class="status-fixed-small-header">Off</dd>
+
+                                <dt style="text-align: left">Boxed layout</dt>
+                                <dd class="status-boxed-layout">Off</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                            <a class="closebox"><i class="fa fa-times"></i></a>
+                        </div>
+                        Fixed navbar
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            Fixed navbar is a top navbar that is sticked on screen.
+                        </p>
+                        <p>
+                            To add fixed navbar you need to add .fixed-navbar class to body element.
+                        </p>
+                        <div class="text-center">
+                            <button id="fixed-navbar" type="button" class="btn btn-success" >
+                                Toggle fixed navbar
+                            </button>
+
+                        </div>
+
+                        <div class="m-t-md">
+                    <pre>
+
+&lt;body class="fixed-navbar"&gt;
+                    </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                            <a class="closebox"><i class="fa fa-times"></i></a>
+                        </div>
+                        Sidebar scroll
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            Sidebar scroll is a (left menu) sidebar that is sticked on screen.
+                        </p>
+                        <p>
+                            To add sidebar scroll you need to add .sidebar-scroll class to body. Sidebar scroll works with fixed-navbar.
+                        </p>
+                        <div class="text-center">
+                            <button id="fixed-sidebar" type="button" class="btn btn-success" >
+                                Toggle sidebar scroll
+                            </button>
+
+                        </div>
+
+                        <div class="m-t-md">
+                    <pre>
+
+&lt;body class="sidebar-scroll fixed-navbar"&gt;
+                    </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                            <a class="closebox"><i class="fa fa-times"></i></a>
+                        </div>
+                        Fixed footer
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            Fixed footer is a bottom footer that is sticked on screen.
+                        </p>
+                        <p>
+                            To add fixed footer you need to add .fixed-footer class to body element.
+                        </p>
+                        <div class="text-center">
+                            <button id="fixed-footer" type="button" class="btn btn-success" >
+                                Toggle footer footer
+                            </button>
+
+                        </div>
+
+                        <div class="m-t-md">
+                    <pre>
+
+&lt;body class="fixed-footer"&gt;
+                    </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                            <a class="closebox"><i class="fa fa-times"></i></a>
+                        </div>
+                        Fixed small header
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            Fixed small header is a top page header that is sticked on screen (only small version).
+                        </p>
+                        <p>
+                            To add fixed small header you need to add .fixed-small-header class to body. Fixed small header works with fixed-navbar and sidebar scroll.
+                        </p>
+                        <div class="text-center">
+                            <button id="fixed-small-header" type="button" class="btn btn-success" >
+                                Toggle fixed small header
+                            </button>
+
+                        </div>
+
+                        <div class="m-t-md">
+                    <pre>
+
+&lt;body class="fixed-small-header sidebar-scroll fixed-navbar"&gt;
+                    </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                            <a class="closebox"><i class="fa fa-times"></i></a>
+                        </div>
+                        Boxed layout
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            Boxed layout is an option for fixed width and centered layout on desktop resolution.
+                        </p>
+                        <p>
+                            To add boxed layout you need to add .boxed class to body element and special additional div wrapper after body tag with .boxed-wrapper class.
+                        </p>
+                        <div class="text-center">
+                            <button id="boxed-layout" type="button" class="btn btn-success" >
+                                Toggle boxed layout
+                            </button>
+
+                        </div>
+
+                        <div class="m-t-md">
+                    <pre>
+&lt;body class="boxed"&gt;
+    &lt;div class="boxed-wrapper"&gt;
+        ….
+        ….
+    &lt;/div&gt;
+&lt;/body&gt;
+                    </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Right sidebar -->
+    <div id="right-sidebar" ng-include="'views/common/right_sidebar.html'" class="sidebar-open" ng-show="rightSidebar"></div>
+
+    <!-- Footer -->
+    <footer class="footer" ng-include="'views/common/footer.html'"></footer>
+</div>
+
+</div>
+
+<!-- Local script only for demo purpose -->
+<script>
+
+    $(function () {
+
+        $('#fixed-navbar').click(function(){
+            if($('body').hasClass('fixed-navbar')) {
+                $('body').removeClass('fixed-navbar');
+                $('.status-fixed-navbar').html("Off");
+
+                if($('body').hasClass('sidebar-scroll')) {
+                    $('body').removeClass('sidebar-scroll');
+                    $('#navigation').slimScroll({destroy: true});
+                    $('#navigation').attr('style', '');
+                    $('.status-fixed-sidebar').html("Off")
+                }
+
+                if($('body').hasClass('fixed-small-header')) {
+                    $('body').removeClass('fixed-small-header');
+                    $('.status-fixed-small-header').html("Off")
+                }
+
+            } else {
+                $('body').addClass('fixed-navbar');
+                $('.status-fixed-navbar').html("<span class='text-success font-bold'>On</span>");
+                $('body').removeClass('boxed');
+                $('.status-boxed-layout').html("Off")
+            }
+        });
+
+        $('#fixed-sidebar').click(function(){
+
+            if($('body').hasClass('sidebar-scroll')) {
+                $('body').removeClass('sidebar-scroll');
+                $('#navigation').slimScroll({destroy: true});
+                $('#navigation').attr('style', '');
+                $('.status-fixed-sidebar').html("Off")
+            } else {
+                $('body').addClass('fixed-navbar');
+                $('body').addClass('sidebar-scroll');
+                $('#navigation').slimScroll({
+                    height: '100%',
+                    opacity: 0.3,
+                    size : 0,
+                    wheelStep : 10
+                });
+                $('.status-fixed-navbar').html("<span class='text-success font-bold'>On</span>");
+                $('.status-fixed-sidebar').html("<span class='text-success font-bold'>On</span>");
+                $('body').removeClass('boxed');
+                $('.status-boxed-layout').html("Off")
+            }
+        });
+
+        $('#fixed-footer').click(function(){
+            if($('body').hasClass('fixed-footer')) {
+                $('body').removeClass('fixed-footer');
+                $('.status-fixed-footer').html("Off");
+            } else {
+                $('body').addClass('fixed-footer');
+                $('.status-fixed-footer').html("<span class='text-success font-bold'>On</span>");
+                $('body').removeClass('boxed');
+                $('.status-boxed-layout').html("Off")
+            }
+        });
+
+        $('#fixed-small-header').click(function(){
+
+            if($('body').hasClass('fixed-small-header')) {
+                $('body').removeClass('fixed-small-header');
+                $('body').removeClass('sidebar-scroll');
+                $('#navigation').slimScroll({destroy: true});
+                $('#navigation').attr('style', '');
+                $('body').removeClass('fixed-navbar');
+                $('.status-fixed-small-header').html("Off");
+                $('.status-fixed-sidebar').html("Off");
+                $('.status-fixed-navbar').html("Off")
+            } else {
+                $('body').addClass('fixed-navbar');
+                $('body').addClass('sidebar-scroll');
+                $('#navigation').slimScroll({
+                    height: '100%',
+                    opacity: 0.3,
+                    size : 0,
+                    wheelStep : 10
+                });
+                $('body').addClass('fixed-small-header');
+                $('.status-fixed-navbar').html("<span class='text-success font-bold'>On</span>");
+                $('.status-fixed-sidebar').html("<span class='text-success font-bold'>On</span>");
+                $('.status-fixed-small-header').html("<span class='text-success font-bold'>On</span>");
+                $('body').removeClass('boxed');
+                $('.status-boxed-layout').html("Off")
+            }
+        });
+
+        $('#boxed-layout').click(function(){
+            if($('body').hasClass('boxed')) {
+                $('body').removeClass('boxed');
+                $('.status-boxed-layout').html("Off")
+            } else {
+                $('body').addClass('boxed');
+                $('.status-boxed-layout').html("<span class='text-success font-bold'>On</span>");
+                $('body').removeClass('fixed-small-header');
+                $('body').removeClass('sidebar-scroll');
+                $('#navigation').slimScroll({destroy: true});
+                $('#navigation').attr('style', '');
+                $('body').removeClass('fixed-navbar');
+                $('body').removeClass('fixed-footer');
+                $('.status-fixed-small-header').html("Off");
+                $('.status-fixed-footer').html("Off");
+                $('.status-fixed-sidebar').html("Off");
+                $('.status-fixed-navbar').html("Off");
+            }
+        });
+
+    });
+
+</script>
