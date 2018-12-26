@@ -27,6 +27,7 @@ public class UserInit implements ApplicationListener<ContextRefreshedEvent> {
             admin.setName("系统管理员");
             admin.setUsername("admin");
             admin.setPassword("admin");
+            admin.setType(User.ADMIN);
             userRepository.save(admin);
         }
     }

@@ -11,11 +11,26 @@
                     <form id="registerForm" name="registerForm">
                         <div class="row">
                             <div class="form-group col-lg-12">
+                                <label for="type">角色</label>
+                                <select ng-model="user.type" id="type" class="form-control m-b">
+                                    <option value="DRIVER">司机</option>
+                                    <option value="OWNER">货主</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-lg-12">
                                 <label for="username">用户名</label>
                                 <input ng-model="user.username" type="text" id="username" class="form-control" name="username" required>
                                 <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.username.$dirty && registerForm.username.$invalid">
                                     <i class="fa fa-exclamation-triangle"></i>
                                     请输入用户名
+                                </p>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="password">密码</label>
+                                <input ng-model="user.password" type="password" id="password" class="form-control" name="password" required>
+                                <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.password.$dirty && registerForm.password.$invalid">
+                                    <i class="fa fa-exclamation-triangle"></i>
+                                    密码不合法
                                 </p>
                             </div>
                             <div class="form-group col-lg-12">
@@ -27,24 +42,28 @@
                                 </p>
                             </div>
                             <div class="form-group col-lg-12">
-                                <label for="tel">手机号</label>
+                                <label for="tel">电话</label>
                                 <input tel-validate ng-model="user.tel" name="tel" type="text" id="tel" class="form-control">
                                 <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.tel.$dirty && registerForm.tel.$invalid">
                                     <i class="fa fa-exclamation-triangle"></i>
-                                    手机号不合法
+                                    电话不合法
                                 </p>
                             </div>
-                            <div class="form-group col-lg-12">
-                                <label for="password">密码</label>
-                                <input ng-model="user.password" type="password" id="password" class="form-control" name="password" required>
-                                <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.password.$dirty && registerForm.password.$invalid">
+                            <div ng-if="user.type === 'OWNER'" class="form-group col-lg-12">
+                                <label for="commonGoods">常用货物</label>
+                                <input ng-model="user.commonGoods" name="commonGoods" type="text" id="commonGoods" class="form-control">
+                                <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.commonGoods.$dirty && registerForm.commonGoods.$invalid">
                                     <i class="fa fa-exclamation-triangle"></i>
-                                    密码不合法
+                                    请输入常用货物
                                 </p>
                             </div>
-                            <div class="checkbox col-lg-12">
-                                <input icheck type="checkbox" ng-model="remember" ng-init="remember = true">
-                                Sigh up for our newsletter
+                            <div ng-if="user.type === 'OWNER'" class="form-group col-lg-12">
+                                <label for="address">地址</label>
+                                <input ng-model="user.address" name="address" type="text" id="address" class="form-control">
+                                <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.address.$dirty && registerForm.address.$invalid">
+                                    <i class="fa fa-exclamation-triangle"></i>
+                                    请输入地址
+                                </p>
                             </div>
                         </div>
                         <div class="text-center">

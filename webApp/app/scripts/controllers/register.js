@@ -11,6 +11,7 @@ angular
                 username: '',
                 password: '',
                 name: '',
+                type: 'DRIVER',
                 tel: ''
             };
         };

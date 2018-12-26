@@ -26,6 +26,7 @@ public class User {
     @Column(nullable = false)
     private String password;               // 密码
 
+    @Column(nullable = false)
     private String type;                   // 类型
 
     private Integer status;                // 状态
