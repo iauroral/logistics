@@ -1,7 +1,4 @@
 spring:
-  data:
-    rest:
-      base-path: /data
   session:
     store-type: hash_map
 
