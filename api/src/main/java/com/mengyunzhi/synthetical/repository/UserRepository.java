@@ -3,13 +3,12 @@ package com.mengyunzhi.synthetical.repository;
 import com.mengyunzhi.synthetical.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-import org.springframework.data.rest.core.annotation.RestResource;
 
 /**
  * @author zhangxishuo on 2018/11/10
  * 用户仓库
  */
-@RepositoryRestResource(path = "user")
+@RepositoryRestResource(path = "User")
 public interface UserRepository extends CrudRepository<User, Long> {
 
     /**
