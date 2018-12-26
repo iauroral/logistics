@@ -1,0 +1,40 @@
+<ui-view>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <h3>车型管理</h3>
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control input-sm m-b-md" id="filter" placeholder="搜索">
+                    <a ui-sref="main.vehicle.add" class="btn btn-primary">
+                    增加
+                </a>
+                    <table id="example1" class="footable table table-stripped toggle-arrow-tiny" data-page-size="8" data-filter=#filter>
+                        <thead>
+                            <tr>
+                                <th data-toggle="true">序号</th>
+                                <th>名称</th>
+                                <th>倍率</th>
+                                <th>押金</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="vehicle in vehicles | orderBy: '-id'">
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ vehicle.name }}</td>
+                                <td>{{ vehicle.multipleRate }}</td>
+                                <td>{{ vehicle.pledge }}</td>
+                                <td>
+                                    <a class="btn btn-xs btn-info" ui-sref="main.vehicle.edit({id: vehicle.id})">编辑</a>
+                                    <button class="btn btn-xs btn-danger" ng-click="delete(vehicle.id)">删除</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</ui-view>

@@ -6,6 +6,14 @@ angular
     .service('CommonService', function(sweetAlert) {
         var self = this;
 
+        self.success = function() {
+            sweetAlert.swal({
+                title: "操作成功!",
+                text: "Everything is OK!",
+                type: "success"
+            });
+        };
+
         self.alert = function(title, text) {
             sweetAlert.swal({
                 title: title,
@@ -22,6 +30,7 @@ angular
 
         return {
             alert     : self.alert,
+            success   : self.success,
             httpError : self.httpError
         };
     });

@@ -37,6 +37,30 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             data: {
                 pageTitle: '仪表台'
             }
+        })
+        .state('main.vehicle', {
+            url: "/vehicle",
+            templateUrl: "views/main/vehicle/index.html",
+            data: {
+                pageTitle: '车型管理'
+            },
+            controller: 'VehicleIndexCtrl'
+        })
+        .state('main.vehicle.add', {
+            url: "/add",
+            templateUrl: "views/main/vehicle/add.html",
+            data: {
+                pageTitle: '增加车型'
+            },
+            controller: 'VehicleAddCtrl'
+        })
+        .state('main.vehicle.edit', {
+            url: "/edit/:id",
+            templateUrl: "views/main/vehicle/edit.html",
+            data: {
+                pageTitle: '编辑车型'
+            },
+            controller: 'VehicleEditCtrl'
         });
 }
 
