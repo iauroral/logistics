@@ -1,0 +1,142 @@
+<div ng-controller="wizardOneCtrl">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <div panel-tools></div>
+                  提交提现申请
+                </div>
+                <div class="panel-body">
+
+                    <form name="simpleForm" novalidate id="simpleForm">
+
+                        <div class="text-center m-b-md">
+
+                            <a ng-click="wizard.show(1)" class="btn" ng-class="{ 'btn-primary': step == 1, 'btn-default': step != 1}">Step 1 - 个人信息填写</a>
+                            <a ng-click="wizard.show(2)" class="btn" ng-class="{ 'btn-primary': step == 2, 'btn-default': step != 2}">Step 2 - 银行卡信息填写a</a>
+                            <a ng-click="wizard.show(3)" class="btn" ng-class="{ 'btn-primary': step == 3, 'btn-default': step != 3}">Step 3 - 确认</a>
+
+                        </div>
+
+
+                        <div ng-show="step == 1"  class="p-m">
+
+                            <div class="row">
+                                <div class="col-lg-3 text-center">
+                                    <i class="pe-7s-user fa-5x text-muted"></i>
+                                    <p class="small m-t-md">
+                                        <strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+                                        <br/><br/>Lorem Ipsum has been the industry's dummy text of the printing and typesetting
+                                    </p>
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="row">
+                                        <div class="form-group col-lg-12">
+                                            <label>姓名</label>
+                                            <input type="" value="" id="" class="form-control" ng-model="user.username" placeholder="username">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>账号密码</label>
+                                            <input type="password" value="" id="" class="form-control" name="" placeholder="******" ng-model="user.password">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>账号昵称</label>
+                                            <input type="text" value="" id="" class="form-control" name="" placeholder="Company Name" ng-model="user.company">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>提现金额</label>
+                                            <input type="" value="" id="" class="form-control" name="" placeholder="user@email.com" ng-model="user.email">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>确认金额</label>
+                                            <input type="text" value="" id="" class="form-control" name="" ng-model="user.country" placeholder="UK">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div ng-show="step == 2" class="p-m">
+
+                            <div class="row">
+                                <div class="col-lg-3 text-center">
+                                    <i class="pe-7s-credit fa-5x text-muted"></i>
+                                    <p class="small m-t-md">
+                                        <strong>It is a long</strong> established fact that a reader will be distracted by the readable
+                                            <br/><br/>Many desktop publishing packages and web page editors now use
+                                    </p>
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="row">
+                                        <div class="form-group col-lg-12">
+                                            <label>银行卡登记姓名</label>
+                                            <input type="" value="" id="" class="form-control" ng-model="user.card_name">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>银行卡号</label>
+                                            <input type="text" value="" id="" class="form-control" name="" ng-model="user.card_number">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>登记手机号</label>
+                                            <input type="text" value="" id="" class="form-control" name="" ng-model="user.billing_address">
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                            <div class="row">
+                                                <div class="col-xs-4 form-group">
+                                                    <label>开户行所在省</label>
+                                                    <input class="form-control" placeholder="ex. 381"  type="text" ng-model="user.cvc">
+                                                </div>
+                                                <div class="col-xs-4 form-group">
+                                                    <label>市/区/县信息</label>
+                                                    <input class="form-control" placeholder="市" type="text" ng-model="user.expire_month">
+                                                </div>
+                                                <div class="col-xs-4 form-group">
+                                                    <label></label>
+                                                    <input class="form-control" placeholder="区/县" type="text" ng-model="user.expire_year">
+                                                </div>
+                                            </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div ng-show="step == 3">
+
+                            <div class="row text-center m-t-lg m-b-lg">
+                                <div class="col-lg-12">
+                                    <i class="pe-7s-check fa-5x text-muted"></i>
+                                    <p class="small m-t-md">
+                                        <strong>There are many</strong> variations of passages of Lorem Ipsum available, but the majority have suffered
+                                    </p>
+                                </div>
+                                <div class="checkbox col-lg-12">
+                                    <input icheck type="checkbox" ng-model="user.approve">
+                                    Approve this form
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="text-right m-t-xs">
+                            <button ng-click="wizard.prev()" ng-disabled="step == 1" class="btn btn-default">上一步</button>
+                            <button ng-click="wizard.next()" ng-disabled="step == 3" ng-hide="step == 3" class="btn btn-default">下一步</button>
+                            <button ng-click="submit()" ng-show="step == 3" class="btn btn-success" ng-disabled="!user.approve">提交</button>
+                        </div>
+
+                 
+
+                    </form>
+
+               
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
