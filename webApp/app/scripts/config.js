@@ -61,6 +61,23 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
                 pageTitle: '编辑车型'
             },
             controller: 'VehicleEditCtrl'
+        })
+        .state('main.orderMake',{
+            url: "/orderMake",
+            templateUrl: "views/main/order/orderMake.html",
+            data: {
+                pageTitle: '创建订单'
+            },
+            controller: 'OrderAddCtrl'
+        })
+        // 个人信息
+        .state('main.personalInfo',{
+            url: "/personalInfo",
+            templateUrl: "views/main/personalInfo/personalInfo.html",
+            data: {
+                pageTitle: '个人信息'
+            },
+            controller: 'PersonalInfoCtrl'
         });
 }
 
