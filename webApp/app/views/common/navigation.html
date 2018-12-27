@@ -20,73 +20,46 @@
         <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
             <a ui-sref="main.vehicle">
                 <span class="nav-label">车型管理</span>
-                <span class="label label-warning pull-right">NEW</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
             <a>
                 <span class="nav-label">货物类型管理</span>
-                <span class="label label-warning pull-right">NEW</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
             <a>
                 <span class="nav-label">定价管理</span>
-                <span class="label label-warning pull-right">NEW</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
             <a>
                 <span class="nav-label">抽成管理</span>
-                <span class="label label-warning pull-right">NEW</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
             <a>
                 <span class="nav-label">账号管理</span>
-                <span class="label label-warning pull-right">NEW</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
             <a>
                 <span class="nav-label">押金管理</span>
-                <span class="label label-warning pull-right">NEW</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
             <a>
                 <span class="nav-label">订单管理</span>
-                <span class="label label-warning pull-right">NEW</span>
             </a>
         </li>
-        <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
+        <li ui-sref-active="active" ng-if="user.type === 'DRIVER'">
+            <a>
+                <span class="nav-label">订单管理</span>
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-if="user.type === 'OWNER' || user.type === 'DRIVER'">
             <a>
                 <span class="nav-label">个人中心</span>
-                <span class="label label-warning pull-right">NEW</span>
-            </a>
-        </li>
-        <li ui-sref-active="active">
-            <a>
-                <span class="nav-label">创建订单</span>
-                <span class="label label-warning pull-right">NEW</span>
-            </a>
-        </li>
-        <li ui-sref-active="active">
-            <a>
-                <span class="nav-label">修改个人信息</span>
-                <span class="label label-warning pull-right">NEW</span>
-            </a>
-        </li>
-        <li ui-sref-active="active">
-            <a>
-                <span class="nav-label">查看正在进行的订单</span>
-                <span class="label label-warning pull-right">NEW</span>
-            </a>
-        </li>
-        <li ui-sref-active="active">
-            <a>
-                <span class="nav-label">查看历史订单</span>
-                <span class="label label-warning pull-right">NEW</span>
             </a>
         </li>
         <!-- <li ui-sref-active="active">

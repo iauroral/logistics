@@ -14,7 +14,6 @@ public class User {
     public static final String OWNER = "OWNER";
     public static final String ADMIN = "ADMIN";
 
-    public static final Integer FREEZE = -1;         // 冻结
     public static final Integer UN_AUTH = 0;         // 未认证
     public static final Integer AUTH = 1;            // 已认证
 
