@@ -44,12 +44,27 @@
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
             <a>
-                <span class="nav-label">订单管理</span>
+                <span class="nav-label">发起订单</span>
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
+            <a>
+                <span class="nav-label">我的订单(客户)</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'DRIVER'">
             <a>
-                <span class="nav-label">订单管理</span>
+                <span class="nav-label">我要接单</span>
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-if="user.type === 'DRIVER'">
+            <a>
+                <span class="nav-label">我的订单(司机)</span>
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-if="user.type === 'OWNER' || user.type === 'DRIVER'">
+            <a>
+                <span class="nav-label">我的钱包</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER' || user.type === 'DRIVER'">
