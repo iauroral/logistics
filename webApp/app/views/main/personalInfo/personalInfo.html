@@ -1,0 +1,80 @@
+<div ng-controller="PersonalInfoCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <!-- <div panel-tools></div> -->
+                    修改个人信息
+                </div>
+                <div class="panel-body">
+                    <form name="simpleForm" novalidate id="simpleForm">
+                        <div ng-show="step == 1" class="p-m">
+                            <div class="row">
+                                <div class="col-lg-3 text-center">
+                                    <i class="pe-7s-user fa-5x text-muted"></i>
+                                    <p class="small m-t-md">
+                                        <strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+                                        <br /><br />Lorem Ipsum has been the industry's dummy text of the printing and typesetting
+                                    </p>
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="row">
+                                        <div class="form-group col-lg-12">
+                                            <label>Username</label>
+                                            <input type="" value="" id="" class="form-control" ng-model="user.username" placeholder="username">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>Password</label>
+                                            <input type="password" value="" id="" class="form-control" name="" placeholder="******" ng-model="user.password">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>Company</label>
+                                            <input type="text" value="" id="" class="form-control" name="" placeholder="Company Name" ng-model="user.company">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>Email Address</label>
+                                            <input type="" value="" id="" class="form-control" name="" placeholder="user@email.com" ng-model="user.email">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>Country</label>
+                                            <input type="text" value="" id="" class="form-control" name="" ng-model="user.country" placeholder="UK">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div ng-show="step == 2">
+                    <div class="row text-center m-t-lg m-b-lg">
+                        <div class="col-lg-12">
+                            <i class="pe-7s-check fa-5x text-muted"></i>
+                            <p class="small m-t-md">
+                                <strong>There are many</strong> variations of passages of Lorem Ipsum available, but the majority have suffered
+                            </p>
+                        </div>
+                        <div class="checkbox col-lg-12">
+                            <input icheck type="checkbox" ng-model="user.approve">
+                            Approve this form
+                        </div>
+                    </div>
+                </div>
+                <div class="text-right m-t-xs">
+                    <button ng-click="submit()" ng-show="step == 3" class="btn btn-success" ng-disabled="!user.approve">Submit</button>
+                </div>
+                <div class="m-t-md">
+                    <p>
+                        <strong>ng-model</strong> data of <strong>USER</strong>
+                    </p>
+                    <pre>{{user | json}}</pre>
+                </div>
+                </form>
+                <div class="m-t-md">
+                    <p>
+                        This is an example of a wizard form which can be easy adjusted. Since each step is managed with function, you can easily add the validation, add additional functionality or use it in conjunction with other plugins like notifications.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
