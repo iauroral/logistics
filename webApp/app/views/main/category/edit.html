@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="m-b-md">
+            <h3>编辑货物类别</h3>
+        </div>
+        <div class="hpanel">
+            <div class="panel-body">
+                <form id="categoryEditForm" name="categoryEditForm" ng-submit="submit()">
+                    <div class="row">
+                        <div class="form-group col-lg-8">
+                            <label for="name">类别名称</label>
+                            <input ng-model="category.name" type="text" id="name" class="form-control" name="name" required>
+                            <p style="margin-top: 10px;" class="text-danger" ng-show="categoryEditForm.name.$dirty && categoryEditForm.name.$invalid">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                请输入类别名称
+                            </p>
+                        </div>
+                        <div class="form-group col-lg-8">
+                            <label for="multipleRate">类别收费倍率</label>
+                            <input ng-model="category.multipleRate" type="number" id="multipleRate" class="form-control" name="multipleRate" required>
+                            <p style="margin-top: 10px;" class="text-danger" ng-show="categoryEditForm.multipleRate.$dirty && categoryEditForm.multipleRate.$invalid">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                请输入类别收费倍率
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <button ng-disabled="categoryEditForm.$invalid" class="btn btn-success">保存</button>
+                        <a ui-sref="main.category" class="btn btn-default">取消</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

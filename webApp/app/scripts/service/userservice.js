@@ -33,10 +33,24 @@ angular
             return $http.get(url);
         };
 
+        //修改个人信息
+        self.update = function(id, vehicle, callback) {
+            var url = '/api/User/' + id;
+            $http.put(url, vehicle)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
         return {
             login               : self.login,
             logout              : self.logout,
             register            : self.register,
-            getCurrentLoginUser : self.getCurrentLoginUser
+            getCurrentLoginUser : self.getCurrentLoginUser,
+            update              : self.update
         };
     });
