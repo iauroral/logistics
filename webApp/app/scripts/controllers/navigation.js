@@ -14,6 +14,7 @@ angular
             UserService.getCurrentLoginUser()
                 .then(function success(response) {
                     $scope.user = response.data;
+                    console.log($scope.user);
                 }, function error(response) {
                     CommonService.alert('请登录!', '');
                     $state.go('login');

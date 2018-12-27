@@ -11,6 +11,18 @@ angular
             return $http.post(url, user);
         };
 
+        self.register = function(user, callback) {
+            var url = '/api/User/register';
+            $http.post(url, user)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
         self.logout = function() {
             var url = '/api/User/logout';
             return $http.post(url);
@@ -24,6 +36,7 @@ angular
         return {
             login               : self.login,
             logout              : self.logout,
+            register            : self.register,
             getCurrentLoginUser : self.getCurrentLoginUser
         };
     });
