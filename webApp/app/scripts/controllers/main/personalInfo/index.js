@@ -48,7 +48,6 @@ angular
         $scope.submit = function() {
             $scope.isEdit = 0;
             UserService.update($scope.user.id, $scope.user, CommonService.success());
-            $state.go('main.PersonalInfo', {}, { reload: true });
         };
 
         // Initial step
