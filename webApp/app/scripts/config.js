@@ -126,6 +126,46 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
                 pageTitle: '个人信息'
             },
             controller: 'PersonalInfoCtrl'
+        })
+         .state('main.mywallet', {
+            url: "/mywallet",
+            templateUrl: "views/main/mywallet/mywallet.html",
+            data: {
+                pageTitle: '我的钱包'
+            },
+           // controller:'MywalletCtrl'
+        })   
+         .state('main.mywallet.traderecord', {
+            url: "/traderecord",
+            templateUrl: "views/main/mywallet/traderecord.html",
+            data: {
+                pageTitle: '交易记录'
+            },
+            //controller:'TradeRecordCtrl'
+        })
+         .state('main.mywallet.bindingbankcard', {
+            url: "/bindingbankcard",
+            templateUrl: "views/main/mywallet/bindingbankcard.html",
+            data: {
+                pageTitle: '绑定银行卡'
+            },
+            //controller:'BindingBankCardCtrl'
+        })
+         .state('main.mywallet.paydeposit', {
+            url: "/paydeposit",
+            templateUrl: "views/main/mywallet/paydeposit.html",
+            data: {
+                pageTitle: '押金缴纳'
+            },
+            //controller:'PayDepositCtrl'
+        })
+         .state('main.mywallet.withdraw', {
+            url: "/withdraw",
+            templateUrl: "views/main/mywallet/withdraw.html",
+            data: {
+                pageTitle: '提现'
+            },
+            //controller:'WithDrawCtrl'
         });
 }
 
