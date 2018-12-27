@@ -118,6 +118,22 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             },
             controller: 'OrderAddCtrl'
         })
+        .state('main.orders', {
+            url: '/orders',
+            templateUrl: 'views/main/order/orders.html',
+            data: {
+                pageTitle: '正在执行的订单'
+            },
+            controller: 'OrderAddCtrl'
+        })
+        .state('main.orderCompleted', {
+            url: '/orderCompleted',
+            templateUrl: 'views/main/order/orderCompleted.html',
+            data: {
+                pageTitle: '历史订单'
+            },
+            controller: 'OrderAddCtrl'
+        })
         // 个人信息
         .state('main.personalInfo',{
             url: "/personalInfo",

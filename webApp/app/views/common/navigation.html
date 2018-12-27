@@ -54,13 +54,13 @@
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
-            <a>
+            <a ui-sref="main.orders">
                 <span class="nav-label">我的订单</span>
                 <span class="label label-warning pull-right">货主端</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
-            <a>
+            <a ui-sref="main.orderCompleted">
                 <span class="nav-label">历史订单</span>
                 <span class="label label-warning pull-right">货主端</span>
             </a>
