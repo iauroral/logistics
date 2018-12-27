@@ -73,7 +73,7 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         // 个人信息
         .state('main.personalInfo',{
             url: "/personalInfo",
-            templateUrl: "views/main/personalInfo/personalInfo.html",
+            templateUrl: "views/main/personalInfo/index.html",
             data: {
                 pageTitle: '个人信息'
             },
