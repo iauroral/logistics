@@ -49,7 +49,7 @@
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
-            <a>
+            <a ui-sref="main.orderMake">
                 <span class="nav-label">发起订单</span>
             </a>
         </li>
@@ -88,7 +88,7 @@
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER' || user.type === 'DRIVER'">
-            <a>
+            <a ui-sref="main.personalInfo">
                 <span class="nav-label">个人中心</span>
             </a>
         </li>

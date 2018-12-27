@@ -119,9 +119,9 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             controller: 'OrderAddCtrl'
         })
         // 个人信息
-        .state('main.personalInfo', {
-            url: '/personalInfo',
-            templateUrl: 'views/main/personalInfo/personalInfo.html',
+        .state('main.personalInfo',{
+            url: "/personalInfo",
+            templateUrl: "views/main/personalInfo/index.html",
             data: {
                 pageTitle: '个人信息'
             },
