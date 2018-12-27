@@ -18,6 +18,8 @@ public interface UserService {
      */
     boolean login(User user);
 
+    void register(User user);
+
     /**
      * 用户注销
      */
