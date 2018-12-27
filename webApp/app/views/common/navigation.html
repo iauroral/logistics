@@ -39,17 +39,52 @@
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
             <a>
+                <span class="nav-label">账号管理</span>
+                <span class="label label-warning pull-right">NEW</span>
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
+            <a>
                 <span class="nav-label">押金管理</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
             <a>
-                <span class="nav-label">订单管理</span>
+                <span class="nav-label">发起订单</span>
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
+            <a>
+                <span class="nav-label">我的订单</span>
+                <span class="label label-warning pull-right">货主端</span>
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
+            <a>
+                <span class="nav-label">历史订单</span>
+                <span class="label label-warning pull-right">货主端</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'DRIVER'">
             <a>
-                <span class="nav-label">订单管理</span>
+                <span class="nav-label">接收订单</span>
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-if="user.type === 'DRIVER'">
+            <a>
+                <span class="nav-label">我的订单</span>
+                <span class="label label-warning pull-right">司机端</span>
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-if="user.type === 'DRIVER'">
+            <a>
+                <span class="nav-label">历史订单</span>
+                <span class="label label-warning pull-right">司机端</span>
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-if="user.type === 'OWNER' || user.type === 'DRIVER'">
+            <a>
+                <span class="nav-label">我的钱包</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER' || user.type === 'DRIVER'">
