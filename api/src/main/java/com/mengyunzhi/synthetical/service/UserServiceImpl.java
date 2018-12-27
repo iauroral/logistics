@@ -50,6 +50,29 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void register(User user) {
+        User registerUser = new User();
+        registerUser.setName(user.getName());
+        registerUser.setUsername(user.getUsername());
+        registerUser.setPassword(user.getPassword());
+        registerUser.setType(user.getType());
+        registerUser.setTel(user.getTel());
+        switch (registerUser.getType()) {
+            case User.DRIVER:
+                registerUser.setLicense(user.getLicense());
+                registerUser.setVehicle(user.getVehicle());
+                break;
+            case User.OWNER:
+                registerUser.setCommonGoods(user.getCommonGoods());
+                registerUser.setAddress(user.getAddress());
+                break;
+            default:
+                throw new IllegalArgumentException("请选择角色");
+        }
+        userRepository.save(user);
+    }
+
+    @Override
     public void logout() throws AuthException {
         logger.debug("获取Session中的UserId");
         Long userId = (Long) httpSession.getAttribute(CommonService.USER_ID);

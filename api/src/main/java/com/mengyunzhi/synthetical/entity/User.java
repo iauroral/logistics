@@ -14,6 +14,9 @@ public class User {
     public static final String OWNER = "OWNER";
     public static final String ADMIN = "ADMIN";
 
+    public static final Integer UN_AUTH = 0;         // 未认证
+    public static final Integer AUTH = 1;            // 已认证
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;                       // 主键
@@ -29,9 +32,9 @@ public class User {
     @Column(nullable = false)
     private String type;                   // 类型
 
-    private Integer status;                // 状态
+    private Integer status = UN_AUTH;      // 状态
 
-    private BigDecimal balance;            // 余额
+    private BigDecimal balance = new BigDecimal("0");        // 余额
 
     private String tel;                    // 电话
 

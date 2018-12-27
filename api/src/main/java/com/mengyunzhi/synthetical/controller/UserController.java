@@ -54,4 +54,9 @@ public class UserController {
             httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
         }
     }
+
+    @PostMapping("register")
+    public void register(@RequestBody User user) {
+        userService.register(user);
+    }
 }

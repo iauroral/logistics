@@ -16,5 +16,14 @@ angular
             };
         };
 
+        self.submit = function() {
+            UserService.register($scope.user, function() {
+                CommonService.success();
+                $state.go('login');
+            });
+        };
+
+        $scope.submit = self.submit;
+
         self.init();
     });

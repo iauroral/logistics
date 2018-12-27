@@ -8,7 +8,7 @@
             </div>
             <div class="hpanel">
                 <div class="panel-body">
-                    <form id="registerForm" name="registerForm">
+                    <form id="registerForm" name="registerForm" ng-submit="submit()">
                         <div class="row">
                             <div class="form-group col-lg-12">
                                 <label for="type">角色</label>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="tel">电话</label>
-                                <input tel-validate ng-model="user.tel" name="tel" type="text" id="tel" class="form-control">
+                                <input tel-validate ng-model="user.tel" name="tel" type="text" id="tel" class="form-control" required>
                                 <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.tel.$dirty && registerForm.tel.$invalid">
                                     <i class="fa fa-exclamation-triangle"></i>
                                     电话不合法
@@ -51,7 +51,7 @@
                             </div>
                             <div ng-if="user.type === 'OWNER'" class="form-group col-lg-12">
                                 <label for="commonGoods">常用货物</label>
-                                <input ng-model="user.commonGoods" name="commonGoods" type="text" id="commonGoods" class="form-control">
+                                <input ng-model="user.commonGoods" name="commonGoods" type="text" id="commonGoods" class="form-control" required>
                                 <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.commonGoods.$dirty && registerForm.commonGoods.$invalid">
                                     <i class="fa fa-exclamation-triangle"></i>
                                     请输入常用货物
@@ -59,12 +59,22 @@
                             </div>
                             <div ng-if="user.type === 'OWNER'" class="form-group col-lg-12">
                                 <label for="address">地址</label>
-                                <input ng-model="user.address" name="address" type="text" id="address" class="form-control">
+                                <input ng-model="user.address" name="address" type="text" id="address" class="form-control" required>
                                 <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.address.$dirty && registerForm.address.$invalid">
                                     <i class="fa fa-exclamation-triangle"></i>
                                     请输入地址
                                 </p>
                             </div>
+                            <div ng-if="user.type === 'DRIVER'" class="form-group col-lg-12">
+                                <label for="license">车牌号</label>
+                                <input ng-model="user.license" name="license" type="text" id="license" class="form-control" required>
+                                <p style="margin-top: 10px;" class="text-danger" ng-show="registerForm.license.$dirty && registerForm.license.$invalid">
+                                    <i class="fa fa-exclamation-triangle"></i>
+                                    请输入车牌号
+                                </p>
+                            </div>
+                            <vehicle-list ng-model="user.vehicle" ng-if="user.type === 'DRIVER'"></vehicle-list>
+                            <input ng-if="user.type === 'DRIVER'" type="hidden" ng-model="user.vehicle.id" required />
                         </div>
                         <div class="text-center">
                             <button ng-disabled="registerForm.$invalid" class="btn btn-success">注册</button>
