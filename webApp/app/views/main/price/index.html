@@ -1,0 +1,40 @@
+<ui-view>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <h3>定价管理</h3>
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control input-sm m-b-md" id="filter" placeholder="搜索">
+                    <a ui-sref="main.price.add" class="btn btn-primary">
+                        增加
+                    </a>
+                    <table id="example1" class="footable table table-stripped toggle-arrow-tiny" data-page-size="8" data-filter=#filter>
+                        <thead>
+                            <tr>
+                                <th data-toggle="true">序号</th>
+                                <th>最低公里数</th>
+                                <th>最高公里数</th>
+                                <th>单位里程价格</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="price in prices | orderBy: '-id'">
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ price.minKilometres }}</td>
+                                <td>{{ price.maxKilometres }}</td>
+                                <td>{{ price.price }}</td>
+                                <td>
+                                    <a class="btn btn-xs btn-info" ui-sref="main.price.edit({id: price.id})">编辑</a>
+                                    <button class="btn btn-xs btn-danger" ng-click="delete(price.id)">删除</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</ui-view>

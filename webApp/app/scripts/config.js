@@ -82,9 +82,33 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             url: '/edit/:id',
             templateUrl: 'views/main/category/edit.html',
             data: {
-                pageTitle: '编辑货物类别管理'
+                pageTitle: '编辑货物类别'
             },
             controller: 'CategoryEditCtrl'
+        })
+        .state('main.price', {
+            url: '/price',
+            templateUrl: 'views/main/price/index.html',
+            data: {
+                pageTitle: '定价管理'
+            },
+            controller: 'PriceIndexCtrl'
+        })
+        .state('main.price.add', {
+            url: '/add',
+            templateUrl: 'views/main/price/add.html',
+            data: {
+                pageTitle: '添加定价'
+            },
+            controller: 'PriceAddCtrl'
+        })
+        .state('main.price.edit', {
+            url: '/edit/:id',
+            templateUrl: 'views/main/price/edit.html',
+            data: {
+                pageTitle: '编辑定价'
+            },
+            controller: 'PriceEditCtrl'
         })
         .state('main.orderMake', {
             url: '/orderMake',
