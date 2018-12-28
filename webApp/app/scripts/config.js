@@ -110,6 +110,30 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             },
             controller: 'PriceEditCtrl'
         })
+        .state('main.tax', {
+            url: '/tax',
+            templateUrl: 'views/main/tax/index.html',
+            data: {
+                pageTitle: '收益管理'
+            },
+            controller: 'TaxIndexCtrl'
+        })
+        .state('main.tax.add', {
+            url: '/add',
+            templateUrl: 'views/main/tax/add.html',
+            data: {
+                pageTitle: '添加收益'
+            },
+            controller: 'TaxAddCtrl'
+        })
+        .state('main.tax.edit', {
+            url: '/edit/:id',
+            templateUrl: 'views/main/tax/edit.html',
+            data: {
+                pageTitle: '编辑收益'
+            },
+            controller: 'TaxEditCtrl'
+        })
         .state('main.orderMake', {
             url: '/orderMake',
             templateUrl: 'views/main/order/orderMake.html',
