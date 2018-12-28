@@ -1,0 +1,40 @@
+<ui-view>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <h3>收益管理</h3>
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control input-sm m-b-md" id="filter" placeholder="搜索">
+                    <a ui-sref="main.tax.add" class="btn btn-primary">
+                        增加
+                    </a>
+                    <table id="example1" class="footable table table-stripped toggle-arrow-tiny" data-page-size="8" data-filter=#filter>
+                        <thead>
+                            <tr>
+                                <th data-toggle="true">序号</th>
+                                <th>最低价格</th>
+                                <th>最高价格</th>
+                                <th>抽成比例</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="tax in taxes | orderBy: '-id'">
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ tax.minPrice }}</td>
+                                <td>{{ tax.maxPrice }}</td>
+                                <td>{{ tax.rate }}</td>
+                                <td>
+                                    <a class="btn btn-xs btn-info" ui-sref="main.tax.edit({id: tax.id})">编辑</a>
+                                    <button class="btn btn-xs btn-danger" ng-click="delete(tax.id)">删除</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</ui-view>
