@@ -78,6 +78,22 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
                 pageTitle: '个人信息'
             },
             controller: 'PersonalInfoCtrl'
+        })
+        .state('main.acceptorder',{
+            url: "/acceptorder",
+            templateUrl: "views/main/acceptorder/index.html",
+            data: {
+                pageTitle: '我要接单'
+            },
+            controller: 'AcceptOrderCtrl'
+        })
+        .state('main.acceptorder.details',{
+            url: "/details/:id",
+            templateUrl: "views/main/acceptorder/details.html",
+            data: {
+                pageTitle: '订单详情'
+            },
+            controller: 'DetailsCtrl'
         });
 }
 
