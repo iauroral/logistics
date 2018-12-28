@@ -142,6 +142,14 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             },
             controller: 'UserIndexCtrl'
         })
+        .state('main.auth', {
+            url: '/auth',
+            templateUrl: 'views/main/auth/index.html',
+            data: {
+                pageTitle: '押金管理'
+            },
+            controller: 'AuthIndexCtrl'
+        })
         .state('main.orderMake', {
             url: '/orderMake',
             templateUrl: 'views/main/order/orderMake.html',
