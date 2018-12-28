@@ -17,7 +17,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="user in users | orderBy: '-id'">
+                        <tr ng-repeat="user in users | orderBy: '-id'" ng-if="user.type !== 'ADMIN'">
                             <td>{{ $index + 1 }}</td>
                             <td>{{ user.username }}</td>
                             <td>{{ user.name }}</td>

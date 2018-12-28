@@ -43,6 +43,11 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
+        logger.debug("用户被冻结，登录失败");
+        if (persistUser.getFreezeOrNot()) {
+            return false;
+        }
+
         logger.debug("记录当前用户id");
         httpSession.setAttribute(CommonService.USER_ID, persistUser.getId());
 
