@@ -134,6 +134,14 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             },
             controller: 'TaxEditCtrl'
         })
+        .state('main.user', {
+            url: '/user',
+            templateUrl: 'views/main/user/index.html',
+            data: {
+                pageTitle: '账号管理'
+            },
+            controller: 'UserIndexCtrl'
+        })
         .state('main.orderMake', {
             url: '/orderMake',
             templateUrl: 'views/main/order/orderMake.html',
@@ -182,8 +190,8 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
                 pageTitle: '订单详情'
             },
             controller: 'DetailsCtrl'
-        }
-         .state('main.mywallet', {
+        })
+        .state('main.mywallet', {
             url: '/mywallet',
             templateUrl: 'views/main/mywallet/mywallet.html',
             data: {

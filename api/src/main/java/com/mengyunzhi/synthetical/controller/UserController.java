@@ -59,4 +59,14 @@ public class UserController {
     public void register(@RequestBody User user) {
         userService.register(user);
     }
+
+    @PutMapping("freeze/{id}")
+    public void freeze(@PathVariable Long id) {
+        userService.freeze(id);
+    }
+
+    @PutMapping("unfreeze/{id}")
+    public void unfreeze(@PathVariable Long id) {
+        userService.unfreeze(id);
+    }
 }
