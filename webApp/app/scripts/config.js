@@ -160,64 +160,64 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         })
         // 个人信息
         .state('main.personalInfo',{
-            url: "/personalInfo",
-            templateUrl: "views/main/personalInfo/index.html",
+            url: '/personalInfo',
+            templateUrl: 'views/main/personalInfo/index.html',
             data: {
                 pageTitle: '个人信息'
             },
             controller: 'PersonalInfoCtrl'
         })
         .state('main.acceptorder',{
-            url: "/acceptorder",
-            templateUrl: "views/main/acceptorder/index.html",
+            url: '/acceptorder',
+            templateUrl: 'views/main/acceptorder/index.html',
             data: {
                 pageTitle: '我要接单'
             },
             controller: 'AcceptOrderCtrl'
         })
         .state('main.acceptorder.details',{
-            url: "/details/:id",
-            templateUrl: "views/main/acceptorder/details.html",
+            url: '/details/:id',
+            templateUrl: 'views/main/acceptorder/details.html',
             data: {
                 pageTitle: '订单详情'
             },
             controller: 'DetailsCtrl'
         }
          .state('main.mywallet', {
-            url: "/mywallet",
-            templateUrl: "views/main/mywallet/mywallet.html",
+            url: '/mywallet',
+            templateUrl: 'views/main/mywallet/mywallet.html',
             data: {
                 pageTitle: '我的钱包'
             },
            // controller:'MywalletCtrl'
         })
          .state('main.mywallet.traderecord', {
-            url: "/traderecord",
-            templateUrl: "views/main/mywallet/traderecord.html",
+            url: '/traderecord',
+            templateUrl: 'views/main/mywallet/traderecord.html',
             data: {
                 pageTitle: '交易记录'
             },
             //controller:'TradeRecordCtrl'
         })
          .state('main.mywallet.bindingbankcard', {
-            url: "/bindingbankcard",
-            templateUrl: "views/main/mywallet/bindingbankcard.html",
+            url: '/bindingbankcard',
+            templateUrl: 'views/main/mywallet/bindingbankcard.html',
             data: {
                 pageTitle: '绑定银行卡'
             },
             //controller:'BindingBankCardCtrl'
         })
          .state('main.mywallet.paydeposit', {
-            url: "/paydeposit",
-            templateUrl: "views/main/mywallet/paydeposit.html",
+            url: '/paydeposit',
+            templateUrl: 'views/main/mywallet/paydeposit.html',
             data: {
                 pageTitle: '押金缴纳'
             },
             //controller:'PayDepositCtrl'
         })
          .state('main.mywallet.withdraw', {
-            url: "/withdraw",
-            templateUrl: "views/main/mywallet/withdraw.html",
+            url: '/withdraw',
+            templateUrl: 'views/main/mywallet/withdraw.html',
             data: {
                 pageTitle: '提现'
             },
