@@ -116,23 +116,23 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             data: {
                 pageTitle: '创建订单'
             },
-            controller: 'OrderAddCtrl'
+            controller: 'OrderMakeCtrl'
         })
         .state('main.orders', {
-            url: '/orders',
-            templateUrl: 'views/main/order/orders.html',
+            url: '/orderRunning',
+            templateUrl: 'views/main/order/orderOfOwnerRunning.html',
             data: {
                 pageTitle: '正在执行的订单'
             },
-            controller: 'OrderAddCtrl'
+            controller: 'OrderOfOwnerRunningCtrl'
         })
         .state('main.orderCompleted', {
             url: '/orderCompleted',
-            templateUrl: 'views/main/order/orderCompleted.html',
+            templateUrl: 'views/main/order/orderOfOwnerCompleted.html',
             data: {
                 pageTitle: '历史订单'
             },
-            controller: 'OrderAddCtrl'
+            controller: 'OrderOfOwnerCompletedCtrl'
         })
         // 个人信息
         .state('main.personalInfo',{

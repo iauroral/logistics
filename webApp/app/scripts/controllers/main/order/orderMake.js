@@ -9,5 +9,4 @@ angular
         
         $scope.submit = self.submit;
 
-        self.init();
     });
