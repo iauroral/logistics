@@ -1,0 +1,56 @@
+<div ng-controller="PersonalInfoCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-heading">
+                    <!-- <div panel-tools></div> -->
+                    个人基本信息
+                </div>
+                <div class="panel-body">
+                    <form name="simpleForm" novalidate id="simpleForm">
+                        <div ng-show="step == 1" class="p-m">
+                            <div class="row">
+                                <div class="col-lg-3 text-center">
+                                    <i class="pe-7s-user fa-5x text-muted"></i>
+                                    <p class="small m-t-md">
+                                        <strong>个人信息</strong> <br/><br />你可以在这里修改个人信息
+                                    </p>
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="row">
+                                        <div class="form-group col-lg-12">
+                                            <label>姓名</label>
+                                            <input type="" value="" id="" class="form-control" ng-model="user.name" ng-disabled="!isEdit"placeholder="姓名">
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                            <label>用户名</label>
+                                            <input type="" value="" id="" class="form-control" ng-model="user.username" ng-disabled="!isEdit" placeholder="用户名">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>身份</label>
+                                            <input type="" value="" id="" class="form-control" ng-model="userType" ng-disabled="1" placeholder="您的身份">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>电话</label>
+                                            <input type="text" value="" id="" class="form-control" name="" placeholder="联系电话" ng-disabled="!isEdit"  ng-model="user.tel">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label>常用货物</label>
+                                            <input type="" value="" id="" class="form-control" name="" placeholder="常用货物" ng-disabled="!isEdit" ng-model="user.commonGoods">
+                                        </div>
+                                    </div>
+                                    <button ng-click="edit()" ng-show="!isEdit" class="btn btn-primary" >修改</button>
+                                    <button ng-click="cancel()" ng-show="isEdit" class="btn btn" >取消</button>
+                                    <button ng-click="submit()" ng-show="isEdit" class="btn btn-primary" >保存</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+               
+                </form>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

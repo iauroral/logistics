@@ -23,12 +23,12 @@
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
-            <a>
-                <span class="nav-label">货物类型管理</span>
+            <a ui-sref="main.category">
+                <span class="nav-label">货物类别管理</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
-            <a>
+            <a ui-sref="main.price">
                 <span class="nav-label">定价管理</span>
             </a>
         </li>
@@ -49,18 +49,18 @@
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
-            <a>
+            <a ui-sref="main.orderMake">
                 <span class="nav-label">发起订单</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
-            <a>
+            <a ui-sref="main.orders">
                 <span class="nav-label">我的订单</span>
                 <span class="label label-warning pull-right">货主端</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER'">
-            <a>
+            <a ui-sref="main.orderCompleted">
                 <span class="nav-label">历史订单</span>
                 <span class="label label-warning pull-right">货主端</span>
             </a>
@@ -83,12 +83,12 @@
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER' || user.type === 'DRIVER'">
-            <a>
+            <a ui-sref="main.mywallet" >
                 <span class="nav-label">我的钱包</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER' || user.type === 'DRIVER'">
-            <a>
+            <a ui-sref="main.personalInfo">
                 <span class="nav-label">个人中心</span>
             </a>
         </li>
