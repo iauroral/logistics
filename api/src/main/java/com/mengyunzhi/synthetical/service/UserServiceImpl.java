@@ -73,6 +73,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void freeze(Long userId) {
+        User user = userRepository.findOne(userId);
+        user.setFreezeOrNot(true);
+        userRepository.save(user);
+    }
+
+    @Override
+    public void unfreeze(Long userId) {
+        User user = userRepository.findOne(userId);
+        user.setFreezeOrNot(false);
+        userRepository.save(user);
+    }
+
+    @Override
     public void logout() throws AuthException {
         logger.debug("获取Session中的UserId");
         Long userId = (Long) httpSession.getAttribute(CommonService.USER_ID);

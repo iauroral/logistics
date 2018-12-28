@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <h3>账号管理</h3>
+            </div>
+            <div class="panel-body">
+                <input type="text" class="form-control input-sm m-b-md" id="filter" placeholder="搜索">
+                <table id="example1" class="footable table table-stripped toggle-arrow-tiny" data-page-size="8" data-filter=#filter>
+                    <thead>
+                        <tr>
+                            <th data-toggle="true">序号</th>
+                            <th>用户名</th>
+                            <th>姓名</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in users | orderBy: '-id'">
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>
+                                <p ng-if="!user.freezeOrNot">正常</p>
+                                <p ng-if="user.freezeOrNot">已冻结</p>
+                            </td>
+                            <td>
+                                <button ng-if="!user.freezeOrNot" class="btn btn-xs btn-danger" ng-click="freeze(user.id)">冻结</button>
+                                <button ng-if="user.freezeOrNot" class="btn btn-xs btn-success" ng-click="unfreeze(user.id)">解冻</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

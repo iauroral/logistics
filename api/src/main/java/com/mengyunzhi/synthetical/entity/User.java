@@ -32,7 +32,9 @@ public class User {
     @Column(nullable = false)
     private String type;                   // 类型
 
-    private Integer status = UN_AUTH;      // 状态
+    private Integer status = UN_AUTH;      // 认证状态
+
+    private Boolean freezeOrNot = false;   // 是否冻结
 
     private BigDecimal balance = new BigDecimal("0");        // 余额
 
@@ -98,6 +100,14 @@ public class User {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Boolean getFreezeOrNot() {
+        return freezeOrNot;
+    }
+
+    public void setFreezeOrNot(Boolean freezeOrNot) {
+        this.freezeOrNot = freezeOrNot;
     }
 
     public BigDecimal getBalance() {
