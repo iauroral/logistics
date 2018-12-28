@@ -33,18 +33,18 @@
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
-            <a>
+            <a ui-sref="main.tax">
                 <span class="nav-label">收益管理</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
-            <a>
+            <a ui-sref="main.user">
                 <span class="nav-label">账号管理</span>
                 <span class="label label-warning pull-right">NEW</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'ADMIN'">
-            <a>
+            <a ui-sref="main.auth">
                 <span class="nav-label">押金管理</span>
             </a>
         </li>
@@ -66,7 +66,7 @@
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'DRIVER'">
-            <a>
+            <a ui-sref="main.acceptorder">
                 <span class="nav-label">接收订单</span>
             </a>
         </li>

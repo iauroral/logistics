@@ -43,6 +43,11 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
+        logger.debug("用户被冻结，登录失败");
+        if (persistUser.getFreezeOrNot()) {
+            return false;
+        }
+
         logger.debug("记录当前用户id");
         httpSession.setAttribute(CommonService.USER_ID, persistUser.getId());
 
@@ -69,6 +74,20 @@ public class UserServiceImpl implements UserService {
             default:
                 throw new IllegalArgumentException("请选择角色");
         }
+        userRepository.save(user);
+    }
+
+    @Override
+    public void freeze(Long userId) {
+        User user = userRepository.findOne(userId);
+        user.setFreezeOrNot(true);
+        userRepository.save(user);
+    }
+
+    @Override
+    public void unfreeze(Long userId) {
+        User user = userRepository.findOne(userId);
+        user.setFreezeOrNot(false);
         userRepository.save(user);
     }
 

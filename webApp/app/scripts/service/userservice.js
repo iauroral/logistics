@@ -6,6 +6,18 @@ angular
     .service('UserService', function($http) {
         var self = this;
 
+        self.getAllUsers = function(callback) {
+            var url = '/api/User';
+            $http.get(url)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
         self.login = function(user) {
             var url = '/api/User/login';
             return $http.post(url, user);
@@ -14,6 +26,30 @@ angular
         self.register = function(user, callback) {
             var url = '/api/User/register';
             $http.post(url, user)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
+        self.freeze = function(id, callback) {
+            var url = '/api/User/freeze/' + id;
+            $http.put(url)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
+        self.unfreeze = function(id, callback) {
+            var url = '/api/User/unfreeze/' + id;
+            $http.put(url)
                 .then(function success(response) {
                     if (callback) {
                         callback(response.data);
@@ -48,9 +84,12 @@ angular
 
         return {
             login               : self.login,
+            update              : self.update,
+            freeze              : self.freeze,
             logout              : self.logout,
             register            : self.register,
-            getCurrentLoginUser : self.getCurrentLoginUser,
-            update              : self.update
+            unfreeze            : self.unfreeze,
+            getAllUsers         : self.getAllUsers,
+            getCurrentLoginUser : self.getCurrentLoginUser
         };
     });
