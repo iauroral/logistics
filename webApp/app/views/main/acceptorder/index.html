@@ -1,0 +1,83 @@
+
+<ui-view>
+ <div class="panel-body">
+                 <div class="panel-heading hbuilt">
+                <div class="p-xs">
+
+                    <form method="get" class="form-horizontal">
+                        <div class="form-group"><label class="col-sm-1 control-label text-left">最早发车时间</label>
+                            <div class="col-sm-1"><input type="text" class="form-control input-sm" placeholder="2018年12月2日"></div>
+                            <div class="form-group"><label class="col-sm-1 control-label text-left">最晚发车时间</label>
+                                <div class="col-sm-1"><input type="text" class="form-control input-sm" placeholder="2018年12月2日"></div>
+                            </div>
+
+                        </div>
+                        
+                        <div class="form-group"><label class="col-sm-1 control-label text-left">最短运输距离</label>
+
+                            <div class="col-sm-1"><input type="text" class="form-control input-sm" placeholder="300km"></div>
+                            <div class="form-group"><label class="col-sm-1 control-label text-left">最长运输距离</label>
+
+                            <div class="col-sm-1"><input type="text" class="form-control input-sm" placeholder="500km"></div>
+                        </div>
+                </div>
+                        
+                    </form>
+                </div>
+                <div class="text-left">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-success" ng-click="open1()">查询</button>
+                </div>
+
+            </div>
+                <p>
+                    全部订单
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered table-striped">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <span class="label label-success">订单编号</span>
+                            </td>
+                            <td>
+                                <span class="label label-success">发车地点</span>
+                            </td>
+                             <td>
+                                <span class="label label-success">运输终点</span>
+                            </td>
+                            <td>
+                                <span class="label label-success">发车日期</span>
+                            </td>
+                            <td>
+                                <span class="label label-success">运输费用</span>
+                            </td>
+                            <td>
+                                <span class="label label-success">操作</span>
+                            </td>
+                        </tr>
+                       <tr>
+                            <td>
+                                <span >1</span>
+                            </td>
+                            <td>
+                                <span>天津市北辰区</span>
+                            </td>
+                             <td>
+                                <span >河北省保定市</span>
+                            </td>
+                            <td>
+                                <span >2018年12月31日</span>
+                            </td>
+                            <td>
+                                <span >2500</span>
+                            </td>
+                            <td>
+                                 <a ui-sref="main.acceptorder.details">详情</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+</ui-view>
