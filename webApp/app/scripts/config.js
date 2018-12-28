@@ -143,6 +143,22 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             },
             controller: 'PersonalInfoCtrl'
         })
+        .state('main.acceptorder',{
+            url: "/acceptorder",
+            templateUrl: "views/main/acceptorder/index.html",
+            data: {
+                pageTitle: '我要接单'
+            },
+            controller: 'AcceptOrderCtrl'
+        })
+        .state('main.acceptorder.details',{
+            url: "/details/:id",
+            templateUrl: "views/main/acceptorder/details.html",
+            data: {
+                pageTitle: '订单详情'
+            },
+            controller: 'DetailsCtrl'
+        }
          .state('main.mywallet', {
             url: "/mywallet",
             templateUrl: "views/main/mywallet/mywallet.html",
@@ -150,7 +166,7 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
                 pageTitle: '我的钱包'
             },
            // controller:'MywalletCtrl'
-        })   
+        })
          .state('main.mywallet.traderecord', {
             url: "/traderecord",
             templateUrl: "views/main/mywallet/traderecord.html",
