@@ -1,116 +1,87 @@
-
 <ui-view>
- <div class="panel-body">
-                 
-                <div class="p-xs">
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="row">
-                                    <label class="col-md-4 control-label text-left">最早发车时间</label>
-                                    <div class="col-md-8">
-                                        <input type="date" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="row">
-                                    <label class="col-md-4 control-label text-left">最晚发车时间</label>
-                                    <div class="col-md-8">
-                                        <input type="date" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="row">
-                                    <label class="col-md-4 control-label text-left">最低运费</label>
-                                    <div class="col-md-8">
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
+    <div class="panel-body">
+        <div class="p-xs">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-4 control-label form-control-static">最早发车时间</label>
+                        <div class="col-md-8">
+                            <input type="date" class="form-control" ng-model="params.startDate" />
                         </div>
-                        <br/>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="row">
-                                    <label class="col-md-4 control-label text-left">最短运输距离</label>
-                                    <div class="col-md-8">
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="row">
-                                    <label class="col-md-4 control-label text-left">最长运输距离</label>
-                                    <div class="col-md-8">
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-4 control-label form-control-static">最晚发车时间</label>
+                        <div class="col-md-8">
+                            <input type="date" class="form-control" ng-model="params.endDate" />
                         </div>
-                        <br/>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="row">
-                                    <div class="col-md-8 col-md-offset-4">
-                                         <button class="btn btn-success" ng-click="open1()">查询</button>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-4 control-label form-control-static">最低运费(元)</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="params.minPrice" />
                         </div>
-                        
-                    
-
-            </div>
-                <p>
-                    全部订单
-                </p>
-                <div class="table-responsive">
-                    <table class="table table-hover table-bordered table-striped">
-                        <tbody>
-                        <tr>
-                            <td>
-                                <span class="label label-success">订单编号</span>
-                            </td>
-                            <td>
-                                <span class="label label-success">发车地点</span>
-                            </td>
-                             <td>
-                                <span class="label label-success">运输终点</span>
-                            </td>
-                            <td>
-                                <span class="label label-success">发车日期</span>
-                            </td>
-                            <td>
-                                <span class="label label-success">运输费用</span>
-                            </td>
-                            <td>
-                                <span class="label label-success">操作</span>
-                            </td>
-                        </tr>
-                       <tr>
-                            <td>
-                                <span >1</span>
-                            </td>
-                            <td>
-                                <span>天津市北辰区</span>
-                            </td>
-                             <td>
-                                <span >河北省保定市</span>
-                            </td>
-                            <td>
-                                <span >2018年12月31日</span>
-                            </td>
-                            <td>
-                                <span >2500</span>
-                            </td>
-                            <td>
-                                 <a ui-sref="main.acceptorder.details">详情</a>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    </div>
                 </div>
             </div>
+            <br />
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-4 control-label form-control-static">最短运输距离(千米)</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="params.minDistance" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-4 control-label form-control-static">最长运输距离(千米)</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="params.maxDistance" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-4">
+                            <button class="btn btn-success" ng-click="reload()">查询</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <th data-toggle="true">序号</th>
+                        <th>起点</th>
+                        <th>终点</th>
+                        <th>运输距离</th>
+                        <th>发车日期</th>
+                        <th>运输费用</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr ng-repeat="order in orders | orderBy: '-id'">
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ order.startPlace }}</td>
+                        <td>{{ order.endPlace }}</td>
+                        <td>{{ order.distance }}</td>
+                        <td>{{ order.date }}</td>
+                        <td>{{ order.totalPrice }}</td>
+                        <td>
+                            <a ui-sref="main.acceptorder.details">详情</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </ui-view>
