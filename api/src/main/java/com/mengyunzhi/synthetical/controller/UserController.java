@@ -60,6 +60,11 @@ public class UserController {
         userService.register(user);
     }
 
+    @PutMapping("update/{id}")
+    public void update(@PathVariable Long id, @RequestBody User user) {
+        userService.update(id, user);
+    }
+
     @PutMapping("freeze/{id}")
     public void freeze(@PathVariable Long id) {
         userService.freeze(id);

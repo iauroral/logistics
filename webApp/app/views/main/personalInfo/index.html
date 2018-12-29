@@ -3,54 +3,75 @@
         <div class="col-lg-12">
             <div class="hpanel">
                 <div class="panel-heading">
-                    <!-- <div panel-tools></div> -->
                     个人基本信息
                 </div>
                 <div class="panel-body">
-                    <form name="simpleForm" novalidate id="simpleForm">
-                        <div ng-show="step == 1" class="p-m">
+                    <form name="personalInfoForm" id="personalInfoForm" ng-submit="submit()">
+                        <div class="p-m">
                             <div class="row">
                                 <div class="col-lg-3 text-center">
                                     <i class="pe-7s-user fa-5x text-muted"></i>
                                     <p class="small m-t-md">
-                                        <strong>个人信息</strong> <br/><br />你可以在这里修改个人信息
+                                        <strong>个人信息</strong> <br /><br />你可以在这里修改个人信息
                                     </p>
                                 </div>
                                 <div class="col-lg-9">
                                     <div class="row">
-                                        <div class="form-group col-lg-12">
-                                            <label>姓名</label>
-                                            <input type="" value="" id="" class="form-control" ng-model="user.name" ng-disabled="!isEdit"placeholder="姓名">
-                                        </div>
-                                        <div class="form-group col-lg-12">
-                                            <label>用户名</label>
-                                            <input type="" value="" id="" class="form-control" ng-model="user.username" ng-disabled="!isEdit" placeholder="用户名">
+                                        <div class="form-group col-lg-6">
+                                            <label for="name">姓名</label>
+                                            <input type="text" id="name" name="name" class="form-control" ng-model="user.name" placeholder="姓名" required>
+                                            <p style="margin-top: 10px;" class="text-danger" ng-show="personalInfoForm.name.$dirty && personalInfoForm.name.$invalid">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                                请输入姓名
+                                            </p>
                                         </div>
                                         <div class="form-group col-lg-6">
-                                            <label>身份</label>
-                                            <input type="" value="" id="" class="form-control" ng-model="userType" ng-disabled="1" placeholder="您的身份">
+                                            <label for="tel">电话</label>
+                                            <input tel-validate type="text" id="tel" name="tel" class="form-control" ng-model="user.tel" placeholder="联系电话" required>
+                                            <p style="margin-top: 10px;" class="text-danger" ng-show="personalInfoForm.tel.$dirty && personalInfoForm.tel.$invalid">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                                电话不合法
+                                            </p>
                                         </div>
-                                        <div class="form-group col-lg-6">
-                                            <label>电话</label>
-                                            <input type="text" value="" id="" class="form-control" name="" placeholder="联系电话" ng-disabled="!isEdit"  ng-model="user.tel">
+                                        <div ng-if="user.type === 'OWNER'" class="form-group col-lg-6">
+                                            <label for="good">常用货物</label>
+                                            <input type="text" id="good" name="good" class="form-control" ng-model="user.commonGoods" placeholder="常用货物" required>
+                                            <p style="margin-top: 10px;" class="text-danger" ng-show="personalInfoForm.good.$dirty && personalInfoForm.good.$invalid">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                                请输入常用货物
+                                            </p>
                                         </div>
-                                        <div class="form-group col-lg-6">
-                                            <label>常用货物</label>
-                                            <input type="" value="" id="" class="form-control" name="" placeholder="常用货物" ng-disabled="!isEdit" ng-model="user.commonGoods">
+                                        <div ng-if="user.type === 'OWNER'" class="form-group col-lg-6">
+                                            <label for="address">地址</label>
+                                            <input type="text" id="address" name="address" class="form-control" ng-model="user.address" placeholder="地址" required>
+                                            <p style="margin-top: 10px;" class="text-danger" ng-show="personalInfoForm.address.$dirty && personalInfoForm.address.$invalid">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                                请输入地址
+                                            </p>
+                                        </div>
+                                        <div ng-if="user.type === 'DRIVER'" class="form-group col-lg-6">
+                                            <label for="license">车牌号</label>
+                                            <input type="text" id="license" name="license" class="form-control" ng-model="user.license" placeholder="车牌号" required>
+                                            <p style="margin-top: 10px;" class="text-danger" ng-show="personalInfoForm.license.$dirty && personalInfoForm.license.$invalid">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                                请输入车牌号
+                                            </p>
+                                        </div>
+                                        <div ng-if="user.type === 'DRIVER'" class="form-group col-lg-6">
+                                            <div class="row">
+                                                <vehicle-list ng-model="user.vehicle"></vehicle-list>
+                                            </div>
+                                            <input type="hidden" name="vehicle" ng-model="user.vehicle.id" required>
                                         </div>
                                     </div>
-                                    <button ng-click="edit()" ng-show="!isEdit" class="btn btn-primary" >修改</button>
-                                    <button ng-click="cancel()" ng-show="isEdit" class="btn btn" >取消</button>
-                                    <button ng-click="submit()" ng-show="isEdit" class="btn btn-primary" >保存</button>
+                                    <!-- <pre>{{ personalInfoForm | json }}</pre> -->
+                                    <button ng-disabled="personalInfoForm.$invalid" class="btn btn-primary">更新个人信息</button>
                                 </div>
                             </div>
                         </div>
+                    </form>
                 </div>
-               
-                </form>
-                <br/>
             </div>
         </div>
     </div>
-</div>
 </div>
