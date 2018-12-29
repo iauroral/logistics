@@ -158,7 +158,7 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
                 pageTitle: '订单详情'
             },
             controller: 'DetailsCtrl'
-        }
+        })
          .state('main.mywallet', {
             url: "/mywallet",
             templateUrl: "views/main/mywallet/mywallet.html",
@@ -198,6 +198,14 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
                 pageTitle: '提现'
             },
             //controller:'WithDrawCtrl'
+        })
+         .state('main.order-driver', {
+            url: "/order-driver",
+            templateUrl: "views/main/order-driver/index.html",
+            data: {
+                pageTitle: '我的订单'
+            },
+            controller:'Order-DriverCtrl'
         });
 }
 
