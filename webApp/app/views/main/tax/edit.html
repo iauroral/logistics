@@ -25,7 +25,7 @@
                         </div>
                         <div class="form-group col-lg-8">
                             <label for="rate">抽成比例</label>
-                            <input ng-model="tax.rate" type="number" id="rate" class="form-control" name="rate" required>
+                            <input ng-model="tax.rate" type="number" id="rate" class="form-control" name="rate" step="0.01" required>
                             <p style="margin-top: 10px;" class="text-danger" ng-show="taxEditForm.rate.$dirty && taxEditForm.rate.$invalid">
                                 <i class="fa fa-exclamation-triangle"></i>
                                 请输入抽成比例
