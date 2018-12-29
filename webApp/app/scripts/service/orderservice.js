@@ -63,9 +63,9 @@ angular
                 });
         };
 
-        self.getOrderRunningByUser = function(user, callback) {
+        self.getOrderRunningByUser = function(callback) {
             var url = '/api/Order/running';
-            $http.post(url, user)
+            $http.get(url)
                 .then(function success(response) {
                     if (callback) {
                         callback(response.data);
@@ -75,9 +75,9 @@ angular
                 });
         };
 
-        self.getOrderCompletedByUser = function(user, callback) {
+        self.getOrderCompletedByUser = function(callback) {
             var url = '/api/Order/completed';
-            $http.post(url, user)
+            $http.get(url)
                 .then(function success(response) {
                     if (callback) {
                         callback(response.data);
