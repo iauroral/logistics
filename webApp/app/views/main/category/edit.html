@@ -17,7 +17,7 @@
                         </div>
                         <div class="form-group col-lg-8">
                             <label for="multipleRate">类别收费倍率</label>
-                            <input ng-model="category.multipleRate" type="number" id="multipleRate" class="form-control" name="multipleRate" required>
+                            <input ng-model="category.multipleRate" type="number" id="multipleRate" class="form-control" name="multipleRate" step="0.01" required>
                             <p style="margin-top: 10px;" class="text-danger" ng-show="categoryEditForm.multipleRate.$dirty && categoryEditForm.multipleRate.$invalid">
                                 <i class="fa fa-exclamation-triangle"></i>
                                 请输入类别收费倍率

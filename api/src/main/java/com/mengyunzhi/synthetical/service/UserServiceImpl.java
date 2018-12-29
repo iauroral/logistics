@@ -10,6 +10,7 @@ import org.springframework.util.Assert;
 
 import javax.security.auth.message.AuthException;
 import javax.servlet.http.HttpSession;
+import java.math.BigDecimal;
 
 /**
  * @author zhangxishuo on 2018/11/11
@@ -43,6 +44,11 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
+        logger.debug("用户被冻结，登录失败");
+        if (persistUser.getFreezeOrNot()) {
+            return false;
+        }
+
         logger.debug("记录当前用户id");
         httpSession.setAttribute(CommonService.USER_ID, persistUser.getId());
 
@@ -69,6 +75,34 @@ public class UserServiceImpl implements UserService {
             default:
                 throw new IllegalArgumentException("请选择角色");
         }
+        userRepository.save(user);
+    }
+
+    @Override
+    public void freeze(Long userId) {
+        User user = userRepository.findOne(userId);
+        user.setFreezeOrNot(true);
+        userRepository.save(user);
+    }
+
+    @Override
+    public void unfreeze(Long userId) {
+        User user = userRepository.findOne(userId);
+        user.setFreezeOrNot(false);
+        userRepository.save(user);
+    }
+
+    @Override
+    public void update(Long userId, User user) {
+        userRepository.save(user);
+    }
+
+    @Override
+    public void pay(Long userId) {
+        User user = userRepository.findOne(userId);
+        BigDecimal deposit = user.getVehicle().getPledge();
+        user.setBalance(user.getBalance().subtract(deposit));
+        user.setStatus(User.AUTH);
         userRepository.save(user);
     }
 

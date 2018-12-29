@@ -21,6 +21,23 @@ public interface UserService {
     void register(User user);
 
     /**
+     * 冻结用户
+     */
+    void freeze(Long userId);
+
+    void unfreeze(Long userId);
+
+    /**
+     * 更新用户
+     */
+    void update(Long userId, User user);
+
+    /**
+     * 缴纳押金
+     */
+    void pay(Long userId);
+
+    /**
      * 用户注销
      */
     void logout() throws AuthException;

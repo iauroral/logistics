@@ -1,9 +1,6 @@
-/**
- * 登录控制器
- */
 angular
     .module('homer')
-    .controller('PersonalInfoCtrl', function($scope, $state, CommonService, UserService) {
+    .controller('PayDepositCtrl', function($scope, $state, CommonService, UserService) {
         var self = this;
 
         self.init = function() {
@@ -16,11 +13,14 @@ angular
                 });
         };
 
-        self.submit = function() {
-            UserService.update($scope.user.id, $scope.user, CommonService.success());
+        self.pay = function() {
+            UserService.pay($scope.user.id, function() {
+                CommonService.success();
+                $state.go('main.mywallet', {}, { reload: true });
+            });
         };
 
-        $scope.submit = self.submit;
+        $scope.pay = self.pay;
 
         self.init();
     });

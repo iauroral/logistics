@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="m-b-md">
+            <h3>添加收益</h3>
+        </div>
+        <div class="hpanel">
+            <div class="panel-body">
+                <form id="taxAddForm" name="taxAddForm" ng-submit="submit()">
+                    <div class="row">
+                        <div class="form-group col-lg-8">
+                            <label for="minPrice">最低价格</label>
+                            <input ng-model="tax.minPrice" type="number" id="minPrice" class="form-control" name="minPrice" required>
+                            <p style="margin-top: 10px;" class="text-danger" ng-show="taxAddForm.minPrice.$dirty && taxAddForm.minPrice.$invalid">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                请输入最低价格
+                            </p>
+                        </div>
+                        <div class="form-group col-lg-8">
+                            <label for="maxPrice">最高价格</label>
+                            <input ng-model="tax.maxPrice" type="number" id="maxPrice" class="form-control" name="maxPrice" required>
+                            <p style="margin-top: 10px;" class="text-danger" ng-show="taxAddForm.maxPrice.$dirty && taxAddForm.maxPrice.$invalid">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                请输入最高价格
+                            </p>
+                        </div>
+                        <div class="form-group col-lg-8">
+                            <label for="rate">抽成比例</label>
+                            <input ng-model="tax.rate" type="number" id="rate" class="form-control" name="rate" step="0.01" required>
+                            <p style="margin-top: 10px;" class="text-danger" ng-show="taxAddForm.rate.$dirty && taxAddForm.rate.$invalid">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                请输入抽成比例
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <button ng-disabled="taxAddForm.$invalid" class="btn btn-success">保存</button>
+                        <a ui-sref="main.tax" class="btn btn-default">取消</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

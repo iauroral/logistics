@@ -110,92 +110,131 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             },
             controller: 'PriceEditCtrl'
         })
+        .state('main.tax', {
+            url: '/tax',
+            templateUrl: 'views/main/tax/index.html',
+            data: {
+                pageTitle: '收益管理'
+            },
+            controller: 'TaxIndexCtrl'
+        })
+        .state('main.tax.add', {
+            url: '/add',
+            templateUrl: 'views/main/tax/add.html',
+            data: {
+                pageTitle: '添加收益'
+            },
+            controller: 'TaxAddCtrl'
+        })
+        .state('main.tax.edit', {
+            url: '/edit/:id',
+            templateUrl: 'views/main/tax/edit.html',
+            data: {
+                pageTitle: '编辑收益'
+            },
+            controller: 'TaxEditCtrl'
+        })
+        .state('main.user', {
+            url: '/user',
+            templateUrl: 'views/main/user/index.html',
+            data: {
+                pageTitle: '账号管理'
+            },
+            controller: 'UserIndexCtrl'
+        })
+        .state('main.auth', {
+            url: '/auth',
+            templateUrl: 'views/main/auth/index.html',
+            data: {
+                pageTitle: '押金管理'
+            },
+            controller: 'AuthIndexCtrl'
+        })
         .state('main.orderMake', {
             url: '/orderMake',
             templateUrl: 'views/main/order/orderMake.html',
             data: {
                 pageTitle: '创建订单'
             },
-            controller: 'OrderAddCtrl'
+            controller: 'OrderMakeCtrl'
         })
         .state('main.orders', {
-            url: '/orders',
-            templateUrl: 'views/main/order/orders.html',
+            url: '/orderRunning',
+            templateUrl: 'views/main/order/orderOfOwnerRunning.html',
             data: {
                 pageTitle: '正在执行的订单'
             },
-            controller: 'OrderAddCtrl'
+            controller: 'OrderOfOwnerRunningCtrl'
         })
         .state('main.orderCompleted', {
             url: '/orderCompleted',
-            templateUrl: 'views/main/order/orderCompleted.html',
+            templateUrl: 'views/main/order/orderOfOwnerCompleted.html',
             data: {
                 pageTitle: '历史订单'
             },
-            controller: 'OrderAddCtrl'
+            controller: 'OrderOfOwnerCompletedCtrl'
         })
         // 个人信息
         .state('main.personalInfo',{
-            url: "/personalInfo",
-            templateUrl: "views/main/personalInfo/index.html",
+            url: '/personalInfo',
+            templateUrl: 'views/main/personalInfo/index.html',
             data: {
                 pageTitle: '个人信息'
             },
             controller: 'PersonalInfoCtrl'
         })
         .state('main.acceptorder',{
-            url: "/acceptorder",
-            templateUrl: "views/main/acceptorder/index.html",
+            url: '/acceptorder',
+            templateUrl: 'views/main/acceptorder/index.html',
             data: {
                 pageTitle: '我要接单'
             },
             controller: 'AcceptOrderCtrl'
         })
         .state('main.acceptorder.details',{
-            url: "/details/:id",
-            templateUrl: "views/main/acceptorder/details.html",
+            url: '/details/:id',
+            templateUrl: 'views/main/acceptorder/details.html',
             data: {
                 pageTitle: '订单详情'
             },
             controller: 'DetailsCtrl'
         })
-         .state('main.mywallet', {
-            url: "/mywallet",
-            templateUrl: "views/main/mywallet/mywallet.html",
+        .state('main.mywallet', {
+            url: '/mywallet',
+            templateUrl: 'views/main/mywallet/mywallet.html',
             data: {
                 pageTitle: '我的钱包'
             },
-           // controller:'MywalletCtrl'
+            controller:'WalletCtrl'
         })
-         .state('main.mywallet.traderecord', {
-            url: "/traderecord",
-            templateUrl: "views/main/mywallet/traderecord.html",
+        .state('main.mywallet.traderecord', {
+            url: '/traderecord',
+            templateUrl: 'views/main/mywallet/traderecord.html',
             data: {
                 pageTitle: '交易记录'
-            },
-            //controller:'TradeRecordCtrl'
+            }
         })
          .state('main.mywallet.bindingbankcard', {
-            url: "/bindingbankcard",
-            templateUrl: "views/main/mywallet/bindingbankcard.html",
+            url: '/bindingbankcard',
+            templateUrl: 'views/main/mywallet/bindingbankcard.html',
             data: {
                 pageTitle: '绑定银行卡'
-            },
-            //controller:'BindingBankCardCtrl'
+            }
         })
          .state('main.mywallet.paydeposit', {
-            url: "/paydeposit",
-            templateUrl: "views/main/mywallet/paydeposit.html",
+            url: '/paydeposit',
+            templateUrl: 'views/main/mywallet/paydeposit.html',
             data: {
                 pageTitle: '押金缴纳'
             },
-            //controller:'PayDepositCtrl'
+            controller:'PayDepositCtrl'
         })
-         .state('main.mywallet.withdraw', {
-            url: "/withdraw",
-            templateUrl: "views/main/mywallet/withdraw.html",
+        .state('main.mywallet.withdraw', {
+            url: '/withdraw',
+            templateUrl: 'views/main/mywallet/withdraw.html',
             data: {
                 pageTitle: '提现'
+<<<<<<< HEAD
             },
             //controller:'WithDrawCtrl'
         })
@@ -206,6 +245,9 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
                 pageTitle: '我的订单'
             },
             controller:'Order-DriverCtrl'
+=======
+            }
+>>>>>>> master
         });
 }
 

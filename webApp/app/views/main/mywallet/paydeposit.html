@@ -5,49 +5,20 @@
                 <span class="label label-info pull-right">NEW</span>
                 <div class="row">
                     <div class="col-sm-8">
-                        <h4><a href=""> 车型应缴押金</a></h4>
-                        <p>
-                            Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,
-                            sometimes by accident, sometimes on purpose (injected humour and the like).
-                        </p>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="project-label">CLIENT</div>
-                                <small>Morph Company</small>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="project-label">VERSION</div>
-                                <small>2.5.2</small>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="project-label">DEDLINE</div>
-                                <small>10.01.2015</small>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="project-label">PROGRESS</div>
-                                <uib-progressbar value="43" type="info" class="m-t-xs  full progress-small"></uib-progressbar>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 project-info">
-                        <div class="project-action m-t-md">
-                            <div class="btn-group">
-                                <button class="btn btn-xs btn-default"> View</button>
-                                <button class="btn btn-xs btn-default"> Edit</button>
-                                <button class="btn btn-xs btn-default"> Delete</button>
-                            </div>
-                        </div>
+                        <h2>车型应缴押金</h2>
+                        <h5>
+                            您当前的车型为 {{ user.vehicle.name }}
+                        </h5>
+                        <h5 ng-if="user.status === 0" class="text-danger">
+                            您还未缴纳押金
+                        </h5>
+                        <h5 ng-if="user.status === 1" class="text-success">
+                            您已经缴纳押金
+                        </h5>
                         <div class="project-value">
                             <h2 class="text-info">
-                                350,00元
+                                {{ user.vehicle.pledge }} 元
                             </h2>
-                        </div>
-                        <div class="project-people">
-                            <img alt="logo" class="img-circle" src="images/gallery/3s.jpg">
-                            <img alt="logo" class="img-circle" src="images/gallery/4s.jpg">
-                            <img alt="logo" class="img-circle" src="images/gallery/5s.jpg">
-                            <img alt="logo" class="img-circle" src="images/gallery/6s.jpg">
-                            <img alt="logo" class="img-circle" src="images/gallery/7s.jpg">
                         </div>
                     </div>
                 </div>
@@ -55,11 +26,12 @@
             <div class="panel-footer">
                 Additional information about project in footer
             </div>
-        </br>
-         </br>
-                <p>
-                    <button type="button" class="btn w-xs btn-primary2">确定</button>&nbsp&nbsp
-                    <button type="button" class="btn w-xs btn-success">返回</button>
-                </p>
-         
-  </div>
+            </br>
+            </br>
+            <p>
+                <button ng-if="user.status === 0" type="button" ng-click="pay()" class="btn w-xs btn-primary2">立即缴纳</button>&nbsp&nbsp
+                <a ui-sref="main.mywallet" class="btn w-xs btn-success">返回</a>
+            </p>
+        </div>
+    </div>
+</div>

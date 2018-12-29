@@ -1,0 +1,46 @@
+<div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+                <div class="panel-body">
+                    <h3>已经完成的订单</h3>
+                    <p>你可以在这里查看 历史订单</p>
+                </div>
+            </div>
+        </div>
+    <div class="col-lg-12">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div panel-tools></div>
+                订单列表
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table cellpadding="1" cellspacing="1" class="table">
+                        <thead>
+                            <tr>
+                                <th>订单状态</th>
+                                <th>起始地点</th>
+                                <th>目的地点</th>
+                                <th>距离</th>
+                                <th>应付金额</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="order in orders" ng-if="order-orderStatus==3">
+                                <td >{{order.orderStatus}}</td>
+                                <td >{{order.startPlace}}</td>
+                                <td >{{order.endPlace}}</td>
+                                <td >{{order.distance}}</td>
+                                <td >{{order.totalPrice}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel-footer">
+                Table - 6 rows
+            </div>
+        </div>
+    </div>
+   
+</div>
