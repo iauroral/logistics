@@ -33,6 +33,11 @@ public interface UserService {
     void update(Long userId, User user);
 
     /**
+     * 缴纳押金
+     */
+    void pay(Long userId);
+
+    /**
      * 用户注销
      */
     void logout() throws AuthException;

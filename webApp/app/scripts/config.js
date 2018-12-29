@@ -226,10 +226,10 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             templateUrl: 'views/main/mywallet/paydeposit.html',
             data: {
                 pageTitle: '押金缴纳'
-            }
-            //controller:'PayDepositCtrl'
+            },
+            controller:'PayDepositCtrl'
         })
-         .state('main.mywallet.withdraw', {
+        .state('main.mywallet.withdraw', {
             url: '/withdraw',
             templateUrl: 'views/main/mywallet/withdraw.html',
             data: {

@@ -3,7 +3,7 @@
  */
 angular
     .module('homer')
-    .service('UserService', function($http) {
+    .service('UserService', function($http, CommonService) {
         var self = this;
 
         self.getAllUsers = function(callback) {
@@ -82,7 +82,20 @@ angular
                 });
         };
 
+        self.pay = function(id, callback) {
+            var url = '/api/User/pay/' + id;
+            $http.put(url)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
         return {
+            pay                 : self.pay,
             login               : self.login,
             update              : self.update,
             freeze              : self.freeze,
