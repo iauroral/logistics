@@ -28,6 +28,11 @@ public interface UserService {
     void unfreeze(Long userId);
 
     /**
+     * 更新用户
+     */
+    void update(Long userId, User user);
+
+    /**
      * 用户注销
      */
     void logout() throws AuthException;

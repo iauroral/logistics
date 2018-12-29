@@ -70,9 +70,9 @@ angular
         };
 
         //修改个人信息
-        self.update = function(id, vehicle, callback) {
-            var url = '/api/User/' + id;
-            $http.put(url, vehicle)
+        self.update = function(id, user, callback) {
+            var url = '/api/User/update/' + id;
+            $http.put(url, user)
                 .then(function success(response) {
                     if (callback) {
                         callback(response.data);
