@@ -87,11 +87,27 @@ angular
                 });
         };
 
+        /**
+         * 综合查询
+         */
+        self.query = function(params, callback) {
+            var url = '/api/Order/query';
+            $http.get(url, { params: params })
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
         return {
-            save         : self.save,
-            update       : self.update,
-            delete       : self.delete,
-            getOrderRunningByUser : self.getOrderRunningByUser,
+            save                    : self.save,
+            query                   : self.query,
+            update                  : self.update,
+            delete                  : self.delete,
+            getOrderRunningByUser   : self.getOrderRunningByUser,
             getOrderCompletedByUser : self.getOrderCompletedByUser
         };
     });
