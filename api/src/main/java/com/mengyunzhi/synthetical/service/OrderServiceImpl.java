@@ -18,7 +18,13 @@ public class OrderServiceImpl implements OrderService {
     private OrdersRepository ordersRepository;
 
     @Override
-    public List<Orders> findOrdersRunningByUser(User user) {
+    public List<Orders> findOrdersRunningByUser(){
+        User user = null;
+        try {
+            user = userService.getCurrentLoginUser();
+        } catch (AuthException e) {
+            e.printStackTrace();
+        }
         List<Orders> runningOrders = ordersRepository.findOrdersByOwnerAndOrderStatus(user,0);
         if(runningOrders.isEmpty())
             return ordersRepository.findOrdersByDriverAndOrderStatus(user,0);
@@ -26,7 +32,13 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Orders> findOrdersCompletedByUser(User user) {
+    public List<Orders> findOrdersCompletedByUser(){
+        User user = null;
+        try {
+            user = userService.getCurrentLoginUser();
+        } catch (AuthException e) {
+            e.printStackTrace();
+        }
         List<Orders> completedOrders = ordersRepository.findOrdersByOwnerAndOrderStatus(user,1);
         if(completedOrders.isEmpty())
             return ordersRepository.findOrdersByDriverAndOrderStatus(user,1);

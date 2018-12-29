@@ -21,11 +21,11 @@ public interface OrderService {
     /**
      * 查找用户正在执行的订单
      */
-    List<Orders>  findOrdersRunningByUser(User user);
+    List<Orders>  findOrdersRunningByUser();
 
     /**
      * 查找用户已经完成的订单
      */
-    List<Orders>  findOrdersCompletedByUser(User user);
+    List<Orders>  findOrdersCompletedByUser();
 }
 

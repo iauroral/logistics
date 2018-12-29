@@ -30,16 +30,16 @@ public class OrderController {
     /**
      * 查找用户正在运行的订单
      */
-    @PostMapping("running")
-    public List<Orders> findOrdersRunningByUser(@RequestBody User user){
-        return orderService.findOrdersRunningByUser(user);
+    @GetMapping("running")
+    public List<Orders> findOrdersRunning(){
+        return orderService.findOrdersRunningByUser();
     }
 
     /**
      * 查找货主已经完成的订单
      */
-    @PostMapping("completed")
-    public List<Orders> findOrdersCompletedByUser(@RequestBody User user){
-        return orderService.findOrdersCompletedByUser(user);
+    @GetMapping("completed")
+    public List<Orders> findOrdersCompleted(){
+        return orderService.findOrdersCompletedByUser();
     }
 }
