@@ -234,20 +234,23 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             templateUrl: 'views/main/mywallet/withdraw.html',
             data: {
                 pageTitle: '提现'
-<<<<<<< HEAD
-            },
-            //controller:'WithDrawCtrl'
+            }
         })
-         .state('main.order-driver', {
-            url: "/order-driver",
+         .state('main.orderDriver', {
+            url: "/orderDriver",
             templateUrl: "views/main/order-driver/index.html",
             data: {
                 pageTitle: '我的订单'
             },
-            controller:'Order-DriverCtrl'
-=======
-            }
->>>>>>> master
+            controller:'OrderDriverCtrl'
+        })
+         .state('main.orderDriver.details', {
+            url: "/details:id",
+            templateUrl: "views/main/order-driver/details.html",
+            data: {
+                pageTitle: '订单详情'
+            },
+            controller:'OrderDetailsDriverCtrl'
         });
 }
 

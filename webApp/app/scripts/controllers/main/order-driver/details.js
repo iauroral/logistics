@@ -1,6 +1,6 @@
 angular
     .module('homer')
-    .controller('OrderDriverCtrl', function() {
+    .controller('OrderDetailsDriverCtrl', function() {
         var self = this;
 
         self.init = function() {
@@ -9,7 +9,6 @@ angular
 
         
 
-        
-
+  
         self.init();
     });
