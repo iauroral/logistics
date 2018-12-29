@@ -47,6 +47,13 @@
 			<artifactId>spring-session</artifactId>
 		</dependency>
 
+		<!-- 综合查询核心库 -->
+		<dependency>
+			<groupId>com.mengyunzhi</groupId>
+			<artifactId>core</artifactId>
+			<version>1.5.3.1-RELEASE</version>
+		</dependency>
+
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>

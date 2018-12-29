@@ -1,11 +1,12 @@
 package com.mengyunzhi.synthetical.controller;
 
 import com.mengyunzhi.synthetical.entity.Orders;
-import com.mengyunzhi.synthetical.entity.User;
 import com.mengyunzhi.synthetical.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -14,18 +15,9 @@ import java.util.List;
 @RestController
 @RequestMapping("Order")
 public class OrderController {
+
     @Autowired
     private OrderService orderService;
-
-//    @PostMapping("add")
-//    public void login(@RequestBody User user, HttpServletResponse httpServletResponse) {
-//        if (userService.login(user)) {
-//            logger.info("登录成功");
-//        } else {
-//            logger.info("登录失败");
-//            httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
-//        }
-//    }
 
     /**
      * 查找用户正在运行的订单
@@ -41,5 +33,18 @@ public class OrderController {
     @GetMapping("completed")
     public List<Orders> findOrdersCompleted(){
         return orderService.findOrdersCompletedByUser();
+    }
+
+    /**
+     * 订单综合查询
+     */
+    @GetMapping("query")
+    public List<Orders> query(@RequestParam(required = false) BigDecimal minPrice,
+                              @RequestParam(required = false) Date startDate,
+                              @RequestParam(required = false) Date endDate,
+                              @RequestParam(required = false) Float minDistance,
+                              @RequestParam(required = false) Float maxDistance) {
+        return orderService
+                .query(minPrice, startDate, endDate, minDistance, maxDistance);
     }
 }
