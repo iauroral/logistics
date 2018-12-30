@@ -1,7 +1,12 @@
 package com.mengyunzhi.synthetical.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mengyunzhi.core.annotation.query.GreaterThanOrEqualToQuery;
+import com.mengyunzhi.core.annotation.query.LessThanOrEqualTo;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -28,7 +33,7 @@ public class Orders {
 
     private Float endLatitude;                // 终点纬度
 
-    private Float distance;                   // 运输状态
+    private Float distance;                   // 运输距离
 
     private Integer logisticsStatus;          // 物流状态
 
@@ -37,6 +42,8 @@ public class Orders {
     private Float starLevel;                  // 评价星级
 
     private BigDecimal totalPrice;            // 总价
+
+    private Date date;                        // 发车日期
 
     @ManyToMany
     private Set<User> grabDrivers;            // 抢单司机
@@ -52,6 +59,31 @@ public class Orders {
 
     @OneToMany(mappedBy = "orders")
     private List<OrderDetail> orderDetailList = new ArrayList<>();     // 订单明细
+
+    @Transient
+    @JsonIgnore
+    @GreaterThanOrEqualToQuery(name = "totalPrice")
+    private BigDecimal minPrice;
+
+    @Transient
+    @JsonIgnore
+    @GreaterThanOrEqualToQuery(name = "date")
+    private Date startDate;
+
+    @Transient
+    @JsonIgnore
+    @LessThanOrEqualTo(name = "date")
+    private Date endDate;
+
+    @Transient
+    @JsonIgnore
+    @GreaterThanOrEqualToQuery(name = "distance")
+    private Float minDistance;
+
+    @Transient
+    @JsonIgnore
+    @LessThanOrEqualTo(name = "distance")
+    private Float maxDistance;
 
     public Orders() {
     }
@@ -152,6 +184,14 @@ public class Orders {
         this.totalPrice = totalPrice;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     public Set<User> getGrabDrivers() {
         return grabDrivers;
     }
@@ -190,5 +230,45 @@ public class Orders {
 
     public void setOrderDetailList(List<OrderDetail> orderDetailList) {
         this.orderDetailList = orderDetailList;
+    }
+
+    public BigDecimal getMinPrice() {
+        return minPrice;
+    }
+
+    public void setMinPrice(BigDecimal minPrice) {
+        this.minPrice = minPrice;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public Float getMinDistance() {
+        return minDistance;
+    }
+
+    public void setMinDistance(Float minDistance) {
+        this.minDistance = minDistance;
+    }
+
+    public Float getMaxDistance() {
+        return maxDistance;
+    }
+
+    public void setMaxDistance(Float maxDistance) {
+        this.maxDistance = maxDistance;
     }
 }

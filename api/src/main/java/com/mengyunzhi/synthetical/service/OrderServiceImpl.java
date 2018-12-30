@@ -1,5 +1,7 @@
 package com.mengyunzhi.synthetical.service;
 
+import com.mengyunzhi.core.service.CommonService;
+import com.mengyunzhi.core.service.YunzhiService;
 import com.mengyunzhi.synthetical.entity.Orders;
 import com.mengyunzhi.synthetical.entity.User;
 import com.mengyunzhi.synthetical.repository.OrdersRepository;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.security.auth.message.AuthException;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -17,6 +20,8 @@ public class OrderServiceImpl implements OrderService {
     private UserService userService;
     @Autowired
     private OrdersRepository ordersRepository;
+    @Autowired
+    private YunzhiService yunzhiService;
 
     @Override
     public Orders makeNewOrder(Orders orders){
@@ -60,5 +65,16 @@ public class OrderServiceImpl implements OrderService {
         if(completedOrders.isEmpty())
             return ordersRepository.findOrdersByDriverAndOrderStatus(user,1);
         return completedOrders;
+    }
+
+    @Override
+    public List<Orders> query(BigDecimal minPrice, Date startDate, Date endDate, Float minDistance, Float maxDistance) {
+        Orders orders = (Orders) CommonService.getNullFieldsObject(Orders.class);
+        orders.setMinPrice(minPrice);
+        orders.setStartDate(startDate);
+        orders.setEndDate(endDate);
+        orders.setMinDistance(minDistance);
+        orders.setMaxDistance(maxDistance);
+        return (List<Orders>) yunzhiService.findAll(ordersRepository, orders);
     }
 }
