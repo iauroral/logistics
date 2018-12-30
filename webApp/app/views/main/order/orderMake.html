@@ -21,36 +21,31 @@
                         <div class="form-group"><label class="col-sm-2 control-label">起始地点</label>
                             <div class="col-sm-9"><input type="text" class="form-control" placeholder="点击以选择起始地点" ng-click="startPlaceInit()" ng-model="startPlace.name"></div>
                         </div>
-                        <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">目的地</label>
                             <div class="col-sm-9"><input type="text" class="form-control" placeholder="点击以选择终止地点" ng-click="endPlaceInit()" ng-model="endPlace.name"></div>
                         </div>
+                        <div class="form-group" ng-if="distance"><label class="col-lg-2 control-label">预估距离</label>
+                            <div class="col-lg-10">
+                                <p class="form-control-static">{{distance}} 公里</p>
+                            </div>
+                        </div>
                         <div class="hr-line-dashed"></div>
                         <div ng-repeat="cargo in cargoList track by $index">
-                       <!--  <div class="form-group " ><div class="form-inline"><label class="col-sm-2 control-label">运载货物{{$index+1}}</label>
-                            <div class="col-sm-3"><select class="form-control" name="account" ng-model="cargoList[$index+1].type">
-                                    <option>普通货物</option>
-                                    <option>恒温食物、药物</option>
-                                    <option>建筑材料</option>
-                                </select>
-                            </div><label class="col-sm-1 control-label">重量</label>
-                            <div class="input-group col-sm-2 "><input type="text" class="form-control" ng-model="cargoList[$index+1].weight"> <span class="input-group-addon">吨</span></div>
-                            <div class="col-sm-2" style="float: right">
-                            <button class="btn ">增加</button>
-                            <button class="btn btn-danger">删除</button></div>
-                    </div></div> -->
-                    <div class="form-group " ><div class="form-inline"><label class="col-sm-2 control-label">运载货物{{$index+1}}</label>
-                            <div class="col-sm-3"><select class="form-control" name="account" style="width: 100%" ng-model="cargoList[$index].goodCategory.name">
-                                    <!-- <option>请选择货物类型</option> -->
-                                    <option>普通货物</option>
-                                    <option>恒温食物、药物</option>
-                                    <option>建筑材料</option>
-                                </select></div><label class="col-sm-1 control-label" >重量</label>
-                            <div class="input-group col-sm-1 "><input type="text" class="form-control" ng-model="cargoList[$index].weight" ng-blur="refreshWeight()"> <span class="input-group-addon">吨</span></div>
-                            <div class="col-sm-2" style="float: right">
-                            <button class="btn " ng-click="cargoInsert()">增加</button>
-                            <button class="btn btn-danger" ng-click="cargoDelete($index)">删除</button></div></div>
-                    </div></div>
+                            <div class="form-group ">
+                                <div class="form-inline"><label class="col-sm-2 control-label">运载货物{{$index+1}}</label>
+                                    <div class="col-sm-3"><select class="form-control" name="account" style="width: 100%" ng-model="cargoList[$index].goodCategory.name">
+                                            <!-- <option>请选择货物类型</option> -->
+                                            <option>普通货物</option>
+                                            <option>恒温食物、药物</option>
+                                            <option>建筑材料</option>
+                                        </select></div><label class="col-sm-1 control-label">重量</label>
+                                    <div class="input-group col-sm-1 "><input type="text" class="form-control" ng-model="cargoList[$index].weight" ng-blur="refreshWeight()"> <span class="input-group-addon">吨</span></div>
+                                    <div class="col-sm-2" style="float: right">
+                                        <button class="btn " ng-click="cargoInsert()">增加</button>
+                                        <button class="btn btn-danger" ng-click="cargoDelete($index)">删除</button></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group"><label class="col-lg-2 control-label">总计重量</label>
                             <div class="col-lg-10">
                                 <p class="form-control-static">{{totalWeight}} 吨</p>
@@ -59,14 +54,9 @@
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
                             <vehicle-list ng-model="vehicle"></vehicle-list>
-                            <!-- <div class="col-sm-10"><select class="form-control m-b" name="account">
-                                    <option value="1">轻型（小于4吨）</option>
-                                    <option value="2">中型（4吨-8吨）</option>
-                                    <option value="3">重型（8吨以上）</option>
-                                    <option value="4">保温箱货车</option>
-                                    <option value="5">自卸车</option>
-                                </select>
-                            </div> -->
+                        </div>
+                        <div class="form-group"><label class="col-sm-2 control-label">运货时间</label>
+                            <div class="col-sm-9"><input type="date" class="form-control" placeholder="点击以选择运货时间" ng-model="dateTime"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-8 col-sm-offset-2">

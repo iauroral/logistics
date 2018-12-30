@@ -13,6 +13,12 @@ angular
             }
         }];
 
+        $scope.startPlace = $scope.endPlace = {
+            name: null,
+            lat: null,
+            lng: null
+        };
+
         $scope.totalWeight = 0.00;
 
         $scope.startPlaceInit = chooseStartPlace;
@@ -60,7 +66,7 @@ angular
             modalInstance.result.then(function(result) {
                 console.log(result); //result关闭是回传的值 
                 $scope.startPlace = result;
-
+                refreshDistance();
                 // $scope.startPlace.addr = result;
             }, function(reason) {
                 console.log(reason); //点击空白区域，总会输出backdrop click，点击取消，则会暑促cancel  
@@ -80,6 +86,7 @@ angular
             modalInstance.result.then(function(result) {
                 console.log(result); //result关闭是回传的值 
                 $scope.endPlace = result;
+                refreshDistance();
 
             }, function(reason) {
                 console.log(reason); //点击空白区域，总会输出backdrop click，点击取消，则会暑促cancel  
@@ -88,7 +95,21 @@ angular
 
         }
 
-        // $scope.distance =
+        function rad(d) {
+            return d * Math.PI / 180.0;
+        }
+
+        function refreshDistance() {
+            if ($scope.startPlace.lat == null || $scope.endPlace.lat == null) return;
+            let radLat1 = rad($scope.startPlace.lat);
+            let radLat2 = rad($scope.endPlace.lat);
+            let a = radLat1 - radLat2;
+            let b = rad($scope.startPlace.lng) - rad($scope.endPlace.lng);
+            let s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b / 2), 2)));
+            s = s * 6378.137; // EARTH_RADIUS;
+            s = Math.round(s * 10000) / 10000; //输出为公里
+            $scope.distance = s;
+        }
 
 
 
@@ -96,19 +117,20 @@ angular
 
         $scope.submit = function() {
             var order = {
+                "date" : $scope.dateTime,
                 "startPlace": $scope.startPlace.name,
                 "endPlace": $scope.endPlace.name,
                 "startLongitude": $scope.startPlace.lng,
                 "startLatitude": $scope.startPlace.lat,
                 "endLongitude": $scope.endPlace.lng,
                 "endLatitude": $scope.endPlace.lat,
-                "distance": 100.0,
+                "distance": $scope.distance,
                 "vehicle": $scope.vehicle,
                 "orderDetailList": $scope.cargoList
             };
-            OrderService.makeOrder(order, function(res){
+            OrderService.makeOrder(order, function(res) {
 
-                        console.log(res);
+                console.log(res);
             });
 
         };
