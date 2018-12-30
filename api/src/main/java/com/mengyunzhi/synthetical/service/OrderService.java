@@ -16,7 +16,7 @@ public interface OrderService {
     /**
      * 新增订单
      */
-    // TODO Orders insertOrder(Orders orders) throws AuthException;
+    Orders makeNewOrder(Orders orders);
 
     /**
      * 查找用户正在执行的订单

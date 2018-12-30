@@ -22,6 +22,14 @@ public class OrderController {
     /**
      * 查找用户正在运行的订单
      */
+    @PostMapping("make")
+    public Orders makeNewOrder(@RequestBody Orders orders){
+        return orderService.makeNewOrder(orders);
+    }
+
+    /**
+     * 查找用户正在运行的订单
+     */
     @GetMapping("running")
     public List<Orders> findOrdersRunning(){
         return orderService.findOrdersRunningByUser();

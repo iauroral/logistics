@@ -166,6 +166,14 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             },
             controller: 'OrderOfOwnerRunningCtrl'
         })
+        .state('main.map', {
+            url: '/map',
+            templateUrl: 'views/main/map/choosePlace.html',
+            data: {
+                pageTitle: '正在执行的订单'
+            },
+            controller: 'choosePlaceCtrl'
+        })
         .state('main.orderCompleted', {
             url: '/orderCompleted',
             templateUrl: 'views/main/order/orderOfOwnerCompleted.html',

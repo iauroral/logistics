@@ -15,9 +15,10 @@ angular
                 });
         };
 
-        self.save = function(price, callback) {
-            var url = '/api/Order';
-            $http.post(url, price)
+        self.makeOrder = function(order, callback) {
+            var url = '/api/Order/make';
+            console.log(order);
+            $http.post(url, order)
                 .then(function success(response) {
                     if (callback) {
                         callback(response.data);
@@ -103,6 +104,10 @@ angular
         };
 
         return {
+            makeOrder         : self.makeOrder,
+            update       : self.update,
+            delete       : self.delete,
+            getOrderRunningByUser : self.getOrderRunningByUser,
             save                    : self.save,
             query                   : self.query,
             update                  : self.update,

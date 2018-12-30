@@ -24,6 +24,22 @@ public class OrderServiceImpl implements OrderService {
     private YunzhiService yunzhiService;
 
     @Override
+    public Orders makeNewOrder(Orders orders){
+        orders.setLogisticsStatus(0);
+        orders.setOrderStatus(0);
+        orders.setStarLevel((float) 5);
+        orders.setTotalPrice(BigDecimal.valueOf(0));
+        try {
+            orders.setOwner(userService.getCurrentLoginUser());
+        } catch (AuthException e) {
+            e.printStackTrace();
+        }
+        ordersRepository.save(orders);
+
+        return orders;
+    }
+
+    @Override
     public List<Orders> findOrdersRunningByUser(){
         User user = null;
         try {
