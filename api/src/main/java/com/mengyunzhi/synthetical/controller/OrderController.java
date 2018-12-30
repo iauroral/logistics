@@ -17,15 +17,14 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-//    @PostMapping("add")
-//    public void login(@RequestBody User user, HttpServletResponse httpServletResponse) {
-//        if (userService.login(user)) {
-//            logger.info("登录成功");
-//        } else {
-//            logger.info("登录失败");
-//            httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
-//        }
-//    }
+    /**
+     * 查找用户正在运行的订单
+     */
+    @PostMapping("make")
+    public Orders makeNewOrder(@RequestBody Orders orders){
+        return orderService.makeNewOrder(orders);
+    }
+
 
     /**
      * 查找用户正在运行的订单

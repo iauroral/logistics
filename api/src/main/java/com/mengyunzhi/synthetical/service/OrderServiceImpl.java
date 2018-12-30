@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.security.auth.message.AuthException;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -16,6 +17,22 @@ public class OrderServiceImpl implements OrderService {
     private UserService userService;
     @Autowired
     private OrdersRepository ordersRepository;
+
+    @Override
+    public Orders makeNewOrder(Orders orders){
+        orders.setLogisticsStatus(0);
+        orders.setOrderStatus(0);
+        orders.setStarLevel((float) 5);
+        orders.setTotalPrice(BigDecimal.valueOf(0));
+        try {
+            orders.setOwner(userService.getCurrentLoginUser());
+        } catch (AuthException e) {
+            e.printStackTrace();
+        }
+        ordersRepository.save(orders);
+
+        return orders;
+    }
 
     @Override
     public List<Orders> findOrdersRunningByUser(){
