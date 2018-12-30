@@ -2,8 +2,10 @@ package com.mengyunzhi.synthetical.service;
 
 import com.mengyunzhi.core.service.CommonService;
 import com.mengyunzhi.core.service.YunzhiService;
+import com.mengyunzhi.synthetical.entity.OrderDetail;
 import com.mengyunzhi.synthetical.entity.Orders;
 import com.mengyunzhi.synthetical.entity.User;
+import com.mengyunzhi.synthetical.repository.OrderDetailRepository;
 import com.mengyunzhi.synthetical.repository.OrdersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,9 +24,12 @@ public class OrderServiceImpl implements OrderService {
     private OrdersRepository ordersRepository;
     @Autowired
     private YunzhiService yunzhiService;
+    @Autowired
+    private OrderDetailRepository orderDetailRepository;
 
     @Override
     public Orders makeNewOrder(Orders orders){
+        // order属性补全 存入order表
         orders.setLogisticsStatus(0);
         orders.setOrderStatus(0);
         orders.setStarLevel((float) 5);
@@ -35,6 +40,12 @@ public class OrderServiceImpl implements OrderService {
             e.printStackTrace();
         }
         ordersRepository.save(orders);
+        
+        // 订单明细存入orderDetail表
+        List<OrderDetail> orderDetailsList = orders.getOrderDetailList();
+        for (OrderDetail orderDetails : orderDetailsList)
+            orderDetails.setOrders(orders);
+        orderDetailRepository.save(orderDetailsList);
 
         return orders;
     }

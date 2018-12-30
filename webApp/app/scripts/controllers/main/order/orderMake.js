@@ -8,9 +8,7 @@ angular
 
         $scope.cargoList = [{
             "weight": null,
-            "goodCategory": {
-                "name": null
-            }
+            "goodCategory": null
         }];
 
         $scope.startPlace = $scope.endPlace = {

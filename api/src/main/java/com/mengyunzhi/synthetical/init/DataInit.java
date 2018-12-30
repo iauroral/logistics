@@ -1,7 +1,9 @@
 package com.mengyunzhi.synthetical.init;
 
+import com.mengyunzhi.synthetical.entity.GoodCategory;
 import com.mengyunzhi.synthetical.entity.User;
 import com.mengyunzhi.synthetical.entity.Vehicle;
+import com.mengyunzhi.synthetical.repository.GoodCategoryRepository;
 import com.mengyunzhi.synthetical.repository.UserRepository;
 import com.mengyunzhi.synthetical.repository.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class DataInit implements ApplicationListener<ContextRefreshedEvent> {
     private UserRepository userRepository;
     @Autowired
     private VehicleRepository vehicleRepository;
+    @Autowired
+    private GoodCategoryRepository goodCategoryRepository;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
@@ -29,6 +33,18 @@ public class DataInit implements ApplicationListener<ContextRefreshedEvent> {
         vehicle.setMultipleRate(1.25F);
         vehicle.setPledge(new BigDecimal("50000"));
         vehicleRepository.save(vehicle);
+
+
+        /**
+         * 初始化货物种类
+         */
+        String[] goods = {"普通货物","恒温食物、药物","建筑材料"};
+        for(int i=0;i<goods.length;i++){
+            GoodCategory goodCategory = new GoodCategory();
+            goodCategory.setName(goods[i]);
+            goodCategory.setMultipleRate(1+0.25F*i);
+            goodCategoryRepository.save(goodCategory);
+        }
 
         User admin = new User();
         admin.setName("系统管理员");

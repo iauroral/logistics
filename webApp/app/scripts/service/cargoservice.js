@@ -3,7 +3,7 @@
  */
 angular
     .module('homer')
-    .service('CategoryService', function($http, CommonService) {
+    .service('CargoService', function($http, CommonService) {
         var self = this;
 
         self.getAllCategories = function(callback) {
