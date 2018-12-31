@@ -104,14 +104,12 @@ angular
         };
 
         return {
-            makeOrder         : self.makeOrder,
-            update       : self.update,
-            delete       : self.delete,
-            getOrderRunningByUser : self.getOrderRunningByUser,
             save                    : self.save,
             query                   : self.query,
             update                  : self.update,
             delete                  : self.delete,
+            makeOrder               : self.makeOrder,
+            getOrderById            : self.getOrderById,
             getOrderRunningByUser   : self.getOrderRunningByUser,
             getOrderCompletedByUser : self.getOrderCompletedByUser
         };

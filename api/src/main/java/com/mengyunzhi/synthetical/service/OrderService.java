@@ -28,6 +28,8 @@ public interface OrderService {
      */
     List<Orders>  findOrdersCompletedByUser();
 
+    Orders findById(Long id);
+
     /**
      * 订单综合查询
      */

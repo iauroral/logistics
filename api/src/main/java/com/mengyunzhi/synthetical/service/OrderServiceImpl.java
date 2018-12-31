@@ -79,6 +79,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public Orders findById(Long id) {
+        return ordersRepository.findOne(id);
+    }
+
+    @Override
     public List<Orders> query(BigDecimal minPrice, Date startDate, Date endDate, Float minDistance, Float maxDistance) {
         Orders orders = (Orders) CommonService.getNullFieldsObject(Orders.class);
         orders.setMinPrice(minPrice);

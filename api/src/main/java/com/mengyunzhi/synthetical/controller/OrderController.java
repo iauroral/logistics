@@ -46,6 +46,12 @@ public class OrderController {
         return orderService.findOrdersCompletedByUser();
     }
 
+    @GetMapping("{id}")
+    @JsonView(OrderJsonView.common.class)
+    public Orders findOne(@PathVariable Long id) {
+        return orderService.findById(id);
+    }
+
     /**
      * 订单综合查询
      */

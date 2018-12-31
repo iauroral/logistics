@@ -1,52 +1,52 @@
 <div class="hpanel email-compose">
-            <div class="panel-heading hbuilt">
-                <div class="p-xs h4">
-                    订单详情
+    <div class="panel-heading hbuilt">
+        <div class="p-xs h4">
+            订单详情
+        </div>
+    </div>
+    <div class="panel-heading hbuilt">
+        <div class="p-xs">
+            <form method="get" class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2">发起人</label>
+                    <p class="col-sm-10">{{ order.owner.name }}</p>
                 </div>
-            </div>
-            <div class="panel-heading hbuilt">
-                <div class="p-xs">
-
-                    <form method="get" class="form-horizontal">
-                        <div class="form-group"><label class="col-sm-1 control-label text-left">订单编号</label>
-
-                            <div class="col-sm-2"><input type="text" class="form-control input-sm"></div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-1 control-label text-left">发车地点</label>
-
-                            <div class="col-sm-2"><input type="text" class="form-control input-sm"></div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-1 control-label text-left">运输终点</label>
-
-                            <div class="col-sm-2"><input type="text" class="form-control input-sm" ></div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-1 control-label text-left">运输里程</label>
-
-                            <div class="col-sm-2"><input type="text" class="form-control input-sm"></div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-1 control-label text-left">发车日期</label>
-
-                            <div class="col-sm-2"><input type="text" class="form-control input-sm"></div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-1 control-label text-left">运输费用</label>
-
-                            <div class="col-sm-2"><input type="text" class="form-control input-sm" ></div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-1 control-label text-left">货物名称</label>
-
-                            <div class="col-sm-2"><input type="text" class="form-control input-sm"></div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-1 control-label text-left">货物重量</label>
-
-                            <div class="col-sm-2"><input type="text" class="form-control input-sm"></div>
-                        </div>
-
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="form-group">
+                    <label class="col-sm-2">发车地点</label>
+                    <p class="col-sm-10">{{ order.startPlace }}</p>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">运输终点</label>
+                    <p class="col-sm-10">{{ order.endPlace }}</p>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">运输距离</label>
+                    <p class="col-sm-10">{{ order.distance }}</p>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">发车日期</label>
+                    <p class="col-sm-10">{{ order.date }}</p>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">需求车型</label>
+                    <p class="col-sm-10">{{ order.vehicle.name }}</p>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">运输费用</label>
+                    <p class="col-sm-10">{{ order.totalPrice }}</p>
+                </div>
+                <div class="form-group" ng-repeat="detail in order.orderDetailList">
+                    <label class="col-sm-2">货物名称</label>
+                    <p class="col-sm-4">{{ detail.goodCategory.name }}</p>
+                    <label class="col-sm-2">货物重量</label>
+                    <p class="col-sm-4">{{ detail.weight }}</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 col-sm-offset-2">
                         <button class="btn btn-primary">抢单</button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button class="btn btn-primary">取消</button>
-                    </form>
-
-
+                        <a ui-sref="main.acceptorder" class="btn btn-primary">取消</a>
+                    </div>
                 </div>
-            </div>
+            </form>
+        </div>
+    </div>
