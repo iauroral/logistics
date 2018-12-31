@@ -103,7 +103,20 @@ angular
                 });
         };
 
+        self.grub = function(id, callback) {
+            var url = '/api/Order/grub/' + id;
+            $http.put(url)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
         return {
+            grub                    : self.grub,
             save                    : self.save,
             query                   : self.query,
             update                  : self.update,

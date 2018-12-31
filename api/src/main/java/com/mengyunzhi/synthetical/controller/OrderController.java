@@ -7,6 +7,7 @@ import com.mengyunzhi.synthetical.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.security.auth.message.AuthException;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
@@ -64,5 +65,13 @@ public class OrderController {
                               @RequestParam(required = false) Float maxDistance) {
         return orderService
                 .query(minPrice, startDate, endDate, minDistance, maxDistance);
+    }
+
+    /**
+     * 抢单
+     */
+    @PutMapping("grub/{id}")
+    public void grub(@PathVariable Long id) throws AuthException {
+        orderService.grub(id);
     }
 }

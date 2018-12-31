@@ -9,9 +9,19 @@ angular
 
         self.getOrder = function(id) {
             OrderService.getOrderById(id, function(data) {
+                console.log(data);
                 $scope.order = data;
             });
         };
+
+        self.submit = function() {
+            OrderService.grub($stateParams.id, function() {
+                CommonService.success();
+                $state.go('main.acceptorder');
+            });
+        };
+
+        $scope.submit = self.submit;
 
         self.init();
     });
