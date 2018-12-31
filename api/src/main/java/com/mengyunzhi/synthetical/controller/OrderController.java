@@ -1,10 +1,13 @@
 package com.mengyunzhi.synthetical.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.mengyunzhi.synthetical.entity.Orders;
+import com.mengyunzhi.synthetical.jsonView.OrderJsonView;
 import com.mengyunzhi.synthetical.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.security.auth.message.AuthException;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
@@ -23,6 +26,7 @@ public class OrderController {
      * 查找用户正在运行的订单
      */
     @PostMapping("make")
+    @JsonView(OrderJsonView.common.class)
     public Orders makeNewOrder(@RequestBody Orders orders){
         return orderService.makeNewOrder(orders);
     }
@@ -43,10 +47,17 @@ public class OrderController {
         return orderService.findOrdersCompletedByUser();
     }
 
+    @GetMapping("{id}")
+    @JsonView(OrderJsonView.common.class)
+    public Orders findOne(@PathVariable Long id) {
+        return orderService.findById(id);
+    }
+
     /**
      * 订单综合查询
      */
     @GetMapping("query")
+    @JsonView(OrderJsonView.common.class)
     public List<Orders> query(@RequestParam(required = false) BigDecimal minPrice,
                               @RequestParam(required = false) Date startDate,
                               @RequestParam(required = false) Date endDate,
@@ -54,5 +65,13 @@ public class OrderController {
                               @RequestParam(required = false) Float maxDistance) {
         return orderService
                 .query(minPrice, startDate, endDate, minDistance, maxDistance);
+    }
+
+    /**
+     * 抢单
+     */
+    @PutMapping("grub/{id}")
+    public void grub(@PathVariable Long id) throws AuthException {
+        orderService.grub(id);
     }
 }

@@ -13,7 +13,9 @@ import org.springframework.stereotype.Service;
 import javax.security.auth.message.AuthException;
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -79,13 +81,32 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public Orders findById(Long id) {
+        return ordersRepository.findOne(id);
+    }
+
+    @Override
     public List<Orders> query(BigDecimal minPrice, Date startDate, Date endDate, Float minDistance, Float maxDistance) {
         Orders orders = (Orders) CommonService.getNullFieldsObject(Orders.class);
+        List<Integer> orderStatusList = new ArrayList<>();
+        orderStatusList.add(Orders.NEW);
+        orderStatusList.add(Orders.ACCEPT);
         orders.setMinPrice(minPrice);
         orders.setStartDate(startDate);
         orders.setEndDate(endDate);
         orders.setMinDistance(minDistance);
         orders.setMaxDistance(maxDistance);
+        orders.setOrderStatusList(orderStatusList);
         return (List<Orders>) yunzhiService.findAll(ordersRepository, orders);
+    }
+
+    @Override
+    public void grub(Long id) throws AuthException {
+        Orders orders = ordersRepository.findOne(id);
+        Set<User> drivers = orders.getGrabDrivers();
+        drivers.add(userService.getCurrentLoginUser());
+        orders.setOrderStatus(Orders.ACCEPT);
+        orders.setGrabDrivers(drivers);
+        ordersRepository.save(orders);
     }
 }

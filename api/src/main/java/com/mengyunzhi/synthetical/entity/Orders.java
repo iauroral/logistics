@@ -1,8 +1,12 @@
 package com.mengyunzhi.synthetical.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 import com.mengyunzhi.core.annotation.query.GreaterThanOrEqualToQuery;
+import com.mengyunzhi.core.annotation.query.InQueryParam;
 import com.mengyunzhi.core.annotation.query.LessThanOrEqualTo;
+import com.mengyunzhi.synthetical.jsonView.NoneJsonView;
+import com.mengyunzhi.synthetical.jsonView.OrderJsonView;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -16,6 +20,12 @@ import java.util.Set;
  */
 @Entity
 public class Orders {
+
+    public static final Integer NEW = 0;      // 新下单
+    public static final Integer ACCEPT = 1;   // 已接单
+    public static final Integer RUN = 2;      // 进行中
+    public static final Integer CONFIRM = 3;  // 等待确认
+    public static final Integer FINISH = 4;   // 订单完成
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -58,6 +68,8 @@ public class Orders {
     private Vehicle vehicle;                  // 货型
 
     @OneToMany(mappedBy = "orders")
+    @JsonView({NoneJsonView.class,
+            OrderJsonView.common.class})
     private List<OrderDetail> orderDetailList = new ArrayList<>();     // 订单明细
 
     @Transient
@@ -84,6 +96,11 @@ public class Orders {
     @JsonIgnore
     @LessThanOrEqualTo(name = "distance")
     private Float maxDistance;
+
+    @Transient
+    @JsonIgnore
+    @InQueryParam(name = "orderStatus")
+    private List<Integer> orderStatusList;
 
     public Orders() {
     }
@@ -270,5 +287,13 @@ public class Orders {
 
     public void setMaxDistance(Float maxDistance) {
         this.maxDistance = maxDistance;
+    }
+
+    public List<Integer> getOrderStatusList() {
+        return orderStatusList;
+    }
+
+    public void setOrderStatusList(List<Integer> orderStatusList) {
+        this.orderStatusList = orderStatusList;
     }
 }

@@ -103,15 +103,26 @@ angular
                 });
         };
 
+        self.grub = function(id, callback) {
+            var url = '/api/Order/grub/' + id;
+            $http.put(url)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
         return {
-            makeOrder         : self.makeOrder,
-            update       : self.update,
-            delete       : self.delete,
-            getOrderRunningByUser : self.getOrderRunningByUser,
+            grub                    : self.grub,
             save                    : self.save,
             query                   : self.query,
             update                  : self.update,
             delete                  : self.delete,
+            makeOrder               : self.makeOrder,
+            getOrderById            : self.getOrderById,
             getOrderRunningByUser   : self.getOrderRunningByUser,
             getOrderCompletedByUser : self.getOrderCompletedByUser
         };
