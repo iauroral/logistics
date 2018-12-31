@@ -1,5 +1,8 @@
 package com.mengyunzhi.synthetical.entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.mengyunzhi.synthetical.jsonView.NoneJsonView;
+
 import javax.persistence.*;
 
 /**
@@ -18,6 +21,7 @@ public class OrderDetail {
     private GoodCategory goodCategory;      // 货物类别
 
     @ManyToOne
+    @JsonView(NoneJsonView.class)
     private Orders orders;                  // 订单
 
     public OrderDetail() {

@@ -1,6 +1,6 @@
 angular
     .module('homer')
-    .controller('AcceptOrderCtrl', function($scope, $state, CommonService, UserService, OrderService) {
+    .controller('AcceptOrderCtrl', function($scope, $state, $filter, CommonService, UserService, OrderService) {
         var self = this;
 
         self.init = function() {
@@ -34,9 +34,26 @@ angular
         };
 
         self.load = self.reload = function() {
-            OrderService.query($scope.params, function(data) {
-                console.log(data);
+            OrderService.query(self.formatParams($scope.params), function(data) {
+                $scope.orders = data;
             });
+        };
+
+        self.formatParams = function(params) {
+            return {
+                minPrice: params.minPrice,
+                startDate: self.formatDate(params.startDate),
+                endDate: self.formatDate(params.endDate),
+                minDistance: params.minDistance,
+                maxDistance: params.maxDistance
+            };
+        };
+
+        self.formatDate = function(date) {
+            if (angular.isUndefined(date)) {
+                return;
+            }
+            return $filter('date')(date, 'yyyy-MM-dd');
         };
 
         $scope.reload = self.reload;

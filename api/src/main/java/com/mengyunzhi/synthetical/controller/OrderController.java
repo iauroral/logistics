@@ -1,6 +1,8 @@
 package com.mengyunzhi.synthetical.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.mengyunzhi.synthetical.entity.Orders;
+import com.mengyunzhi.synthetical.jsonView.OrderJsonView;
 import com.mengyunzhi.synthetical.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +25,7 @@ public class OrderController {
      * 查找用户正在运行的订单
      */
     @PostMapping("make")
+    @JsonView(OrderJsonView.common.class)
     public Orders makeNewOrder(@RequestBody Orders orders){
         return orderService.makeNewOrder(orders);
     }
@@ -47,6 +50,7 @@ public class OrderController {
      * 订单综合查询
      */
     @GetMapping("query")
+    @JsonView(OrderJsonView.common.class)
     public List<Orders> query(@RequestParam(required = false) BigDecimal minPrice,
                               @RequestParam(required = false) Date startDate,
                               @RequestParam(required = false) Date endDate,

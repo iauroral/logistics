@@ -1,8 +1,11 @@
 package com.mengyunzhi.synthetical.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 import com.mengyunzhi.core.annotation.query.GreaterThanOrEqualToQuery;
 import com.mengyunzhi.core.annotation.query.LessThanOrEqualTo;
+import com.mengyunzhi.synthetical.jsonView.NoneJsonView;
+import com.mengyunzhi.synthetical.jsonView.OrderJsonView;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -58,6 +61,8 @@ public class Orders {
     private Vehicle vehicle;                  // 货型
 
     @OneToMany(mappedBy = "orders")
+    @JsonView({NoneJsonView.class,
+            OrderJsonView.common.class})
     private List<OrderDetail> orderDetailList = new ArrayList<>();     // 订单明细
 
     @Transient

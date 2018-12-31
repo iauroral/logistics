@@ -1,16 +1,16 @@
 angular
     .module('homer')
-    .controller('CategoryIndexCtrl', function($scope, CommonService, CategoryService) {
+    .controller('CategoryIndexCtrl', function($scope, CommonService, CargoService) {
         var self = this;
 
         self.init = function() {
-            CategoryService.getAllCategories(function(data) {
+            CargoService.getAllCategories(function(data) {
                 $scope.categories = data._embedded.goodCategories;
             });
         };
 
         self.delete = function(id) {
-            CategoryService.delete(id, function() {
+            CargoService.delete(id, function() {
                 CommonService.success();
                 $scope.categories = $scope.categories.filter(function(value) {
                     return value.id !== id;
