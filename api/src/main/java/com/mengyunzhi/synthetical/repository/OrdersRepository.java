@@ -14,6 +14,4 @@ import java.util.List;
 @RepositoryRestResource(path = "Orders")
 public interface OrdersRepository extends JpaRepository<Orders, Long>, JpaSpecificationExecutor<Orders> {
 
-    List<Orders> findOrdersByOwnerAndOrderStatus(User owner,Integer orderStatus);
-    List<Orders> findOrdersByDriverAndOrderStatus(User driver,Integer orderStatus);
 }
