@@ -27,6 +27,10 @@ public class Orders {
     public static final Integer CONFIRM = 3;  // 等待确认
     public static final Integer FINISH = 4;   // 订单完成
 
+    public static final Integer WAIT_TRANSIT = 0;      // 等待运输
+    public static final Integer IN_TRANSIT = 1;        // 运输中
+    public static final Integer ARRIVE_TRANSIT = 2;    // 已经到达
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;                          // 主键
@@ -45,9 +49,9 @@ public class Orders {
 
     private Float distance;                   // 运输距离
 
-    private Integer logisticsStatus;          // 物流状态
+    private Integer logisticsStatus = WAIT_TRANSIT;          // 物流状态
 
-    private Integer orderStatus;              // 订单状态
+    private Integer orderStatus = NEW;                       // 订单状态
 
     private Float starLevel;                  // 评价星级
 

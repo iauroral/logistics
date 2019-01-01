@@ -3,10 +3,7 @@ package com.mengyunzhi.synthetical.entity;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Calendar;
 
@@ -26,6 +23,9 @@ public class Payment {
     private String type;                  // 付款方式
 
     private BigDecimal paid;              // 已付金额
+
+    @ManyToOne
+    private Orders orders;                // 订单
 
     @CreationTimestamp
     private Calendar firstPayTime;        // 首付时间
@@ -65,6 +65,14 @@ public class Payment {
 
     public void setPaid(BigDecimal paid) {
         this.paid = paid;
+    }
+
+    public Orders getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Orders orders) {
+        this.orders = orders;
     }
 
     public Calendar getFirstPayTime() {
