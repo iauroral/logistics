@@ -10,7 +10,6 @@ import com.mengyunzhi.synthetical.repository.OrderDetailRepository;
 import com.mengyunzhi.synthetical.repository.OrdersRepository;
 import com.mengyunzhi.synthetical.repository.PaymentRepository;
 import com.mengyunzhi.synthetical.repository.UserRepository;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -61,9 +60,10 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<Orders> findOrdersRunningByUser() {
         List<Integer> orderStatusList = new ArrayList<>();
+        orderStatusList.add(Orders.NEW);
+        orderStatusList.add(Orders.ACCEPT);
         orderStatusList.add(Orders.RUN);
         orderStatusList.add(Orders.CONFIRM);
-        orderStatusList.add(Orders.ACCEPT);
 
         Orders orders = (Orders) CommonService.getNullFieldsObject(Orders.class);
         orders.setOwner(this.getCurrentLoginUser());
@@ -81,6 +81,14 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Orders> findAllOrdersCompletedByCurrentDriver() {
+        Orders orders = (Orders) CommonService.getNullFieldsObject(Orders.class);
+        orders.setDriver(this.getCurrentLoginUser());
+        orders.setOrderStatus(Orders.FINISH);
+        return (List<Orders>) yunzhiService.findAll(ordersRepository, orders);
+    }
+
+    @Override
+    public List<Orders> findAllOrdersRunningByCurrentDriver() {
         List<Integer> orderStatusList = new ArrayList<>();
         orderStatusList.add(Orders.RUN);
         orderStatusList.add(Orders.CONFIRM);
@@ -88,14 +96,6 @@ public class OrderServiceImpl implements OrderService {
         Orders orders = (Orders) CommonService.getNullFieldsObject(Orders.class);
         orders.setDriver(this.getCurrentLoginUser());
         orders.setOrderStatusList(orderStatusList);
-        return (List<Orders>) yunzhiService.findAll(ordersRepository, orders);
-    }
-
-    @Override
-    public List<Orders> findAllOrdersRunningByCurrentDriver() {
-        Orders orders = (Orders) CommonService.getNullFieldsObject(Orders.class);
-        orders.setDriver(this.getCurrentLoginUser());
-        orders.setOrderStatus(Orders.FINISH);
         return (List<Orders>) yunzhiService.findAll(ordersRepository, orders);
     }
 

@@ -166,6 +166,14 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             },
             controller: 'OrderOfOwnerRunningCtrl'
         })
+        .state('main.orders.select', {
+            url: '/select/:id',
+            templateUrl: 'views/main/order/select.html',
+            data: {
+                pageTitle: '选择司机'
+            },
+            controller: 'OrderSelectDriverCtrl'
+        })
         .state('main.map', {
             url: '/map',
             templateUrl: 'views/main/map/choosePlace.html',
@@ -183,7 +191,7 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             controller: 'OrderOfOwnerCompletedCtrl'
         })
         // 个人信息
-        .state('main.personalInfo',{
+        .state('main.personalInfo', {
             url: '/personalInfo',
             templateUrl: 'views/main/personalInfo/index.html',
             data: {
@@ -191,7 +199,7 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             },
             controller: 'PersonalInfoCtrl'
         })
-        .state('main.acceptorder',{
+        .state('main.acceptorder', {
             url: '/acceptorder',
             templateUrl: 'views/main/acceptorder/index.html',
             data: {
@@ -199,7 +207,7 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             },
             controller: 'AcceptOrderCtrl'
         })
-        .state('main.acceptorder.details',{
+        .state('main.acceptorder.details', {
             url: '/details/:id',
             templateUrl: 'views/main/acceptorder/details.html',
             data: {
@@ -213,7 +221,7 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             data: {
                 pageTitle: '我的钱包'
             },
-            controller:'WalletCtrl'
+            controller: 'WalletCtrl'
         })
         .state('main.mywallet.traderecord', {
             url: '/traderecord',
@@ -222,20 +230,20 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
                 pageTitle: '交易记录'
             }
         })
-         .state('main.mywallet.bindingbankcard', {
+        .state('main.mywallet.bindingbankcard', {
             url: '/bindingbankcard',
             templateUrl: 'views/main/mywallet/bindingbankcard.html',
             data: {
                 pageTitle: '绑定银行卡'
             }
         })
-         .state('main.mywallet.paydeposit', {
+        .state('main.mywallet.paydeposit', {
             url: '/paydeposit',
             templateUrl: 'views/main/mywallet/paydeposit.html',
             data: {
                 pageTitle: '押金缴纳'
             },
-            controller:'PayDepositCtrl'
+            controller: 'PayDepositCtrl'
         })
         .state('main.mywallet.withdraw', {
             url: '/withdraw',
@@ -244,21 +252,21 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
                 pageTitle: '提现'
             }
         })
-         .state('main.orderDriver', {
-            url: "/orderDriver",
-            templateUrl: "views/main/order-driver/index.html",
+        .state('main.orderDriver', {
+            url: '/orderDriver',
+            templateUrl: 'views/main/orderDriver/index.html',
             data: {
                 pageTitle: '我的订单'
             },
-            controller:'OrderDriverCtrl'
+            controller: 'OrderDriverCtrl'
         })
-         .state('main.orderDriver.details', {
-            url: "/details:id",
-            templateUrl: "views/main/order-driver/details.html",
+        .state('main.completeDriver', {
+            url: '/completeDriver',
+            templateUrl: 'views/main/order/orderOfOwnerCompleted.html',
             data: {
-                pageTitle: '订单详情'
+                pageTitle: '历史订单'
             },
-            controller:'OrderDetailsDriverCtrl'
+            controller: 'OrderDriverCompleteCtrl'
         });
 }
 
