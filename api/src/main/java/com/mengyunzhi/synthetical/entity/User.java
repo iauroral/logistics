@@ -1,5 +1,7 @@
 package com.mengyunzhi.synthetical.entity;
 
+import com.mengyunzhi.core.entity.YunZhiEntity;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -8,7 +10,7 @@ import java.math.BigDecimal;
  * 用户实体
  */
 @Entity
-public class User {
+public class User implements YunZhiEntity {
 
     public static final String DRIVER = "DRIVER";
     public static final String OWNER = "OWNER";

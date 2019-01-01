@@ -16,25 +16,27 @@
             <div class="panel-body">
                 <div class="table-responsive">
                     <table cellpadding="1" cellspacing="1" class="table">
-                        <thead>
-                            <tr>
-                                <th>订单状态</th>
-                                <th>起始地点</th>
-                                <th>目的地点</th>
-                                <th>距离</th>
-                                <th>应付金额</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="order in orders" ng-if="order-orderStatus==3">
-                                <td >{{order.orderStatus}}</td>
-                                <td >{{order.startPlace}}</td>
-                                <td >{{order.endPlace}}</td>
-                                <td >{{order.distance}}</td>
-                                <td >{{order.totalPrice}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>起始地点</th>
+                                    <th>目的地点</th>
+                                    <th>距离</th>
+                                    <th>订单状态</th>
+                                    <th>物流状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="order in orders" ng-if="order-orderStatus!=3">
+                                    <td>{{ $index + 1 }}</td>
+                                    <td>{{ order.startPlace }}</td>
+                                    <td>{{ order.endPlace }}</td>
+                                    <td>{{ order.distance }}</td>
+                                    <td>{{ order.orderStatus }}</td>
+                                    <td>{{ order.logisticsStatus }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                 </div>
             </div>
             <div class="panel-footer">

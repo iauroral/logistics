@@ -77,13 +77,13 @@
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'DRIVER'">
-            <a>
+            <a ui-sref="main.completeDriver">
                 <span class="nav-label">历史订单</span>
                 <span class="label label-warning pull-right">司机端</span>
             </a>
         </li>
         <li ui-sref-active="active" ng-if="user.type === 'OWNER' || user.type === 'DRIVER'">
-            <a ui-sref="main.mywallet" >
+            <a ui-sref="main.mywallet">
                 <span class="nav-label">我的钱包</span>
             </a>
         </li>
