@@ -16,7 +16,7 @@ angular
 
         self.submit = function() {
             VehicleService.save($scope.vehicle, function() {
-                CommonService.success();
+                CommonService.success('保存成功', '添加车型成功');
                 $state.go('main.vehicle', {}, { reload: true });
             });
         };

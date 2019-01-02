@@ -13,7 +13,7 @@ angular
 
         self.submit = function() {
             TaxService.save($scope.tax, function() {
-                CommonService.success();
+                CommonService.success('保存成功', '添加收益成功');
                 $state.go('main.tax', {}, { reload: true });
             });
         };

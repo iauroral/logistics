@@ -11,14 +11,14 @@ angular
 
         self.freeze = function(id) {
             UserService.freeze(id, function() {
-                CommonService.success();
+                CommonService.success('冻结成功', '该用户登录受限');
                 $state.reload();
             });
         };
 
         self.unfreeze = function(id) {
             UserService.unfreeze(id, function() {
-                CommonService.success();
+                CommonService.success('解冻成功', '该用户可正常登录');
                 $state.reload();
             });
         };

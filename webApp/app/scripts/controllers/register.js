@@ -18,7 +18,7 @@ angular
 
         self.submit = function() {
             UserService.register($scope.user, function() {
-                CommonService.success();
+                CommonService.success('注册成功', '欢迎使用本系统');
                 $state.go('login');
             });
         };
