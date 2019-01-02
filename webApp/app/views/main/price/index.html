@@ -8,7 +8,8 @@
                 <div class="panel-body">
                     <input type="text" class="form-control input-sm m-b-md" id="filter" placeholder="搜索">
                     <a ui-sref="main.price.add" class="btn btn-primary">
-                        增加
+                        <i class="fa fa-plus"></i>
+                        &nbsp;增加
                     </a>
                     <table id="example1" class="footable table table-stripped toggle-arrow-tiny" data-page-size="8" data-filter=#filter>
                         <thead>
@@ -27,8 +28,14 @@
                                 <td>{{ price.maxKilometres }}</td>
                                 <td>{{ price.price }}</td>
                                 <td>
-                                    <a class="btn btn-xs btn-info" ui-sref="main.price.edit({id: price.id})">编辑</a>
-                                    <button class="btn btn-xs btn-danger" ng-click="delete(price.id)">删除</button>
+                                    <a class="btn btn-sm btn-info" ui-sref="main.price.edit({id: price.id})">
+                                        <i class="fa fa-edit"></i>
+                                        &nbsp;编辑
+                                    </a>
+                                    <button class="btn btn-sm btn-danger" ng-click="delete(price.id)">
+                                        <i class="pe-7s-trash"></i>
+                                        &nbsp;删除
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>

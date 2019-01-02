@@ -31,7 +31,7 @@ angular
                         callback(response.data);
                     }
                 }, function error() {
-                    CommonService.httpError();
+                    CommonService.error('注册失败', '可能是您的网络连接错误或用户名重复');
                 });
         };
 

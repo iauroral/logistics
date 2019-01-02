@@ -12,7 +12,7 @@ angular
 
         self.submit = function() {
             TaxService.update($stateParams.id, $scope.tax, function() {
-                CommonService.success();
+                CommonService.success('更新成功', '更新收益成功');
                 $state.go('main.tax', {}, { reload: true });
             });
         };

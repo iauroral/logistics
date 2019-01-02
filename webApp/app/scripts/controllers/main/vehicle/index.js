@@ -13,10 +13,12 @@ angular
         };
 
         self.delete = function(id) {
-            VehicleService.delete(id, function() {
-                CommonService.success();
-                $scope.vehicles = $scope.vehicles.filter(function(value) {
-                    return value.id !== id;
+            CommonService.warning(function(success, error) {
+                VehicleService.delete(id, function() {
+                    CommonService.success('删除成功');
+                    $scope.vehicles = $scope.vehicles.filter(function(value) {
+                        return value.id !== id;
+                    });
                 });
             });
         };
