@@ -13,7 +13,7 @@ angular
 
         self.submit = function() {
             PriceService.save($scope.price, function() {
-                CommonService.success();
+                CommonService.success('保存成功', '添加定价成功');
                 $state.go('main.price', {}, { reload: true });
             });
         };
