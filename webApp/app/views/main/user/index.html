@@ -26,8 +26,14 @@
                                 <p ng-if="user.freezeOrNot">已冻结</p>
                             </td>
                             <td>
-                                <button ng-if="!user.freezeOrNot" class="btn btn-xs btn-danger" ng-click="freeze(user.id)">冻结</button>
-                                <button ng-if="user.freezeOrNot" class="btn btn-xs btn-success" ng-click="unfreeze(user.id)">解冻</button>
+                                <button ng-if="!user.freezeOrNot" class="btn btn-sm btn-danger" ng-click="freeze(user.id)">
+                                    <i class="pe-7s-lock"></i>
+                                    &nbsp;冻结
+                                </button>
+                                <button ng-if="user.freezeOrNot" class="btn btn-sm btn-success" ng-click="unfreeze(user.id)">
+                                    <i class="pe-7s-unlock"></i>
+                                    &nbsp;解冻
+                                </button>
                             </td>
                         </tr>
                     </tbody>

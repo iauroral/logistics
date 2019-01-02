@@ -18,7 +18,6 @@ angular
                     });
                 });
             });
-            
         };
 
         $scope.delete = self.delete;
