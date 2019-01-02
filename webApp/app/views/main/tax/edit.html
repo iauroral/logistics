@@ -8,7 +8,7 @@
                 <form id="taxEditForm" name="taxEditForm" ng-submit="submit()">
                     <div class="row">
                         <div class="form-group col-lg-8">
-                            <label for="minPrice">最低价格</label>
+                            <label for="minPrice">最低价格(元)</label>
                             <input ng-model="tax.minPrice" type="number" id="minPrice" class="form-control" name="minPrice" required>
                             <p style="margin-top: 10px;" class="text-danger" ng-show="taxEditForm.minPrice.$dirty && taxEditForm.minPrice.$invalid">
                                 <i class="fa fa-exclamation-triangle"></i>
@@ -16,7 +16,7 @@
                             </p>
                         </div>
                         <div class="form-group col-lg-8">
-                            <label for="maxPrice">最高价格</label>
+                            <label for="maxPrice">最高价格(元)</label>
                             <input ng-model="tax.maxPrice" type="number" id="maxPrice" class="form-control" name="maxPrice" required>
                             <p style="margin-top: 10px;" class="text-danger" ng-show="taxEditForm.maxPrice.$dirty && taxEditForm.maxPrice.$invalid">
                                 <i class="fa fa-exclamation-triangle"></i>
@@ -33,8 +33,14 @@
                         </div>
                     </div>
                     <div>
-                        <button ng-disabled="taxEditForm.$invalid" class="btn btn-success">保存</button>
-                        <a ui-sref="main.tax" class="btn btn-default">取消</a>
+                        <button ng-disabled="taxEditForm.$invalid" class="btn btn-success">
+                            <i class="pe-7s-diskette"></i>
+                            &nbsp;保存
+                        </button>
+                        <a ui-sref="main.tax" class="btn btn-default">
+                            <i class="pe-7s-back"></i>
+                            &nbsp;取消
+                        </a>
                     </div>
                 </form>
             </div>

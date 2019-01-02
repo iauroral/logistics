@@ -10,12 +10,15 @@ angular
         };
 
         self.delete = function(id) {
-            TaxService.delete(id, function() {
-                CommonService.success();
-                $scope.taxes = $scope.taxes.filter(function(value) {
-                    return value.id !== id;
+            CommonService.warning(function(success, error) {
+                TaxService.delete(id, function() {
+                    CommonService.success('删除成功');
+                    $scope.taxes = $scope.taxes.filter(function(value) {
+                        return value.id !== id;
+                    });
                 });
             });
+            
         };
 
         $scope.delete = self.delete;
