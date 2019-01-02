@@ -58,14 +58,15 @@
                                             </p>
                                         </div>
                                         <div ng-if="user.type === 'DRIVER'" class="form-group col-lg-6">
-                                            <div class="row">
-                                                <vehicle-list ng-model="user.vehicle"></vehicle-list>
-                                            </div>
+                                            <label>车型</label>
+                                            <vehicle-list ng-model="user.vehicle"></vehicle-list>
                                             <input type="hidden" name="vehicle" ng-model="user.vehicle.id" required>
                                         </div>
                                     </div>
-                                    <!-- <pre>{{ personalInfoForm | json }}</pre> -->
-                                    <button ng-disabled="personalInfoForm.$invalid" class="btn btn-primary">更新个人信息</button>
+                                    <button ng-disabled="personalInfoForm.$invalid" class="btn btn-primary">
+                                        <i class="pe-7s-diskette"></i>
+                                        &nbsp;更新个人信息
+                                    </button>
                                 </div>
                             </div>
                         </div>
