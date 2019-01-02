@@ -15,7 +15,7 @@ angular
 
         self.submit = function() {
             VehicleService.update($stateParams.id, $scope.vehicle, function() {
-                CommonService.success();
+                CommonService.success('更新成功', '更新车型成功');
                 $state.go('main.vehicle', {}, { reload: true });
             });
         };
