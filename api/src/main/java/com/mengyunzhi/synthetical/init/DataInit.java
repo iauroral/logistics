@@ -68,11 +68,14 @@ public class DataInit implements ApplicationListener<ContextRefreshedEvent> {
      * 价格规则初始化
      */
     public void priceRuleInit(){
+        String[] prices = {"3.5","5.5","8"};
+        float[] minDistance = {0,100,500};
+        float[] maxDistance = {100,500,10000000};
         for(int i = 0;i<3;i++){
             Price priceRule = new Price();
-            priceRule.setMinKilometres(i*5F);
-            priceRule.setMaxKilometres(i*5+5F);
-            priceRule.setPrice(new BigDecimal(1+0.25F*i));
+            priceRule.setMinKilometres(minDistance[i]);
+            priceRule.setMaxKilometres(maxDistance[i]);
+            priceRule.setPrice(new BigDecimal(prices[i]));
             priceRepository.save(priceRule);
         }
     }
