@@ -1,11 +1,10 @@
 package com.mengyunzhi.synthetical.init;
 
 import com.mengyunzhi.synthetical.entity.GoodCategory;
+import com.mengyunzhi.synthetical.entity.Price;
 import com.mengyunzhi.synthetical.entity.User;
 import com.mengyunzhi.synthetical.entity.Vehicle;
-import com.mengyunzhi.synthetical.repository.GoodCategoryRepository;
-import com.mengyunzhi.synthetical.repository.UserRepository;
-import com.mengyunzhi.synthetical.repository.VehicleRepository;
+import com.mengyunzhi.synthetical.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -25,6 +24,8 @@ public class DataInit implements ApplicationListener<ContextRefreshedEvent> {
     private VehicleRepository vehicleRepository;
     @Autowired
     private GoodCategoryRepository goodCategoryRepository;
+    @Autowired
+    private PriceRepository priceRepository;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
@@ -45,6 +46,19 @@ public class DataInit implements ApplicationListener<ContextRefreshedEvent> {
             goodCategory.setMultipleRate(1+0.25F*i);
             goodCategoryRepository.save(goodCategory);
         }
+
+        /**
+         * 价格规则初始化
+         */
+        for(int i = 0;i<3;i++){
+            Price priceRule = new Price();
+            priceRule.setMinKilometres(i*5F);
+            priceRule.setMaxKilometres(i*5+5F);
+            priceRule.setPrice(new BigDecimal(1+0.25F*i));
+            priceRepository.save(priceRule);
+        }
+
+
 
         User admin = new User();
         admin.setName("系统管理员");

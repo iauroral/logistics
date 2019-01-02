@@ -4,10 +4,10 @@ import com.mengyunzhi.core.service.CommonService;
 import com.mengyunzhi.core.service.YunzhiService;
 import com.mengyunzhi.synthetical.entity.OrderDetail;
 import com.mengyunzhi.synthetical.entity.Orders;
-import com.mengyunzhi.synthetical.entity.Payment;
 import com.mengyunzhi.synthetical.entity.User;
 import com.mengyunzhi.synthetical.repository.OrderDetailRepository;
 import com.mengyunzhi.synthetical.repository.OrdersRepository;
+import com.mengyunzhi.synthetical.entity.Payment;
 import com.mengyunzhi.synthetical.repository.PaymentRepository;
 import com.mengyunzhi.synthetical.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +27,8 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private UserService userService;
     @Autowired
+    private PriceService priceService;
+    @Autowired
     private UserRepository userRepository;
     @Autowired
     private OrdersRepository ordersRepository;
@@ -39,20 +41,31 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Orders makeNewOrder(Orders orders){
+        List<OrderDetail> orderDetailsList = orders.getOrderDetailList();
+
         // order属性补全 存入order表
-        orders.setTotalPrice(BigDecimal.valueOf(0));
+        orders.setStarLevel((float) 5);
+        // 计算订单总价
+        BigDecimal totalPrice = new BigDecimal(0);
+
+        for(OrderDetail orderDetailsNow : orderDetailsList){
+            BigDecimal priceOfDetails = priceService.getPriceByDistance(orders.getDistance());
+            totalPrice = totalPrice.add(priceOfDetails.multiply(
+                    new BigDecimal(orderDetailsNow.getGoodCategory().getMultipleRate())));
+        }
+        orders.setTotalPrice(totalPrice);
         try {
             orders.setOwner(userService.getCurrentLoginUser());
         } catch (AuthException e) {
             e.printStackTrace();
         }
         ordersRepository.save(orders);
-        
+
         // 订单明细存入orderDetail表
-        List<OrderDetail> orderDetailsList = orders.getOrderDetailList();
         for (OrderDetail orderDetails : orderDetailsList)
             orderDetails.setOrders(orders);
         orderDetailRepository.save(orderDetailsList);
+
 
         return orders;
     }
