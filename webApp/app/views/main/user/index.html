@@ -21,10 +21,7 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ user.username }}</td>
                             <td>{{ user.name }}</td>
-                            <td>
-                                <p ng-if="!user.freezeOrNot">正常</p>
-                                <p ng-if="user.freezeOrNot">已冻结</p>
-                            </td>
+                            <td ng-bind-html="user.freezeOrNot | userState"></td>
                             <td>
                                 <button ng-if="!user.freezeOrNot" class="btn btn-sm btn-danger" ng-click="freeze(user.id)">
                                     <i class="pe-7s-lock"></i>

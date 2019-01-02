@@ -20,10 +20,7 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ user.username }}</td>
                             <td>{{ user.name }}</td>
-                            <td>
-                                <p ng-if="user.status === 0">未认证</p>
-                                <p ng-if="user.status === 1">已认证</p>
-                            </td>
+                            <td ng-bind-html="user.status | driverState"></td>
                         </tr>
                     </tbody>
                 </table>
