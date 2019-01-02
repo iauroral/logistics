@@ -73,8 +73,11 @@
                                     请输入车牌号
                                 </p>
                             </div>
-                            <vehicle-list ng-model="user.vehicle" ng-if="user.type === 'DRIVER'"></vehicle-list>
-                            <input ng-if="user.type === 'DRIVER'" type="hidden" ng-model="user.vehicle.id" required />
+                            <div ng-if="user.type === 'DRIVER'" class="form-group col-lg-12">
+                                <label>车型</label>
+                                <vehicle-list ng-model="user.vehicle"></vehicle-list>
+                                <input type="hidden" ng-model="user.vehicle.id" required />
+                            </div>
                         </div>
                         <div class="text-center">
                             <button ng-disabled="registerForm.$invalid" class="btn btn-success">注册</button>
