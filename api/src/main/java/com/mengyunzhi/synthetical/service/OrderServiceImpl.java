@@ -5,11 +5,8 @@ import com.mengyunzhi.core.service.YunzhiService;
 import com.mengyunzhi.synthetical.entity.OrderDetail;
 import com.mengyunzhi.synthetical.entity.Orders;
 import com.mengyunzhi.synthetical.entity.User;
-import com.mengyunzhi.synthetical.repository.OrderDetailRepository;
-import com.mengyunzhi.synthetical.repository.OrdersRepository;
+import com.mengyunzhi.synthetical.repository.*;
 import com.mengyunzhi.synthetical.entity.Payment;
-import com.mengyunzhi.synthetical.repository.PaymentRepository;
-import com.mengyunzhi.synthetical.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +35,8 @@ public class OrderServiceImpl implements OrderService {
     private YunzhiService yunzhiService;
     @Autowired
     private OrderDetailRepository orderDetailRepository;
+    @Autowired
+    private TaxRepository taxRepository;
 
     @Override
     public Orders makeNewOrder(Orders orders){
@@ -150,9 +149,19 @@ public class OrderServiceImpl implements OrderService {
     public void confirm(Long id) {
         Orders orders = ordersRepository.findOne(id);
 
+        // 确认司机的酬劳
         User user = orders.getDriver();
-        user.setBalance(user.getBalance().add(orders.getTotalPrice()));
+        BigDecimal taxPrice = orders.getTotalPrice().multiply( new BigDecimal(
+                taxRepository.findByMinPriceLessThanAndMaxPriceGreaterThanEqual(
+                        orders.getTotalPrice(),orders.getTotalPrice()).getRate()));
+        user.setBalance(user.getBalance().add(orders.getTotalPrice()).subtract(taxPrice));
         userRepository.save(user);
+
+        // 抽取一定的中介费用
+        User admin = userRepository.findByUsername("admin");
+        admin.setBalance(admin.getBalance().add(taxPrice));
+        userRepository.save(admin);
+
 
         orders.setOrderStatus(Orders.FINISH);
         ordersRepository.save(orders);
