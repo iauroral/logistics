@@ -103,15 +103,104 @@ angular
                 });
         };
 
+        self.grub = function(id, callback) {
+            var url = '/api/Order/grub/' + id;
+            $http.put(url)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
+        self.pay = function(id, driver, callback) {
+            var url = '/api/Order/pay/' + id;
+            $http.put(url, driver)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
+        self.driverRunning = function(callback) {
+            var url = '/api/Order/driver/running';
+            $http.get(url)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
+        self.driverCompleted = function(callback) {
+            var url = '/api/Order/driver/completed';
+            $http.get(url)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
+        self.in = function(id, callback) {
+            var url = '/api/Order/in/' + id;
+            $http.put(url)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
+        self.finish = function(id, callback) {
+            var url = '/api/Order/finish/' + id;
+            $http.put(url)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
+        self.confirm = function(id, callback) {
+            var url = '/api/Order/confirm/' + id;
+            $http.put(url)
+                .then(function success(response) {
+                    if (callback) {
+                        callback(response.data);
+                    }
+                }, function error() {
+                    CommonService.httpError();
+                });
+        };
+
         return {
-            makeOrder         : self.makeOrder,
-            update       : self.update,
-            delete       : self.delete,
-            getOrderRunningByUser : self.getOrderRunningByUser,
+            in                      : self.in,
+            pay                     : self.pay,
+            grub                    : self.grub,
             save                    : self.save,
             query                   : self.query,
             update                  : self.update,
+            finish                  : self.finish,
             delete                  : self.delete,
+            confirm                 : self.confirm,
+            makeOrder               : self.makeOrder,
+            getOrderById            : self.getOrderById,
+            driverRunning           : self.driverRunning,
+            driverCompleted         : self.driverCompleted,
             getOrderRunningByUser   : self.getOrderRunningByUser,
             getOrderCompletedByUser : self.getOrderCompletedByUser
         };

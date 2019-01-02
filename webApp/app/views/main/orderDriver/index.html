@@ -37,8 +37,12 @@
                                     <td>{{ order.orderStatus }}</td>
                                     <td>{{ order.logisticsStatus }}</td>
                                     <td>
-                                        <a ui-sref="main.orders.select({id: order.id})" class="btn btn-primary" ng-if="order.orderStatus === 1">选择司机</a>
-                                        <button ng-click="confirm(order.id)" class="btn btn-primary" ng-if="order.orderStatus === 3">确认订单</button>
+                                        <button ng-click="in(order.id)" class="btn btn-primary" ng-if="order.logisticsStatus === 0">
+                                            更改为正在运输
+                                        </button>
+                                        <button ng-click="finish(order.id)" class="btn btn-primary" ng-if="order.logisticsStatus === 1">
+                                            更改为运输完成
+                                        </button>
                                     </td>
                                 </tr>
                             </tbody>

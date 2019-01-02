@@ -1,7 +1,9 @@
 package com.mengyunzhi.synthetical.service;
 
 import com.mengyunzhi.synthetical.entity.Orders;
+import com.mengyunzhi.synthetical.entity.User;
 
+import javax.security.auth.message.AuthException;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
@@ -21,12 +23,26 @@ public interface OrderService {
     /**
      * 查找用户正在执行的订单
      */
-    List<Orders>  findOrdersRunningByUser();
+    List<Orders> findOrdersRunningByUser();
 
     /**
      * 查找用户已经完成的订单
      */
-    List<Orders>  findOrdersCompletedByUser();
+    List<Orders> findOrdersCompletedByUser();
+
+    List<Orders> findAllOrdersCompletedByCurrentDriver();
+
+    List<Orders> findAllOrdersRunningByCurrentDriver();
+
+    void pay(Long id, User user);
+
+    void in(Long id);
+
+    void finish(Long id);
+
+    void confirm(Long id);
+
+    Orders findById(Long id);
 
     /**
      * 订单综合查询
@@ -36,5 +52,10 @@ public interface OrderService {
                        Date endDate,
                        Float minDistance,
                        Float maxDistance);
+
+    /**
+     * 抢单
+     */
+    void grub(Long id) throws AuthException;
 }
 
