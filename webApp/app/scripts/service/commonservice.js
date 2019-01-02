@@ -6,11 +6,25 @@ angular
     .service('CommonService', function(sweetAlert) {
         var self = this;
 
-        self.success = function() {
+        self.success = function(title, text) {
+            if (angular.isUndefined(title)) {
+                title = '操作成功';
+            }
+            if (angular.isUndefined(text)) {
+                text = 'Everything is OK!';
+            }
             sweetAlert.swal({
-                title: "操作成功!",
-                text: "Everything is OK!",
-                type: "success"
+                title: title,
+                text: text,
+                type: 'success'
+            });
+        };
+
+        self.error = function(title, text) {
+            sweetAlert.swal({
+                title: title,
+                text: text,
+                type: 'error'
             });
         };
 
@@ -18,6 +32,7 @@ angular
             sweetAlert.swal({
                 title: title,
                 text: text
+                // type: 'error'
             });
         };
 
@@ -30,6 +45,7 @@ angular
 
         return {
             alert     : self.alert,
+            error     : self.error,
             success   : self.success,
             httpError : self.httpError
         };
