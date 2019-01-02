@@ -50,7 +50,7 @@ angular
                         callback(response.data);
                     }
                 }, function error() {
-                    CommonService.httpError();
+                    CommonService.error('删除失败', '此车型已被使用');
                 });
         };
 

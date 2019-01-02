@@ -43,10 +43,86 @@ angular
             });
         };
 
+        self.warning = function(callback, title, text, confirmButtonText, cancelButtonText) {
+            if (typeof(title) === 'undefined') {
+                title = '该操作不可逆，您确认要继续吗?';
+            }
+            if (typeof(text) === 'undefined') {
+                text = '';
+            }
+            if (typeof(confirmButtonText) === 'undefined') {
+                confirmButtonText = '确认';
+            }
+            if (typeof(cancelButtonText) === 'undefined') {
+                cancelButtonText = '返回';
+            }
+            sweetAlert.swal({
+                    title: title,
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: confirmButtonText,
+                    cancelButtonText: cancelButtonText,
+                    closeOnConfirm: false,
+                    closeOnCancel: false,
+                    text: text
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
+                        callback(
+                            function success(type, title, message, callback) {
+                                if (!type) {
+                                    type = 'success';
+                                }
+                                if (!title) {
+                                    title = '操作成功';
+                                }
+                                if (!message) {
+                                    message = '';
+                                }
+                                //提示用户，删除成功
+                                sweetAlert.swal({ title: title, text: message, type: type }, function() {
+                                    if (callback) {
+                                        callback();
+                                    }
+                                });
+                            },
+                            function error(typeOrResponse, title, message, callback) {
+                                var type;
+                                if (typeOrResponse && typeOrResponse.status) {
+                                    title = typeOrResponse.data.message;
+                                    type = 'error';
+                                    message = typeOrResponse.config.method + ':' + typeOrResponse.data.path + '. ' + typeOrResponse.data.exception + '->' + typeOrResponse.data.error + '. ' + typeOrResponse.status;
+                                } else {
+                                    if (!type) {
+                                        type = 'error';
+                                    }
+                                    if (!title) {
+                                        title = '操作失败';
+                                    }
+                                    if (!message) {
+                                        message = '';
+                                    }
+                                }
+
+                                //提示用户，删除失败
+                                sweetAlert.swal({ title: title, text: message, type: type }, function() {
+                                    if (callback) {
+                                        callback();
+                                    }
+                                });
+                            });
+                    } else {
+                        sweetAlert.swal('操作已取消', '', 'error');
+                    }
+                });
+        };
+
         return {
-            alert     : self.alert,
-            error     : self.error,
-            success   : self.success,
-            httpError : self.httpError
+            alert: self.alert,
+            error: self.error,
+            success: self.success,
+            warning: self.warning,
+            httpError: self.httpError
         };
     });
