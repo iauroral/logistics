@@ -14,9 +14,11 @@ angular
         };
 
         self.pay = function() {
-            UserService.pay($scope.user.id, function() {
-                CommonService.success();
-                $state.go('main.mywallet', {}, { reload: true });
+            CommonService.warning(function(success, error) {
+                UserService.pay($scope.user.id, function() {
+                    CommonService.success('押金缴纳成功', '您现在可以去接受订单了！');
+                    $state.go('main.mywallet', {}, { reload: true });
+                });
             });
         };
 
