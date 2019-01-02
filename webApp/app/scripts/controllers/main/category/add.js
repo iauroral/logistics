@@ -1,6 +1,6 @@
 angular
     .module('homer')
-    .controller('CategoryAddCtrl', function($scope, $state, CommonService, CategoryService) {
+    .controller('CategoryAddCtrl', function($scope, $state, CommonService, CargoService) {
         var self = this;
 
         self.init = function() {
@@ -11,8 +11,8 @@ angular
         };
 
         self.submit = function() {
-            CategoryService.save($scope.category, function() {
-                CommonService.success();
+            CargoService.save($scope.category, function() {
+                CommonService.success('保存成功', '添加货物类别成功');
                 $state.go('main.category', {}, { reload: true });
             });
         };

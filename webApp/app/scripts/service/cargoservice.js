@@ -50,7 +50,8 @@ angular
                         callback(response.data);
                     }
                 }, function error() {
-                    CommonService.httpError();
+                    // CommonService.httpError();
+                    CommonService.error('删除失败', '该货物类别已经被使用');
                 });
         };
 

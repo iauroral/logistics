@@ -10,10 +10,12 @@ angular
         };
 
         self.delete = function(id) {
-            CargoService.delete(id, function() {
-                CommonService.success();
-                $scope.categories = $scope.categories.filter(function(value) {
-                    return value.id !== id;
+            CommonService.warning(function(success, error) {
+                CargoService.delete(id, function() {
+                    CommonService.success('删除成功');
+                    $scope.categories = $scope.categories.filter(function(value) {
+                        return value.id !== id;
+                    });
                 });
             });
         };
