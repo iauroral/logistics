@@ -4,21 +4,12 @@ import com.mengyunzhi.core.service.CommonService;
 import com.mengyunzhi.core.service.YunzhiService;
 import com.mengyunzhi.synthetical.entity.OrderDetail;
 import com.mengyunzhi.synthetical.entity.Orders;
-<<<<<<< HEAD
-import com.mengyunzhi.synthetical.entity.Price;
 import com.mengyunzhi.synthetical.entity.User;
 import com.mengyunzhi.synthetical.repository.OrderDetailRepository;
 import com.mengyunzhi.synthetical.repository.OrdersRepository;
-import com.mengyunzhi.synthetical.repository.PriceRepository;
-import javafx.scene.effect.Light;
-=======
 import com.mengyunzhi.synthetical.entity.Payment;
-import com.mengyunzhi.synthetical.entity.User;
-import com.mengyunzhi.synthetical.repository.OrderDetailRepository;
-import com.mengyunzhi.synthetical.repository.OrdersRepository;
 import com.mengyunzhi.synthetical.repository.PaymentRepository;
 import com.mengyunzhi.synthetical.repository.UserRepository;
->>>>>>> master
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -53,19 +44,16 @@ public class OrderServiceImpl implements OrderService {
         List<OrderDetail> orderDetailsList = orders.getOrderDetailList();
 
         // order属性补全 存入order表
-        orders.setLogisticsStatus(0);
-        orders.setOrderStatus(0);
         orders.setStarLevel((float) 5);
         // 计算订单总价
         BigDecimal totalPrice = new BigDecimal(0);
+
         for(OrderDetail orderDetailsNow : orderDetailsList){
             BigDecimal priceOfDetails = priceService.getPriceByDistance(orders.getDistance());
             totalPrice = totalPrice.add(priceOfDetails.multiply(
                     new BigDecimal(orderDetailsNow.getGoodCategory().getMultipleRate())));
         }
-
         orders.setTotalPrice(totalPrice);
-        orders.setTotalPrice(BigDecimal.valueOf(0));
         try {
             orders.setOwner(userService.getCurrentLoginUser());
         } catch (AuthException e) {
@@ -73,10 +61,10 @@ public class OrderServiceImpl implements OrderService {
         }
         ordersRepository.save(orders);
 
-//        // 订单明细存入orderDetail表
-//        for (OrderDetail orderDetails : orderDetailsList)
-//            orderDetails.setOrders(orders);
-//        orderDetailRepository.save(orderDetailsList);
+        // 订单明细存入orderDetail表
+        for (OrderDetail orderDetails : orderDetailsList)
+            orderDetails.setOrders(orders);
+        orderDetailRepository.save(orderDetailsList);
 
 
         return orders;

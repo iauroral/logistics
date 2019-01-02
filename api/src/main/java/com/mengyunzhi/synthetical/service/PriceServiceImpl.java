@@ -17,15 +17,14 @@ public class PriceServiceImpl implements PriceService {
 
     @Override
     public BigDecimal getPriceByDistance(float distance) {
-        // 计算订单总价
         BigDecimal totalPrice = new BigDecimal(0);
         List<Price> priceList = priceRepository.findAll();
         for (Price aPriceList : priceList) {
             float max = aPriceList.getMaxKilometres();
             float min = aPriceList.getMinKilometres();
-            if (min < distance)
+            if (min > distance)
                 break;
-            if (max >= distance)
+            if (max <= distance)
                 totalPrice = totalPrice.add(aPriceList.getPrice()
                         .multiply(new BigDecimal(max - min)));
             else
