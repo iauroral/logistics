@@ -25,6 +25,12 @@ public class Vehicle {
     public Vehicle() {
     }
 
+    public Vehicle(String name, Float multipleRate, BigDecimal pledge) {
+        this.name = name;
+        this.multipleRate = multipleRate;
+        this.pledge = pledge;
+    }
+
     public Long getId() {
         return id;
     }

@@ -25,6 +25,12 @@ public class Tax {
     public Tax() {
     }
 
+    public Tax(Float rate, BigDecimal minPrice, BigDecimal maxPrice) {
+        this.rate = rate;
+        this.minPrice = minPrice;
+        this.maxPrice = maxPrice;
+    }
+
     public Long getId() {
         return id;
     }
