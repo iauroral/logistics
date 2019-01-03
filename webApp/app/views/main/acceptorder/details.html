@@ -20,10 +20,6 @@
                     <p class="col-sm-10">{{ order.endPlace }}</p>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2">运输距离</label>
-                    <p class="col-sm-10">{{ order.distance }}</p>
-                </div>
-                <div class="form-group">
                     <label class="col-sm-2">发车日期</label>
                     <p class="col-sm-10">{{ order.date }}</p>
                 </div>
@@ -32,19 +28,29 @@
                     <p class="col-sm-10">{{ order.vehicle.name }}</p>
                 </div>
                 <div class="form-group">
+                    <label class="col-sm-2">运输距离</label>
+                    <p class="col-sm-10">{{ order.distance }}千米</p>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2">运输费用</label>
-                    <p class="col-sm-10">{{ order.totalPrice }}</p>
+                    <p class="col-sm-10">{{ order.totalPrice }}元</p>
                 </div>
                 <div class="form-group" ng-repeat="detail in order.orderDetailList">
                     <label class="col-sm-2">货物名称</label>
                     <p class="col-sm-4">{{ detail.goodCategory.name }}</p>
                     <label class="col-sm-2">货物重量</label>
-                    <p class="col-sm-4">{{ detail.weight }}</p>
+                    <p class="col-sm-4">{{ detail.weight }}千克</p>
                 </div>
                 <div class="row">
                     <div class="col-sm-2 col-sm-offset-2">
-                        <button ng-click="submit()" class="btn btn-primary">抢单</button>
-                        <a ui-sref="main.acceptorder" class="btn btn-primary">取消</a>
+                        <button ng-click="submit()" class="btn btn-primary">
+                            <i class="pe-7s-cart"></i>
+                            &nbsp;抢单
+                        </button>
+                        <a ui-sref="main.acceptorder" class="btn btn-default">
+                            <i class="pe-7s-back"></i>
+                            &nbsp;取消
+                        </a>
                     </div>
                 </div>
             </form>
