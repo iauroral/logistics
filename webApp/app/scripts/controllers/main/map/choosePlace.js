@@ -21,19 +21,20 @@ angular
             $uibModalInstance.dismiss('取消选择地点');
         };
         $scope.init = function() {
-            console.log("map loading");
+            // console.log("map loading");
             $scope.addressInfo = "双击可以放大 请选择你的起始位置";
 
             // 百度地图API功能
             map = new BMap.Map("allmap");
-            map.centerAndZoom("北京", 12);
+            map.centerAndZoom("北京", 9);
+            map.enableScrollWheelZoom(true);
 
             // 定位到当前城市
             var myCity = new BMap.LocalCity();
             myCity.get(function(loc) {
                 console.log(loc);
                 var cityName = loc.name;
-                map.centerAndZoom(cityName, 12);
+                map.centerAndZoom(cityName, 9);
                 markMap(loc.center);
             });
 
