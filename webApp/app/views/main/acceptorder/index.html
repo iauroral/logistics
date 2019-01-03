@@ -51,7 +51,10 @@
                 <div class="col-md-4">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-4">
-                            <button class="btn btn-success" ng-click="reload()">查询</button>
+                            <button class="btn btn-success" ng-click="reload()">
+                                <i class="pe-7s-search"></i>
+                                &nbsp;查询
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -62,10 +65,10 @@
                 <tbody>
                     <tr>
                         <th data-toggle="true">序号</th>
-                        <th>起点</th>
-                        <th>终点</th>
-                        <th>运输距离</th>
+                        <th>起始地点</th>
+                        <th>目的地点</th>
                         <th>发车日期</th>
+                        <th>运输距离</th>
                         <th>运输费用</th>
                         <th>操作</th>
                     </tr>
@@ -73,11 +76,14 @@
                         <td>{{ $index + 1 }}</td>
                         <td>{{ order.startPlace }}</td>
                         <td>{{ order.endPlace }}</td>
-                        <td>{{ order.distance }}</td>
                         <td>{{ order.date }}</td>
-                        <td>{{ order.totalPrice }}</td>
+                        <td>{{ order.distance }}千米</td>
+                        <td>{{ order.totalPrice }}元</td>
                         <td>
-                            <a ui-sref="main.acceptorder.details({id: order.id})">详情</a>
+                            <a ui-sref="main.acceptorder.details({id: order.id})" class="btn btn-info btn-xs">
+                                <i class="pe-7s-file"></i>
+                                &nbsp;详情
+                            </a>
                         </td>
                     </tr>
                 </tbody>

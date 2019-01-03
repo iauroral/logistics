@@ -19,10 +19,34 @@
                 <div class="panel-body">
                     <form class="form-horizontal" name="myForm" ng-submit="submit()">
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">司机选择</label>
-                            <div class="col-sm-9">
+                            <label class="col-sm-2 control-label">选择司机</label>
+                            <div class="col-sm-4">
                                 <select id="driver" class="form-control" ng-model="driver" ng-options="driver as driver.name for driver in order.grabDrivers track by driver.id"></select>
                                 <input type="hidden" name="driver" ng-model="driver.id" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">姓名</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">{{ driver.name }}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">电话</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">{{ driver.tel }}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">车牌号</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">{{ driver.license }}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">车型</label>
+                            <div class="col-sm-9">
+                                <p class="form-control-static">{{ driver.vehicle.name }}</p>
                             </div>
                         </div>
                         <div class="form-group">

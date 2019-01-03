@@ -10,9 +10,11 @@ angular
         };
 
         self.submit = function() {
-            OrderService.pay($stateParams.id, $scope.driver, function() {
-                CommonService.success();
-                $state.go('main.orders', {}, {reload: true});
+            CommonService.warning(function(success, error) {
+                OrderService.pay($stateParams.id, $scope.driver, function() {
+                    CommonService.success('选择司机成功');
+                    $state.go('main.orders', {}, {reload: true});
+                });
             });
         };
 

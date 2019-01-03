@@ -25,6 +25,12 @@ public class Price {
     public Price() {
     }
 
+    public Price(BigDecimal price, Float minKilometres, Float maxKilometres) {
+        this.price = price;
+        this.minKilometres = minKilometres;
+        this.maxKilometres = maxKilometres;
+    }
+
     public Long getId() {
         return id;
     }

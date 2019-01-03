@@ -22,6 +22,11 @@ public class GoodCategory {
     public GoodCategory() {
     }
 
+    public GoodCategory(String name, Float multipleRate) {
+        this.name = name;
+        this.multipleRate = multipleRate;
+    }
+
     public Long getId() {
         return id;
     }

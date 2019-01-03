@@ -11,7 +11,6 @@
         <div class="col-lg-12">
             <div class="hpanel">
                 <div class="panel-heading">
-                    <div panel-tools></div>
                     订单列表
                 </div>
                 <div class="panel-body">
@@ -20,9 +19,15 @@
                             <thead>
                                 <tr>
                                     <th>序号</th>
+                                    <th>货主</th>
+                                    <th>接单司机</th>
                                     <th>起始地点</th>
                                     <th>目的地点</th>
                                     <th>距离</th>
+                                    <th>总价</th>
+                                    <th>需求车型</th>
+                                    <th>发车日期</th>
+                                    <th>详细信息</th>
                                     <th>订单状态</th>
                                     <th>物流状态</th>
                                     <th>操作</th>
@@ -31,22 +36,36 @@
                             <tbody>
                                 <tr ng-repeat="order in orders">
                                     <td>{{ $index + 1 }}</td>
+                                    <td>{{ order.owner.name }}</td>
+                                    <td>{{ order.driver.name }}</td>
                                     <td>{{ order.startPlace }}</td>
                                     <td>{{ order.endPlace }}</td>
-                                    <td>{{ order.distance }}</td>
-                                    <td>{{ order.orderStatus }}</td>
-                                    <td>{{ order.logisticsStatus }}</td>
+                                    <td>{{ order.distance }}千米</td>
+                                    <td>{{ order.totalPrice }}元</td>
+                                    <td>{{ order.vehicle.name }}</td>
+                                    <td>{{ order.date }}</td>
                                     <td>
-                                        <a ui-sref="main.orders.select({id: order.id})" class="btn btn-primary" ng-if="order.orderStatus === 1">选择司机</a>
-                                        <button ng-click="confirm(order.id)" class="btn btn-primary" ng-if="order.orderStatus === 3">确认订单</button>
+                                        <p ng-repeat="detail in order.orderDetailList">
+                                            {{ detail.goodCategory.name }} {{ detail.weight }} 千克
+                                        </p>
+                                    </td>
+                                    <td ng-bind-html="order.orderStatus | orderStatus"></td>
+                                    <td ng-bind-html="order.logisticsStatus | logisticsStatus"></td>
+                                    <td>
+                                        <span ng-if="order.orderStatus !== 1 && order.orderStatus !== 3" class="badge badge-error">无法操作该订单</span>
+                                        <a ui-sref="main.orders.select({id: order.id})" class="btn btn-info btn-xs" ng-if="order.orderStatus === 1">
+                                            <i class="pe-7s-filter"></i>
+                                            &nbsp;选择司机
+                                        </a>
+                                        <button ng-click="confirm(order.id)" class="btn btn-success btn-xs" ng-if="order.orderStatus === 3">
+                                            <i class="pe-7s-note"></i>
+                                            &nbsp;确认已完成
+                                        </button>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
-                <div class="panel-footer">
-                    Table - 6 rows
                 </div>
             </div>
         </div>
