@@ -30,6 +30,7 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="order in orders">
+                                    <pre>{{ order | json }}</pre>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ order.startPlace }}</td>
                                     <td>{{ order.endPlace }}</td>
@@ -44,9 +45,6 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-                <div class="panel-footer">
-                    Table - 6 rows
                 </div>
             </div>
         </div>

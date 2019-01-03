@@ -1,6 +1,13 @@
 spring:
   session:
     store-type: hash_map
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/logistics
+    username: root
+    password:
 
 server:
   port: 8000
