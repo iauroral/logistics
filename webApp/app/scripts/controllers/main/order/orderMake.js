@@ -103,7 +103,7 @@ angular
             let b = rad($scope.startPlace.lng) - rad($scope.endPlace.lng);
             let s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b / 2), 2)));
             s = s * 6378.137; // EARTH_RADIUS;
-            s = Math.round(s * 10000) / 10000; //输出为公里
+            s = 1.414 * Math.round(s * 10000) / 10000; //输出为公里
             $scope.distance = s;
         }
 
