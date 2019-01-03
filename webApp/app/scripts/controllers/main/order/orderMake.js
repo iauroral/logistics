@@ -3,7 +3,7 @@
  */
 angular
     .module('homer')
-    .controller('OrderMakeCtrl', function($scope, $uibModal, CommonService, OrderService) {
+    .controller('OrderMakeCtrl', function($scope, $state, $uibModal, CommonService, OrderService) {
         var self = this;
 
         $scope.cargoList = [{
@@ -89,8 +89,6 @@ angular
             }, function(reason) {
                 console.log(reason); //点击空白区域，总会输出backdrop click，点击取消，则会暑促cancel  
             });
-
-
         }
 
         function rad(d) {
@@ -109,13 +107,9 @@ angular
             $scope.distance = s;
         }
 
-
-
-
-
         $scope.submit = function() {
             var order = {
-                "date" : $scope.dateTime,
+                "date": $scope.dateTime,
                 "startPlace": $scope.startPlace.name,
                 "endPlace": $scope.endPlace.name,
                 "startLongitude": $scope.startPlace.lng,
@@ -126,10 +120,9 @@ angular
                 "vehicle": $scope.vehicle,
                 "orderDetailList": $scope.cargoList
             };
-            OrderService.makeOrder(order, function(res) {
-
-                console.log(res);
+            OrderService.makeOrder(order, function() {
+                CommonService.success('订单发起成功', '前往我的订单页面');
+                $state.go('main.orders', {}, { reload: true });
             });
-
         };
     });

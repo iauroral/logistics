@@ -1,6 +1,6 @@
 <div>
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-md-12">
             <div class="hpanel">
                 <div class="panel-body">
                     <h3>创建订单</h3>
@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-md-12">
             <div class="hpanel">
                 <div class="panel-heading">
                     <!-- <div panel-tools></div> -->
@@ -18,51 +18,101 @@
                 </div>
                 <div class="panel-body">
                     <form method="get" class="form-horizontal">
-                        <div class="form-group"><label class="col-sm-2 control-label">起始地点</label>
-                            <div class="col-sm-9"><input type="text" class="form-control" placeholder="点击以选择起始地点" ng-click="startPlaceInit()" ng-model="startPlace.name"></div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-2 control-label">目的地</label>
-                            <div class="col-sm-9"><input type="text" class="form-control" placeholder="点击以选择终止地点" ng-click="endPlaceInit()" ng-model="endPlace.name"></div>
-                        </div>
-                        <div class="form-group" ng-if="distance"><label class="col-lg-2 control-label">预估距离</label>
-                            <div class="col-lg-10">
-                                <p class="form-control-static">{{distance}} 公里</p>
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <label class="col-md-6 control-label">起始地点</label>
+                                    <p class="col-md-6 form-control-static">{{ startPlace.name }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="button" class="btn btn-primary btn-sm pull-right" ng-click="startPlaceInit()" ng-model="startPlace.name" value="点击以选择起始地点" />
                             </div>
                         </div>
-                        <div class="hr-line-dashed"></div>
-                        <div ng-repeat="cargo in cargoList track by $index">
-                            <div class="form-group ">
-                                <div class="form-inline"><label class="col-sm-2 control-label">运载货物{{$index+1}}</label>
-                                    <div class="col-sm-3">
-                                        <cargo-list ng-model="cargoList[$index].goodCategory" style="width:100%"></cargo-list>
-                                    </div><label class="col-sm-1 control-label">重量</label>
-                                    <div class="input-group col-sm-2 "><input type="text" class="form-control" ng-model="cargoList[$index].weight" ng-blur="refreshWeight()" style="width: 100%"> <span class="input-group-addon">千克</span></div>
-                                    <div class="col-sm-2" style="float: right">
-                                        <button class="btn " ng-click="cargoInsert()">增加</button>
-                                        <button class="btn btn-danger" ng-click="cargoDelete($index)">删除</button></div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <label class="col-md-6 control-label">目的地点</label>
+                                    <p class="col-md-6 form-control-static">{{ endPlace.name }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="button" class="btn btn-primary btn-sm pull-right" ng-click="endPlaceInit()" ng-model="endPlace.name" value="点击以选择目的地点" />
+                            </div>
+                        </div>
+                        <div class="form-group" ng-if="distance">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <label class="col-md-6 control-label">预估距离</label>
+                                    <p class="col-md-6 form-control-static">{{distance}} 公里</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group"><label class="col-lg-2 control-label">总计重量</label>
-                            <div class="col-lg-10">
-                                <p class="form-control-static">{{totalWeight}} 千克</p>
+                        <div ng-repeat="cargo in cargoList track by $index">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <label class="col-md-6 control-label">运载货物{{ $index + 1 }}</label>
+                                        <cargo-list class="col-md-6" ng-model="cargoList[$index].goodCategory"></cargo-list>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <label class="col-md-6 control-label">重量</label>
+                                        <div class="input-group col-md-6">
+                                            <input type="text" class="form-control" ng-model="cargoList[$index].weight" ng-blur="refreshWeight()">
+                                            <span class="input-group-addon">千克</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-danger" ng-click="cargoDelete($index)">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                    <button ng-show="$last" class="btn btn-info" ng-click="cargoInsert()">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group"> <label class="col-sm-2 control-label">车型选择</label>
-                            <div class="col-sm-9">
-                                <vehicle-list ng-model="vehicle"></vehicle-list>
-                            </div>
-                        </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group"><label class="col-sm-2 control-label">运货时间</label>
-                            <div class="col-sm-4"><input type="date" class="form-control" placeholder="点击以选择运货时间" ng-model="dateTime"></div>
-                            <div class="col-sm-4"><input type="time" class="form-control" placeholder="点击以选择运货时间" ng-model="dateTime"></div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-8 col-sm-offset-2">
-                                <!-- <button class="btn btn-default" type="submit">Cancel</button> -->
-                                <button class="btn btn-primary" type="submit" ng-click="submit()">提交订单</button>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <label class="col-md-6 control-label">总计重量</label>
+                                    <div class="col-md-6">
+                                        <p class="form-control-static">{{totalWeight}} 千克</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <label class="col-md-6 control-label">车型选择</label>
+                                    <div class="col-md-6">
+                                        <vehicle-list ng-model="vehicle"></vehicle-list>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <label class="col-md-6 control-label">运货时间</label>
+                                    <div class="col-md-6">
+                                        <input type="date" class="form-control" placeholder="点击以选择运货时间" ng-model="dateTime">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-2">
+                                <button class="btn btn-primary" type="submit" ng-click="submit()">
+                                    <i class="pe-7s-check"></i>
+                                    &nbsp;提交订单
+                                </button>
                             </div>
                         </div>
                     </form>
