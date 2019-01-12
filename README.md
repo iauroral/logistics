@@ -59,4 +59,7 @@ grunt live
 
 ### 后台启动
 
-
+```
+cd api
+mvn spring-boot:run
+```
