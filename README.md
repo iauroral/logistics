@@ -6,9 +6,7 @@
 
  - 软件工程专业 `162`班 `301`宿舍作品
 
-<div align=center>
-	<img src="images/hebut.jpeg" />
-</div>
+![河北工业大学](images/hebut.jpeg)
 
 # 软件架构
 
