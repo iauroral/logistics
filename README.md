@@ -2,11 +2,13 @@
 
 声明：本系统不再维护，部分框架与组件已过时，仅供《河北工业大学》学生学习交流使用。
 
-## 河北工业大学 软件工程`2016`级 软件设计与编程实践 作品
+## 河北工业大学 软件设计与编程实践
 
-**勤慎公忠**
+勤慎公忠
 
-**完成人：张喜硕 曽斯维 刘超 刘振飞**
+`2016`级软件工程学生作品
+
+完成人：张喜硕 曽斯维 刘超 刘振飞
 
 ![河北工业大学](images/hebut.png)
 
@@ -28,6 +30,8 @@
 
 最好的轻量级文本编辑器：[Sublime](http://www.sublimetext.com/)
 
+`Java`项目管理工具：[Maven](https://maven.apache.org/)
+
 ## 快速启动
 
 **克隆此项目**
@@ -36,16 +40,33 @@
 git clone https://github.com/TomorrowFramework/logistics.git
 ```
 
-前台采用`Grunt`管理项目(`Grunt`现在已被开源社区弃用，以后的项目中会考虑使用`gulp`与`webpack`等更流行的工具)。
+**进入前端项目目录**
 
 ```
 cd webApp
+```
+
+**安装`npm`依赖**
+
+```
 npm install
+```
+
+**安装`bower`依赖**
+
+```
 bower install
+```
+
+注：安装需要网络环境支持，`npm`加速可选用[淘宝镜像](https://npm.taobao.org/)，`bower`加速请配置网络代理，推荐`V2Ray`。
+
+```
 grunt live
 ```
 
-`npm`与`bower`的配置文件维护的不好，所以可能缺少一些包，如果前台无法启动，请找到`data`目录下的`template.zip`文件，解压，并拷贝其中的`node_modules`与`bower_components`。
+执行命令后，浏览器自动弹出`http://localhost:9000/#!/login`页面即证明前端启动成功。
+
+![webApp](webApp.png)
 
 ### 后台启动
 
