@@ -2,21 +2,19 @@
 
 声明：本系统不再维护，部分框架与组件已过时，仅供《河北工业大学》学生学习交流使用。
 
-## 河北工业大学 软件设计与编程实践
+## 河北工业大学 勤慎公忠
 
-勤慎公忠
-
-`2016`级软件工程学生作品
+软件设计与编程实践，软件工程`2016`级学生作品。
 
 完成人：张喜硕 曽斯维 刘超 刘振飞
 
-![河北工业大学](images/hebut.png)
+![河北工业大学](images/hebut.jpg)
 
 ## 软件架构
 
 ![architecture](images/architecture.png)
 
-## 开发环境
+## 开发环境[推荐 `Unix`]
 
 版本控制工具：[Git](https://git-scm.com/)
 
@@ -31,6 +29,8 @@
 最好的轻量级文本编辑器：[Sublime](http://www.sublimetext.com/)
 
 `Java`项目管理工具：[Maven](https://maven.apache.org/)
+
+开源关系型数据库：[MySQL](https://www.mysql.com/)[推荐 `Docker` + `Kitematic`]
 
 ## 快速启动
 
@@ -66,11 +66,10 @@ grunt live
 
 执行命令后，浏览器自动弹出`http://localhost:9000/#!/login`页面即证明前端启动成功。
 
-![webApp](images/webApp.png)
+![web](images/web.png)
 
-### 后台启动
+**配置数据库**
 
-```
-cd api
-mvn spring-boot:run
-```
+定位到`api/src/main/resources`目录，修改程序配置`application.yml`。
+
+![config](images/config.png)
