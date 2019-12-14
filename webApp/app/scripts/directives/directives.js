@@ -46,8 +46,6 @@ function sideNavigation($timeout) {
     return {
         restrict: 'A',
         link: function(scope, element) {
-            // Call the metsiMenu plugin and plug it to sidebar navigation
-            element.metisMenu();
 
             // Colapse menu in mobile mode after click on element
             var menuElement = $('#side-menu a:not([href$="\\#"])');
@@ -61,13 +59,6 @@ function sideNavigation($timeout) {
             // Check if sidebar scroll is enabled
             if($('body').hasClass('sidebar-scroll')) {
                 var navigation = element.parent();
-                navigation.slimScroll({
-                    height: '100%',
-                    opacity: 0.3,
-                    size : 0,
-                    wheelStep : 5,
-                    allowPageScroll : true,
-                });
             }
 
 
@@ -114,7 +105,6 @@ function sparkline() {
                 render();
             });
             var render = function () {
-                $(element).sparkline(scope.sparkData, scope.sparkOptions);
             };
         }
     }

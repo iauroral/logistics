@@ -10,6 +10,32 @@
 
 ![河北工业大学](images/hebut.jpg)
 
+## 主要功能
+
+### 通用功能
+
+登录、注册、注销
+
+![common](images/common.png)
+
+### 司机端
+
+接收订单、我的订单、历史订单、我的钱包、交易记录、押金缴纳、个人中心
+
+![driver](images/driver.png)
+
+### 货主端
+
+发起订单、我的订单、历史订单、我的钱包、交易记录、个人中心
+
+![owner](images/owner.png)
+
+### 管理端
+
+车型管理、货物类别管理、定价管理、收益管理、账号管理、押金管理、我的钱包
+
+![admin](images/admin.png)
+
 ## 软件架构
 
 ![architecture](images/architecture.png)
