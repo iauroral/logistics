@@ -66,7 +66,7 @@ grunt live
 
 执行命令后，浏览器自动弹出`http://localhost:9000/#!/login`页面即证明前端启动成功。
 
-![webApp](webApp.png)
+![webApp](images/webApp.png)
 
 ### 后台启动
 
