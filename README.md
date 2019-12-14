@@ -91,3 +91,19 @@ mvn spring-boot:run
 > 执行出现类似如下日志信息表示后台启动成功。
 
 ![api](images/api.png)
+
+- 配置`NGINX`
+
+定位到`NGINX`配置目录，引入当前项目下的`NGINX`配置文件。
+
+![nginx](images/nginx.png)
+
+- 重新加载`NGINX`配置
+
+```
+nginx -s reload
+```
+
+浏览器访问：`http://localhost:8005/#!/login`，成功显示即配置成功。
+
+![complete](images/complete.png)
