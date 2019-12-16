@@ -1,5 +1,7 @@
 # 物流运输平台
 
+> **如果本项目对你有所帮助，欢迎`star`。**
+
 > 声明：本系统不再维护，部分框架与组件已过时，仅供《河北工业大学》学生学习交流使用。
 
 ## 河北工业大学 勤慎公忠
@@ -133,3 +135,13 @@ nginx -s reload
 浏览器访问：`http://localhost:8005/#!/login`，成功显示即配置成功。
 
 ![complete](images/complete.png)
+
+## 可能遇到的问题
+
+本系统使用百度地图进行地点选择，长期未维护，百度地图`Key`可能会过期，如过期，请到百度开发者平台申请新的密钥。
+
+修改`webApp/app/index.html`文件，定位到如下代码，将`&ak=`之后的值更改为新密钥。
+
+```javascript
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=CL0VYMHkr4cryAhWNaIbYRpGvyHRAuYt"></script>
+```
